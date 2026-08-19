@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-53QCQY7DLP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-53QCQY7DLP');
+    </script>
+    <link rel="icon" type="image/png" href="/fav.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>Journal | ZELENO Premium Cannabis</title>
+    <meta name="description" content="Artigos sobre a ciência da cannabis medicinal, tratamento, regulação e bem-estar. O journal da ZELENO para pacientes e profissionais de saúde.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ZELENO Journal">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Journal | ZELENO Premium Cannabis">
+    <meta property="og:description" content="Artigos sobre a ciência da cannabis medicinal, tratamento, regulação e bem-estar. O journal da ZELENO para pacientes e profissionais de saúde.">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Cores atualizadas para o verde correto */
+            --primary: #00543d; 
+            --accent: #499375;
+            --y2k-purple: #00543d;
+            --y2k-lime: #00543d;
+            --bg-dark: #f4f4f4;      
+            --white: #00543d;
+            --zeleno-dark: #00543d; 
+            --glass: rgba(0, 84, 61, 0.05);
+            --transition: cubic-bezier(0.85, 0, 0.15, 1);
+        }
+
+        /* --- ESTILOS GERAIS --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        body { background: #f4f4f4; color: #00261b; font-family: 'Poppins', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+        /* --- HEADER --- */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; 
+            padding: 15px 4%; 
+            z-index: 10000;
+            background: transparent;
+            backdrop-filter: none;
+            border-bottom: none;
+            transition: transform 0.35s ease, opacity 0.35s ease;
+        }
+
+        .main-header.header-hidden {
+            transform: translateY(-120%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .nav-group { 
+            display: flex; 
+            align-items: center; 
+            gap: 32px; 
+            flex: 1; 
+        }
+
+        #navGroupLeft { justify-content: flex-end; }
+        #mainNav { justify-content: flex-start; }
+        .header-logo { flex: 0 0 auto; padding: 0 40px; }
+
+        /* Filtro para garantir o verde #00543d no logo */
+        .logo-color-fix {
+            filter: brightness(0) saturate(100%) invert(21%) sepia(26%) saturate(3660%) hue-rotate(133deg) brightness(91%) contrast(101%);
+        }
+
+        .nav-link {
+            color: var(--primary);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px; 
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+        .nav-link:hover { color: var(--accent); }
+        .nav-link.active-box {
+            background: var(--primary);
+            color: #ffffff;
+            padding: 10px 22px; 
+            border-radius: 4px;
+            font-weight: 900 !important;
+            font-size: 12px;
+            display: inline-block;
+        }
+
+        .header-logo img { height: 48px; width: auto; display: block; }
+
+        .btn-store-header {
+            background: var(--primary);
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px; 
+            font-weight: 900;
+            padding: 10px 22px; 
+            border-radius: 4px;
+            white-space: nowrap;
+            margin-left: 10px; 
+        }
+
+        /* --- MOBILE MENU --- */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 26px;
+            cursor: pointer;
+            z-index: 10001;
+        }
+
+        @media (max-width: 1023px) {
+            .main-header { justify-content: space-between; padding: 12px 6%; gap: 0; }
+            .mobile-menu-toggle { display: block; }
+            .header-logo img { height: 42px; }
+            .nav-group {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%; 
+                min-height: 100dvh;
+                height: 100dvh;
+                background: #ffffff; 
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                transition: 0.5s var(--transition);
+                z-index: 10000;
+                overflow-y: auto;
+                padding: 90px 24px 40px;
+                flex: none; 
+            }
+            .nav-group.active { right: 0; }
+            .nav-link { font-size: 11px; font-weight: 900; color: var(--primary); background: transparent !important; }
+            .nav-group.active .cloned-0 { background: var(--primary) !important; color: #ffffff !important; padding: 10px 25px !important; border-radius: 4px; min-width: 180px; }
+            .btn-store-header { margin-left: 0; font-size: 10px !important; padding: 10px 25px !important; width: auto; min-width: 180px; text-align: center; background: var(--primary); color: #ffffff; }
+            .main-header .nav-group:first-of-type { display: none; }
+        }
+
+        /* --- BLOG CONTENT --- */
+        .blog-hero { padding: 180px 5% 60px; text-align: center; max-width: 1200px; margin: 0 auto; }
+        .editorial-tag { font-size: 9px; text-transform: uppercase; letter-spacing: 4px; color: var(--primary); margin-bottom: 15px; display: block; font-weight: 700; }
+        .title-chic { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 200; line-height: 1.1; text-transform: uppercase; margin-bottom: 25px; color: #00261b; }
+        .title-chic b { font-weight: 900; color: var(--primary); display: inline; margin-left: 10px; }
+        
+        .magazine-grid { max-width: 1300px; margin: 0 auto; padding: 0 5% 50px; display: grid; grid-template-columns: repeat(12, 1fr); gap: 25px; }
+        /* Card visivel por padrao (aparece mesmo sem JS); a paginacao esconde o excedente
+           com a classe .is-hidden, para nao brigar com o display: flex. */
+        .editorial-card { grid-column: span 4; background: #ffffff; border: 1px solid rgba(0, 84, 61, 0.05); padding: 25px; border-radius: 15px; transition: 0.6s var(--transition); position: relative; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+        .editorial-card.is-hidden { display: none; }
+        /* Na etiqueta so o numero fica em negrito. O peso 600 da palavra "Edicao" exige que
+           600 esteja na URL da Poppins la em cima, senao o navegador cai em 700.
+           Obs.: a familia vai ate 900, entao 1000 e desenhado com a face 900. */
+        .editorial-card .editorial-tag { font-weight: 600; }
+        .editorial-card .editorial-tag b { font-weight: 1000; }
+        .editorial-card:hover { transform: translateY(-8px); border-color: var(--primary); box-shadow: 0 15px 40px rgba(0,0,0,0.05); }
+        .card-img { width: 100%; height: 220px; background-size: cover; background-position: center; border-radius: 10px; margin-bottom: 20px; flex-shrink: 0; }
+
+        /* O titulo ocupa so o que precisa: o subtitulo vem sempre logo abaixo, com o
+           mesmo espacamento, tenha o titulo 1, 2 ou 3 linhas. O alinhamento entre os
+           cards fica por conta do botao, ancorado no rodape. */
+        .editorial-card .title-chic { font-size: 1.25rem !important; line-height: 1.3 !important; font-weight: 400; margin-bottom: 15px; color: var(--primary); }
+        .editorial-card .title-chic b { display: block; margin-left: 0; font-size: 1.35rem; }
+        .info-text { font-size: 0.9rem; line-height: 1.6; font-weight: 400; color: #666; margin-bottom: 20px; }
+        .btn-read { background: none; border: none; color: var(--primary); text-transform: uppercase; font-size: 10px; letter-spacing: 3px; padding: 8px 0; border-bottom: 2px solid var(--primary); cursor: pointer; text-decoration: none; display: inline-block; font-weight: 700; }
+
+        /* margin-top: auto joga o botao para o rodape do card, entao ele fica alinhado
+           mesmo quando os subtitulos tem numeros de linha diferentes.
+           align-self impede que o item flex estique a borda por todo o card. */
+        .editorial-card .btn-read { align-self: flex-start; margin-top: auto; }
+
+        /* O link "Explorar" se estica por todo o card: foto, titulo e texto tambem
+           levam ao artigo, sem precisar de um segundo <a> aninhado. */
+        .editorial-card .btn-read::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .pagination-container { display: flex; justify-content: center; gap: 10px; padding-bottom: 100px; }
+        .page-btn { background: transparent; border: 1px solid rgba(0, 84, 61, 0.2); color: var(--primary); padding: 10px 18px; cursor: pointer; border-radius: 4px; font-weight: 700; transition: 0.3s; }
+        .page-btn.active { background: var(--primary); color: #ffffff; border-color: var(--primary); }
+
+        /* --- BARRA DE PROGRESSO --- */
+        .progress-container-alt {
+            position: fixed;
+            right: 25px; 
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px; 
+            height: 150px; 
+            background: rgba(0, 84, 61, 0.1); 
+            border-radius: 20px;
+            z-index: 10001; 
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0, 84, 61, 0.05);
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            width: 100%;
+            height: 0%; 
+            background: linear-gradient(to bottom, #00543d, #499375); 
+            border-radius: 20px;
+            transition: height 0.15s ease-out;
+        }
+
+        /* --- FOOTER --- */
+        .main-footer {
+            background: #ffffff;
+            padding: 50px 10% 15px;
+            border-top: 1px solid rgba(0, 84, 61, 0.1);
+            position: relative;
+            z-index: 70;
+            margin-top: auto;
+        }
+
+        .footer-grid { display: flex; justify-content: flex-start; gap: 50px; max-width: 1200px; margin: 0 auto 60px auto; flex-wrap: wrap; text-align: left; }
+        .footer-brand { flex: 2; min-width: 280px; }
+        .footer-brand .footer-logo { height: 60px; margin-bottom: 20px; }
+        .footer-brand p { color: #666; font-size: 11px; line-height: 1.6; max-width: 300px; }
+        .footer-title { color: var(--primary); font-size: 1.1rem; font-weight: 700; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links { list-style: none; }
+        .footer-links a { color: #666; text-decoration: none; font-size: 11px; transition: 0.3s; }
+        .footer-links a:hover { color: var(--primary); padding-left: 5px; }
+        .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 30px; border-top: 1px solid rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .footer-bottom p { font-size: 11px; color: #999; }
+        .social-links { display: flex; gap: 20px; margin-top: 25px; }
+        .social-links a { color: var(--primary); font-size: 22px; transition: 0.3s; text-decoration: none; }
+        .social-links a:hover { color: var(--accent); transform: translateY(-3px); }
+
+        @media (max-width: 600px) {
+            .footer-grid { text-align: center; justify-content: center; }
+            .footer-brand { align-items: center; text-align: center; }
+            .footer-col, .footer-col-nav { margin-left: 0; text-align: center; }
+            .social-links { justify-content: center; }
+        }
+
+        .header-controls {
+            position: fixed;
+            left: 30px;
+            bottom: 30px;
+            z-index: 10002;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-language-toggle {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 10px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-language-toggle:hover {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .btn-theme-toggle {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .btn-theme-toggle:hover {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        body.dark-mode {
+            background: #081711;
+            color: #e8f5ef;
+        }
+
+        body.dark-mode .blog-hero,
+        body.dark-mode .brands-section,
+        body.dark-mode .main-footer,
+        body.dark-mode main {
+            background: #081711;
+        }
+
+        body.dark-mode .editorial-card,
+        body.dark-mode .main-footer {
+            background: #0e241b;
+            border-color: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+        }
+
+        body.dark-mode .editorial-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+        }
+
+        body.dark-mode .title-chic,
+        body.dark-mode .editorial-card .title-chic,
+        body.dark-mode .footer-title,
+        body.dark-mode .nav-link,
+        body.dark-mode .mobile-menu-toggle,
+        body.dark-mode .btn-language-toggle,
+        body.dark-mode .btn-theme-toggle,
+        body.dark-mode .btn-read,
+        body.dark-mode .page-btn,
+        body.dark-mode .social-links a,
+        body.dark-mode .logo-color-fix,
+        body.dark-mode .footer-logo.logo-color-fix {
+            color: #ffffff;
+        }
+
+        body.dark-mode .logo-color-fix,
+        body.dark-mode .footer-logo.logo-color-fix {
+            filter: brightness(0) invert(1);
+        }
+
+        body.dark-mode .title-chic b,
+        body.dark-mode .editorial-tag,
+        body.dark-mode .footer-links a:hover,
+        body.dark-mode .social-links a:hover {
+            color: var(--accent);
+        }
+
+        body.dark-mode .info-text,
+        body.dark-mode .footer-brand p,
+        body.dark-mode .footer-links a,
+        body.dark-mode .footer-bottom p {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        body.dark-mode .btn-language-toggle,
+        body.dark-mode .btn-theme-toggle,
+        body.dark-mode .page-btn {
+            border-color: rgba(255, 255, 255, 0.35);
+            color: #ffffff;
+        }
+
+        body.dark-mode .btn-language-toggle:hover,
+        body.dark-mode .btn-theme-toggle:hover,
+        body.dark-mode .page-btn.active,
+        body.dark-mode .page-btn:hover {
+            background: #ffffff;
+            color: var(--primary);
+            border-color: #ffffff;
+        }
+
+        body.dark-mode .btn-read {
+            border-bottom-color: #ffffff;
+        }
+
+        body.dark-mode .progress-container-alt {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        body.dark-mode .footer-bottom {
+            border-top-color: rgba(255, 255, 255, 0.08);
+        }
+
+        @media (max-width: 1023px) {
+            .header-controls {
+                left: 20px;
+                bottom: 20px;
+            }
+        }
+
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; z-index: 9999; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); text-decoration: none; transition: 0.3s; animation: pulse-whatsapp 2s infinite; }
+        .whatsapp-float:hover { transform: scale(1.1); background: #20ba5a; }
+        @keyframes pulse-whatsapp { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+
+        /* --- CORREÇÃO MOBILE: GRID DO BLOG EM 1 COLUNA --- */
+        @media (max-width: 768px) {
+            .blog-hero { padding: 130px 6% 40px; }
+            .magazine-grid {
+                grid-template-columns: 1fr;
+                gap: 22px;
+                padding: 0 6% 40px;
+            }
+            .editorial-card {
+                grid-column: 1 / -1 !important;
+                padding: 20px;
+            }
+            .card-img { height: 200px; }
+            .pagination-container { padding-bottom: 70px; }
+        }
+        /* --- MENU FLUTUANTE ---
+           Barra destacada das rgba(0, 84, 61, 0.10)s, com cantos arredondados, que acompanha
+           o usuario em toda a navegacao e nao se esconde mais ao rolar.
+           IMPORTANTE: sem transform e sem backdrop-filter aqui. Os dois criam
+           containing block e prendem o painel do menu mobile (position: fixed)
+           dentro da area da barra. */
+        .main-header {
+            position: fixed;
+            height: auto;
+            padding: 9px 20px;
+            top: 14px;
+            left: 3%;
+            right: 3%;
+            width: auto;
+            border-radius: 18px;
+            border: 1px solid rgba(0, 84, 61, 0.10);
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 12px 34px rgba(0, 38, 27, 0.13);
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+
+        /* O menu acompanha o usuario: a regra de esconder no scroll fica sem efeito. */
+        .main-header.header-hidden {
+            transform: none;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        @media (max-width: 1023px) {
+            .main-header {
+                top: 10px;
+                left: 3%;
+                right: 3%;
+                border-radius: 14px;
+                padding: 7px 14px;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+        }
+        body.dark-mode .main-header {
+            background: rgba(14, 36, 27, 0.96) !important;
+            border-color: rgba(255, 255, 255, 0.10);
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.40);
+        }
+        /* --- AJUSTES MOBILE ---
+           No modo escuro o painel do menu continuava branco, enquanto os links
+           e o botao de fechar ficam brancos: o menu abria ilegivel. */
+        @media (max-width: 1023px) {
+            body.dark-mode .nav-group,
+            body.dark-mode .mobile-nav-full {
+                background: #081711;
+            }
+            body.dark-mode .nav-group .nav-link,
+            body.dark-mode .mobile-nav-full .nav-link {
+                color: #ffffff;
+            }
+            body.dark-mode .mobile-menu-toggle { color: #ffffff; }
+        }
+        /* --- PADRAO DE CORES DO MENU ---
+           Barra clara -> textos e logo em verde escuro.
+           Barra escura (modo escuro) -> textos e logo brancos. */
+        .main-header .nav-link:not(.active-box):not(.btn-store-header):not(.btn-green-box),
+        .main-header .mobile-menu-toggle { color: #00543d; }
+        .main-header .header-logo img { filter: brightness(0) saturate(100%) invert(21%) sepia(26%) saturate(3660%) hue-rotate(133deg) brightness(91%) contrast(101%); }
+
+        body.dark-mode .main-header .nav-link:not(.active-box):not(.btn-store-header):not(.btn-green-box),
+        body.dark-mode .main-header .mobile-menu-toggle { color: #ffffff; }
+        body.dark-mode .main-header .header-logo img { filter: brightness(0) invert(1); }
+
+        /* Botoes do menu: verde escuro com texto branco em todos os modos.
+           Contorno leve para nao se confundir com a barra escura. */
+        .main-header .nav-link.active-box,
+        .main-header .btn-store-header,
+        .main-header .btn-green-box {
+            background: #00543d !important;
+            color: #ffffff !important;
+        }
+        body.dark-mode .main-header .nav-link.active-box,
+        body.dark-mode .main-header .btn-store-header,
+        body.dark-mode .main-header .btn-green-box { border: 1px solid rgba(255,255,255,0.18); }
+        /* --- SEM PALAVRA SOZINHA NA LINHA ---
+           Nenhum texto do site pode quebrar deixando uma palavra orfa na
+           ultima linha. balance reparte as linhas em comprimentos parecidos
+           (bom para titulo curto); pretty evita a viuva no fim do paragrafo.
+           Navegador sem suporte ignora e quebra do jeito tradicional. */
+        h1, h2, h3, h4, h5, h6,
+        .giant-title, .title-chic, .section-title, .product-title,
+        .footer-title, .editorial-tag, .floating-tag, .step-card h3,
+        .diff-item h4, .science-box h4, .value-card h3, .card-content h3,
+        .property-card h3, .review-text, .big-quote h2, .cta-block h2,
+        .booking-copy h1, .booking-intro h1, .contact-info h1,
+        .policy-section h1, .policy-section h2, .faq-question,
+        .btn-more, .btn-read, .btn-main, .detail-list b, .stat-label {
+            text-wrap: balance;
+        }
+
+        p, li, figcaption, blockquote, .info-text, .product-description,
+        .section-lead, .section-head p, .text-reveal p, .photo-credit,
+        .article-meta, .author-box p, .consult-note, .review-author,
+        .booking-cta-note, .mini-review p, .footer-brand p, .footer-bottom p {
+            text-wrap: pretty;
+        }
+        /* --- BOTOES FLUTUANTES DE TEMA E IDIOMA ---
+           Eles ficam sobre o conteudo da pagina, nao sobre a barra do menu,
+           entao nao podem depender do estado dela: ganham fundo proprio e
+           passam a ter contraste sobre qualquer coisa que esteja atras. */
+        .btn-theme-toggle,
+        .btn-language-toggle {
+            background: rgba(255, 255, 255, 0.94) !important;
+            border: 1px solid rgba(0, 84, 61, 0.20) !important;
+            color: #00543d !important;
+            box-shadow: 0 6px 18px rgba(0, 38, 27, 0.12);
+            text-shadow: none !important;
+        }
+
+        .btn-theme-toggle:hover,
+        .btn-language-toggle:hover {
+            background: #00543d !important;
+            border-color: #00543d !important;
+            color: #ffffff !important;
+        }
+
+        body.dark-mode .btn-theme-toggle,
+        body.dark-mode .btn-language-toggle {
+            background: rgba(14, 36, 27, 0.94) !important;
+            border-color: rgba(255, 255, 255, 0.22) !important;
+            color: #ffffff !important;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+        }
+
+        body.dark-mode .btn-theme-toggle:hover,
+        body.dark-mode .btn-language-toggle:hover {
+            background: #ffffff !important;
+            border-color: #ffffff !important;
+            color: #00543d !important;
+        }
+        /* --- LARGURA DA BARRA DO MENU ---
+           No desktop a barra passa a ter a largura do proprio conteudo:
+           comeca na borda do botao "Agendar Consulta" e termina na do
+           "Loja Exclusiva". Centralizada com margin auto, nunca com
+           translateX, que criaria containing block e prenderia o painel
+           do menu mobile. No celular ela continua ocupando a largura toda. */
+        @media (min-width: 1024px) {
+            .main-header {
+                left: 0;
+                right: 0;
+                width: fit-content;
+                max-width: 94%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .main-header .nav-group {
+                flex: 0 0 auto;
+                width: auto;
+                max-width: none;
+            }
+        }</style>
+</head>
+<body>
+    <div class="progress-container-alt">
+        <div class="progress-bar-fill" id="scrollProgress"></div>
+    </div>
+    <a href="https://hubs.ly/Q04sNmtw0" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+
+    <header class="main-header">
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="nav-group" id="navGroupLeft">
+            <a href="/agendamento" class="nav-link active-box">Agendar Consulta</a>
+            <a href="/sobre-nos" class="nav-link">Sobre Nós</a>
+            <a href="/produtos" class="nav-link">Produtos</a>
+            <a href="/blog" class="nav-link">Blog</a> 
+        </div> 
+
+        <div class="header-logo">
+            <a href="/">
+                <img src="/logo.png" alt="Zeleno" class="logo-color-fix">
+            </a>
+        </div>
+
+        <div class="nav-group" id="mainNav">
+            <a href="/contato" class="nav-link">Contato</a>
+            <a href="/perguntas-frequentes" class="nav-link">Perguntas</a>
+            <a href="/para-medicos" class="nav-link">Para Médicos</a>
+            <a href="https://zelenostore.com/" class="btn-store-header">Loja Exclusiva</a>
+        </div>
+    </header>
+
+    <div class="header-controls">
+            <button id="themeToggle" class="btn-theme-toggle" aria-label="Alternar modo escuro">
+                <svg class="icon-theme" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.7 14.6A8.6 8.6 0 0 1 9.4 3.3a.6.6 0 0 0-.8-.7 9.9 9.9 0 1 0 12.8 12.8.6.6 0 0 0-.7-.8z"/></svg>
+            </button>
+            <button id="languageToggle" class="btn-language-toggle">EN</button>
+        </div>
+
+    <main>
+        <section class="blog-hero">
+            <span class="editorial-tag">Conhecimento</span>
+            <h1 class="title-chic">ZELENO<b>blog</b></h1>
+            <p class="info-text" style="max-width: 700px; margin: 0 auto;">Explorações profundas sobre a ciência da cannabis,<br> bem-estar de alto nível e a evolução da medicina natural.</p>
+        </section>
+
+<div class="magazine-grid" id="blogGrid">
+            <article class="editorial-card" data-card="22">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog25-v2.jpg');"></div>
+                <span class="editorial-tag">Edição <b>12</b></span>
+                <h2 class="title-chic">4 anos de Zeleno<b>a história do fundador</b></h2>
+                <p class="info-text">Felipe Brollo, CEO da Zeleno, conta a origem da empresa, os desafios do mercado e por que informação vence preconceito.</p>
+                <a href="/blog/4-anos-de-zeleno-a-historia-do-ceo-felipe-brollo" class="btn-read">Explorar</a>
+            </article>
+
+            <article class="editorial-card" data-card="21">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog24.jpg');"></div>
+                <span class="editorial-tag">Edição <b>11</b></span>
+                <h2 class="title-chic">Sair do lugar<b>de coisa escondida</b></h2>
+                <p class="info-text">Carlos Jeronymo, CGO da Zeleno, sobre a jornada do paciente e o que vem depois da prescrição.</p>
+                <a href="/blog/como-a-zeleno-transforma-burocracia-em-cuidado" class="btn-read">Explorar</a>
+            </article>
+
+            <article class="editorial-card" data-card="20">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog23.jpg');"></div>
+                <span class="editorial-tag">Edição <b>10</b></span>
+                <h2 class="title-chic">A ciência está vencendo<b>o estigma</b></h2>
+                <p class="info-text">Reclassificação nos EUA, mais pesquisa na Europa e o novo marco regulatório brasileiro.</p>
+                <a href="/blog/a-ciencia-esta-vencendo-o-estigma" class="btn-read">Explorar</a>
+            </article>
+
+            <article class="editorial-card" data-card="9">
+                <div class="card-img" style="background-image: url('/blog/Fotos/3.png');"></div>
+                <span class="editorial-tag">Edição <b>09</b></span>
+                <h2 class="title-chic">Nova regra dos EUA<b>sobre cannabis</b></h2>
+                <p class="info-text">O que muda para os pacientes brasileiros que dependem de produtos importados.</p>
+                <a href="/blog/nova-regra-dos-eua-o-que-muda-para-voce" class="btn-read">Explorar</a>
+            </article>
+
+            <article class="editorial-card" data-card="8">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog8.png');"></div>
+                <span class="editorial-tag">Edição <b>08</b></span>
+                <h2 class="title-chic">O que a ciência<b>já descobriu sobre a planta</b></h2>
+                <p class="info-text">Por que ainda há tanta dúvida sobre a cannabis medicinal?</p>
+                <a href="/blog/a-ciencia-por-tras-da-planta" class="btn-read">Explorar</a>
+            </article>
+
+            <article class="editorial-card" data-card="7">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog7.png');"></div>
+                <span class="editorial-tag">Edição <b>07</b></span>
+                <h2 class="title-chic">5 tabus sobre<b>a cannabis medicinal</b></h2>
+                <p class="info-text">Informação de qualidade é o melhor remédio contra o estigma.</p>
+                <a href="/blog/5-tabus-sobre-cannabis-medicinal" class="btn-read">Explorar</a>
+            </article>
+
+            <article class="editorial-card" data-card="6">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog6.png');"></div>
+                <span class="editorial-tag">Edição <b>06</b></span>
+                <h2 class="title-chic">Ansiedade e insônia:<b>O auxílio do óleo</b></h2>
+                <p class="info-text">O óleo de cannabis pode auxiliar de forma responsável no sono e humor.</p>
+                <a href="/blog/ansiedade-insonia-e-dor" class="btn-read">Explorar</a>
+            </article>
+
+            <article class="editorial-card" data-card="5">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog5.png');"></div>
+                <span class="editorial-tag">Edição <b>05</b></span>
+                <h2 class="title-chic">O que muda ao iniciar<b>um tratamento orientado</b></h2>
+                <p class="info-text">Quando o tratamento é feito com acompanhamento médico, os efeitos são graduais.</p>
+                <a href="/blog/a-evolucao-do-seu-tratamento" class="btn-read">Explorar</a>
+            </article>
+
+            <article class="editorial-card" data-card="4">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog4.png');"></div>
+                <span class="editorial-tag">Edição <b>04</b></span>
+                <h2 class="title-chic">Troque a tarja preta<b>pela Planta Verde</b></h2>
+                <p class="info-text">Nem todo alívio precisa vir acompanhado de efeitos colaterais.</p>
+                <a href="/blog/tarja-preta-vs-planta-verde" class="btn-read">Explorar</a>
+            </article>
+
+            <article class="editorial-card" data-card="3">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog3.png');"></div>
+                <span class="editorial-tag">Edição <b>03</b></span>
+                <h2 class="title-chic">Como saber se a cannabis<b>faz sentido para você</b></h2>
+                <p class="info-text">Nem todo mundo precisa de cannabis medicinal. Mas alguns sinais indicam benefícios.</p>
+                <a href="/blog/tratamento-faz-sentido-para-voce" class="btn-read">Explorar</a>
+            </article>
+
+            <article class="editorial-card" data-card="2">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog2.png');"></div>
+                <span class="editorial-tag">Edição <b>02</b></span>
+                <h2 class="title-chic">A cannabis medicinal<b>não atrapalha na sua CNH</b></h2>
+                <p class="info-text">Uma dúvida recorrente entre pacientes é se o tratamento pode interferir na CNH.</p>
+                <a href="/blog/a-cannabis-nao-atrapalha-na-cnh" class="btn-read">Explorar</a>
+            </article>
+
+            <article class="editorial-card" data-card="1">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog1.png');"></div>
+                <span class="editorial-tag">Edição <b>01</b></span>
+                <h2 class="title-chic">O que a cannabis medicinal<b>pode tratar?</b></h2>
+                <p class="info-text">É importante destacar que essas condições são objeto de estudo e avaliação clínica.</p>
+                <a href="/blog/o-que-a-cannabis-pode-tratar" class="btn-read">Explorar</a>
+            </article>
+
+            <!-- RASCUNHOS: artigos prontos, fora do ar. Para publicar, mova o
+                 <article> para cima do comentario e ajuste o numero da edicao. -->
+            <!--
+            <article class="editorial-card" data-card="10">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog11.png');"></div>
+                <span class="editorial-tag">Dermatologia &amp; Bem-estar</span>
+                <h2 class="title-chic">CBD no cuidado<b>da psoríase</b></h2>
+                <p class="info-text">Como o canabidiol atua na inflamação e na renovação celular da pele.</p>
+                <a href="/blog/11" class="btn-read">Explorar</a>
+            </article>
+
+            <article class="editorial-card" data-card="11">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog12.png');"></div>
+                <span class="editorial-tag">Inovação e Bem-estar</span>
+                <h2 class="title-chic">Gummies de CBD:<b>sabor e saúde</b></h2>
+                <p class="info-text">Praticidade e liberação gradual do canabidiol em formato de goma.</p>
+                <a href="/blog/12" class="btn-read">Explorar</a>
+            </article>
+
+            <article class="editorial-card" data-card="12">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog13.png');"></div>
+                <span class="editorial-tag">Saúde e Metabolismo</span>
+                <h2 class="title-chic">Maconha e o controle<b>do apetite</b></h2>
+                <p class="info-text">Da larica ao tratamento da caquexia: como os canabinoides agem no metabolismo.</p>
+                <a href="/blog/13" class="btn-read">Explorar</a>
+            </article>
+
+            <article class="editorial-card" data-card="13">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog15.png');"></div>
+                <span class="editorial-tag">Saúde Mental</span>
+                <h2 class="title-chic">Burnout e CBD:<b>recupere o fôlego</b></h2>
+                <p class="info-text">Modulação do estresse e recuperação do sono no esgotamento profissional.</p>
+                <a href="/blog/15" class="btn-read">Explorar</a>
+            </article>
+
+            <article class="editorial-card" data-card="14">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog16.png');"></div>
+                <span class="editorial-tag">Qualidade Zeleno</span>
+                <h2 class="title-chic">A importância da<b>qualidade no CBD</b></h2>
+                <p class="info-text">Certificados de análise, full spectrum e isolado: o que observar antes de comprar.</p>
+                <a href="/blog/16" class="btn-read">Explorar</a>
+            </article>
+
+            <article class="editorial-card" data-card="15">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog17.png');"></div>
+                <span class="editorial-tag">Bem-estar Mental</span>
+                <h2 class="title-chic">Ansiedade e CBD:<b>um novo caminho</b></h2>
+                <p class="info-text">Alívio sem os efeitos colaterais comuns dos ansiolíticos tradicionais.</p>
+                <a href="/blog/17" class="btn-read">Explorar</a>
+            </article>
+
+            <article class="editorial-card" data-card="16">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog18.png');"></div>
+                <span class="editorial-tag">Prevenção</span>
+                <h2 class="title-chic">Saúde mental<b>e prevenção</b></h2>
+                <p class="info-text">Neuroproteção e equilíbrio em uma estratégia preventiva de cuidado.</p>
+                <a href="/blog/18" class="btn-read">Explorar</a>
+            </article>
+
+            <article class="editorial-card" data-card="17">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog19.png');"></div>
+                <span class="editorial-tag">Guia de Uso</span>
+                <h2 class="title-chic">Diversas maneiras<b>de consumir CBD</b></h2>
+                <p class="info-text">Óleos, gomas, cápsulas, cremes e bálsamos: como escolher o seu formato.</p>
+                <a href="/blog/19" class="btn-read">Explorar</a>
+            </article>
+
+            <article class="editorial-card" data-card="18">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog20.png');"></div>
+                <span class="editorial-tag">Consciência</span>
+                <h2 class="title-chic">Redução de danos<b>e alta qualidade</b></h2>
+                <p class="info-text">Contaminantes, alternativas à combustão e práticas seguras de consumo.</p>
+                <a href="/blog/20" class="btn-read">Explorar</a>
+            </article>
+
+            <article class="editorial-card" data-card="19">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog21.png');"></div>
+                <span class="editorial-tag">Ciência das Plantas</span>
+                <h2 class="title-chic">Extrações<b>e concentrados</b></h2>
+                <p class="info-text">Full spectrum, isolados e destilados: como a extração define o resultado.</p>
+                <a href="/blog/21" class="btn-read">Explorar</a>
+            </article>
+            -->
+
+           <!--  <article class="editorial-card">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog9.png');"></div>
+                <span class="editorial-tag">Edição 09 </span>
+                <h2 class="title-chic">História e benefícios<b>da cannabis no mundo</b></h2>
+                <p class="info-text">A relação entre a humanidade e a cannabis é milenar.</p>
+                <a href="/blog/9" class="btn-read">Explorar</a>
+            </article>
+            
+            <article class="editorial-card">
+                <div class="card-img" style="background-image: url('/blog/Fotos/blog10.png');"></div>
+                <span class="editorial-tag">Edição 10 </span>
+                <h2 class="title-chic">O milenar uso<b>como um santo remédio</b></h2>
+                <p class="info-text">Durante milênios, usamos a cannabis como um santo remédio.</p>
+                <a href="/blog/10" class="btn-read">Explorar</a>
+            </article> -->
+        </div>
+
+        <div class="pagination-container" id="pagination"></div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/">
+                    <img src="/logo.png" alt="Zeleno Logo" class="footer-logo logo-color-fix" style="position: relative;left: -10px;">
+                </a>
+                <p>Liderando a revolução da cannabis medicinal através do rigor científico e da pureza absoluta.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/zeleno.meds/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@zelenomeds"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.linkedin.com/company/zeleno-meds/"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col footer-col-nav">
+                <h4 class="footer-title">Navegação</h4>
+                <ul class="footer-links">
+                    <li><a href="/sobre-nos">Sobre Nós</a></li>
+                    <li><a href="/produtos">Produtos</a></li>
+                    <li><a href="/politica-de-privacidade">Política de Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">Suporte</h4>
+                <ul class="footer-links">
+                    <li><a href="/perguntas-frequentes">Dúvidas Frequentes</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contato">Contato</a></li>
+                    <li><a href="/trabalhe-conosco">Trabalhe Conosco</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Zeleno Meds. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mainNav = document.getElementById('mainNav');
+        const navLeft = document.getElementById('navGroupLeft');
+        const header = document.querySelector('.main-header');
+        let lastScrollYMenu = window.scrollY;
+
+        function updateHeaderVisibilityByScrollDirection() {
+            if (!header) return;
+
+            const currentScrollY = window.scrollY;
+            const firstSection = document.querySelector('.blog-hero');
+            const firstSectionLimit = firstSection
+                ? firstSection.offsetTop + firstSection.offsetHeight - 80
+                : window.innerHeight - 80;
+            const menuIsOpen = mainNav && mainNav.classList.contains('active');
+
+            if (menuIsOpen || currentScrollY <= firstSectionLimit) {
+                header.classList.remove('header-hidden');
+                lastScrollYMenu = currentScrollY;
+                return;
+            }
+
+            if (currentScrollY > lastScrollYMenu + 8) {
+                header.classList.add('header-hidden');
+            } else if (currentScrollY < lastScrollYMenu - 8) {
+                header.classList.remove('header-hidden');
+            }
+
+            lastScrollYMenu = currentScrollY;
+        }
+
+        window.addEventListener('scroll', updateHeaderVisibilityByScrollDirection, { passive: true });
+
+        mobileMenuToggle.addEventListener('click', () => {
+            const icon = mobileMenuToggle.querySelector('i');
+            if (!mainNav.classList.contains('active')) {
+                if (window.innerWidth <= 1023) {
+                    const linksLeft = Array.from(navLeft.querySelectorAll('.nav-link')).reverse();
+                    linksLeft.forEach((link, index) => {
+                        const originalIndex = linksLeft.length - 1 - index;
+                        if (!mainNav.querySelector(`.cloned-${originalIndex}`)) {
+                            const clone = link.cloneNode(true);
+                            clone.classList.add('cloned-link', `cloned-${originalIndex}`);
+                            mainNav.prepend(clone);
+                        }
+                    });
+                }
+                header.classList.remove('header-hidden');
+                mainNav.classList.add('active');
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                mainNav.classList.remove('active');
+                icon.classList.replace('fa-times', 'fa-bars');
+                mainNav.querySelectorAll('.cloned-link').forEach(el => el.remove());
+            }
+        });
+
+        // BARRA DE PROGRESSO
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            const progressBar = document.getElementById("scrollProgress");
+            if (progressBar) { progressBar.style.height = scrolled + "%"; }
+        });
+
+        // PAGINAÇÃO ORIGINAL
+        const cardsPerPage = 6;
+        const cards = document.querySelectorAll('.editorial-card');
+        const paginationContainer = document.getElementById('pagination');
+        let currentPage = 1;
+
+        function displayCards(page) {
+            const start = (page - 1) * cardsPerPage;
+            const end = start + cardsPerPage;
+            cards.forEach((card, index) => {
+                // Classe em vez de style.display: o card precisa continuar sendo flex.
+                card.classList.toggle('is-hidden', index < start || index >= end);
+            });
+            if(page !== 1) {
+                document.querySelector('.blog-hero').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function setupPagination() {
+            const pageCount = Math.ceil(cards.length / cardsPerPage);
+            paginationContainer.innerHTML = '';
+            if (pageCount <= 1) return;
+            for (let i = 1; i <= pageCount; i++) {
+                const btn = document.createElement('button');
+                btn.innerText = i;
+                btn.classList.add('page-btn');
+                if (i === currentPage) btn.classList.add('active');
+                btn.addEventListener('click', () => {
+                    currentPage = i;
+                    displayCards(currentPage);
+                    document.querySelectorAll('.page-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                });
+                paginationContainer.appendChild(btn);
+            }
+        }
+
+        displayCards(currentPage);
+        setupPagination();
+
+        (function () {
+            const blogTranslations = {
+                pt: {
+                    pageTitle: "Journal | ZELENO Premium Cannabis",
+                    navSchedule: "Agendar Consulta",
+                    navAbout: "Sobre Nós",
+                    navProducts: "Produtos",
+                    navBlog: "Blog",
+                    navContact: "Contato",
+                    navQuestions: "Perguntas",
+                    navDoctors: "Para Médicos",
+                    navStore: "Loja Exclusiva",
+                    heroTag: "Conhecimento",
+                    heroTitle: 'ZELENO<b>blog</b>',
+                    heroText: 'Explorações profundas sobre a ciência da cannabis,<br> bem-estar de alto nível e a evolução da medicina natural.',
+                    card1Tag: 'Edição <b>01</b>',
+                    card1Title: 'O que a cannabis medicinal<b>pode tratar?</b>',
+                    card1Text: 'É importante destacar que essas condições são objeto de estudo e avaliação clínica.',
+                    card2Tag: 'Edição <b>02</b>',
+                    card2Title: 'A cannabis medicinal<b>não atrapalha na sua CNH</b>',
+                    card2Text: 'Uma dúvida recorrente entre pacientes é se o tratamento pode interferir na CNH.',
+                    card3Tag: 'Edição <b>03</b>',
+                    card3Title: 'Como saber se a cannabis<b>faz sentido para você</b>',
+                    card3Text: 'Nem todo mundo precisa de cannabis medicinal. Mas alguns sinais indicam benefícios.',
+                    card4Tag: 'Edição <b>04</b>',
+                    card4Title: 'Troque a tarja preta<b>pela Planta Verde</b>',
+                    card4Text: 'Nem todo alívio precisa vir acompanhado de efeitos colaterais.',
+                    card5Tag: 'Edição <b>05</b>',
+                    card5Title: 'O que muda ao iniciar<b>um tratamento orientado</b>',
+                    card5Text: 'Quando o tratamento é feito com acompanhamento médico, os efeitos são graduais.',
+                    card6Tag: 'Edição <b>06</b>',
+                    card6Title: 'Ansiedade e insônia:<b>O auxílio do óleo</b>',
+                    card6Text: 'O óleo de cannabis pode auxiliar de forma responsável no sono e humor.',
+                    card7Tag: 'Edição <b>07</b>',
+                    card7Title: '5 tabus sobre<b>a cannabis medicinal</b>',
+                    card7Text: 'Informação de qualidade é o melhor remédio contra o estigma.',
+                    card8Tag: 'Edição <b>08</b>',
+                    card8Title: 'O que a ciência<b>já descobriu sobre a planta</b>',
+                    card8Text: 'Por que ainda há tanta dúvida sobre a cannabis medicinal?',
+                    card9Tag: 'Edição <b>09</b>',
+                    card9Title: 'Nova regra dos EUA<b>sobre cannabis</b>',
+                    card9Text: 'O que muda para os pacientes brasileiros que dependem de produtos importados.',
+                    card10Tag: 'Dermatologia &amp; Bem-estar',
+                    card10Title: 'CBD no cuidado<b>da psoríase</b>',
+                    card10Text: 'Como o canabidiol atua na inflamação e na renovação celular da pele.',
+                    card11Tag: 'Inovação e Bem-estar',
+                    card11Title: 'Gummies de CBD:<b>sabor e saúde</b>',
+                    card11Text: 'Praticidade e liberação gradual do canabidiol em formato de goma.',
+                    card12Tag: 'Saúde e Metabolismo',
+                    card12Title: 'Maconha e o controle<b>do apetite</b>',
+                    card12Text: 'Da larica ao tratamento da caquexia: como os canabinoides agem no metabolismo.',
+                    card13Tag: 'Saúde Mental',
+                    card13Title: 'Burnout e CBD:<b>recupere o fôlego</b>',
+                    card13Text: 'Modulação do estresse e recuperação do sono no esgotamento profissional.',
+                    card14Tag: 'Qualidade Zeleno',
+                    card14Title: 'A importância da<b>qualidade no CBD</b>',
+                    card14Text: 'Certificados de análise, full spectrum e isolado: o que observar antes de comprar.',
+                    card15Tag: 'Bem-estar Mental',
+                    card15Title: 'Ansiedade e CBD:<b>um novo caminho</b>',
+                    card15Text: 'Alívio sem os efeitos colaterais comuns dos ansiolíticos tradicionais.',
+                    card16Tag: 'Prevenção',
+                    card16Title: 'Saúde mental<b>e prevenção</b>',
+                    card16Text: 'Neuroproteção e equilíbrio em uma estratégia preventiva de cuidado.',
+                    card17Tag: 'Guia de Uso',
+                    card17Title: 'Diversas maneiras<b>de consumir CBD</b>',
+                    card17Text: 'Óleos, gomas, cápsulas, cremes e bálsamos: como escolher o seu formato.',
+                    card18Tag: 'Consciência',
+                    card18Title: 'Redução de danos<b>e alta qualidade</b>',
+                    card18Text: 'Contaminantes, alternativas à combustão e práticas seguras de consumo.',
+                    card19Tag: 'Ciência das Plantas',
+                    card19Title: 'Extrações<b>e concentrados</b>',
+                    card19Text: 'Full spectrum, isolados e destilados: como a extração define o resultado.',
+                    card20Tag: 'Edição <b>10</b>',
+                    card20Title: 'A ciência está vencendo<b>o estigma</b>',
+                    card20Text: 'Reclassificação nos EUA, mais pesquisa na Europa e o novo marco regulatório brasileiro.',
+                    card22Tag: 'Edição <b>12</b>',
+                    card22Title: '4 anos de Zeleno<b>a história do fundador</b>',
+                    card22Text: 'Felipe Brollo, CEO da Zeleno, conta a origem da empresa, os desafios do mercado e por que informação vence preconceito.',
+                    card21Tag: 'Edição <b>11</b>',
+                    card21Title: 'Sair do lugar<b>de coisa escondida</b>',
+                    card21Text: 'Carlos Jeronymo, CGO da Zeleno, sobre a jornada do paciente e o que vem depois da prescrição.',
+                    readBtn: 'Explorar',
+                    footerText: 'Liderando a revolução da cannabis medicinal através do rigor científico e da pureza absoluta.',
+                    footerNav: 'Navegação',
+                    footerSupport: 'Suporte',
+                    footerAbout: 'Sobre Nós',
+                    footerProducts: 'Produtos',
+                    footerPrivacy: 'Política de Privacidade',
+                    footerFaq: 'Dúvidas Frequentes',
+                    footerBlog: 'Blog',
+                    footerContact: 'Contato',
+                    footerWork: 'Trabalhe Conosco',
+                    footerRights: '© 2026 Zeleno Meds. Todos os direitos reservados.'
+                },
+                en: {
+                    pageTitle: "Journal | ZELENO Premium Cannabis",
+                    navSchedule: "Book Consultation",
+                    navAbout: "About Us",
+                    navProducts: "Products",
+                    navBlog: "Blog",
+                    navContact: "Contact",
+                    navQuestions: "Questions",
+                    navDoctors: "For Doctors",
+                    navStore: "Exclusive Store",
+                    heroTag: "Knowledge",
+                    heroTitle: 'ZELENO<b>blog</b>',
+                    heroText: 'Deep explorations into cannabis science,<br> high-level well-being and the evolution of natural medicine.',
+                    card1Tag: 'Edition <b>01</b>',
+                    card1Title: 'What can medicinal cannabis<b>help treat?</b>',
+                    card1Text: 'It is important to highlight that these conditions are subject to study and clinical evaluation.',
+                    card2Tag: 'Edition <b>02</b>',
+                    card2Title: 'Medicinal cannabis<b>does not affect your driver license</b>',
+                    card2Text: 'A recurring question among patients is whether treatment may interfere with their driver license.',
+                    card3Tag: 'Edition <b>03</b>',
+                    card3Title: 'How to know whether cannabis<b>makes sense for you</b>',
+                    card3Text: 'Not everyone needs medicinal cannabis. But some signs may indicate benefits.',
+                    card4Tag: 'Edition <b>04</b>',
+                    card4Title: 'Replace heavy medication<b>with the Green Plant</b>',
+                    card4Text: 'Not every relief needs to come with side effects.',
+                    card5Tag: 'Edition <b>05</b>',
+                    card5Title: 'What changes when starting<b>a guided treatment</b>',
+                    card5Text: 'When treatment is done with medical follow-up, the effects tend to be gradual.',
+                    card6Tag: 'Edition <b>06</b>',
+                    card6Title: 'Anxiety and insomnia:<b>The support of the oil</b>',
+                    card6Text: 'Cannabis oil may responsibly support sleep and mood.',
+                    card7Tag: 'Edition <b>07</b>',
+                    card7Title: '5 taboos about<b>medicinal cannabis</b>',
+                    card7Text: 'Quality information is the best remedy against stigma.',
+                    card8Tag: 'Edition <b>08</b>',
+                    card8Title: 'What science<b>has already discovered about the plant</b>',
+                    card8Text: 'Why is there still so much doubt about medicinal cannabis?',
+                    card9Tag: 'Edition <b>09</b>',
+                    card9Title: 'New US rule<b>on cannabis</b>',
+                    card9Text: 'What changes for Brazilian patients who rely on imported products.',
+                    card10Tag: 'Dermatology &amp; Wellness',
+                    card10Title: 'CBD in the care<b>of psoriasis</b>',
+                    card10Text: 'How cannabidiol acts on inflammation and skin cell renewal.',
+                    card11Tag: 'Innovation and Wellness',
+                    card11Title: 'CBD gummies:<b>flavor and health</b>',
+                    card11Text: 'Convenience and gradual release of cannabidiol in gummy form.',
+                    card12Tag: 'Health and Metabolism',
+                    card12Title: 'Cannabis and appetite<b>control</b>',
+                    card12Text: 'From the munchies to treating cachexia: how cannabinoids act on metabolism.',
+                    card13Tag: 'Mental Health',
+                    card13Title: 'Burnout and CBD:<b>catch your breath</b>',
+                    card13Text: 'Stress modulation and sleep recovery in professional burnout.',
+                    card14Tag: 'Zeleno Quality',
+                    card14Title: 'The importance of<b>quality in CBD</b>',
+                    card14Text: 'Certificates of analysis, full spectrum and isolate: what to check before buying.',
+                    card15Tag: 'Mental Wellness',
+                    card15Title: 'Anxiety and CBD:<b>a new path</b>',
+                    card15Text: 'Relief without the common side effects of traditional anxiolytics.',
+                    card16Tag: 'Prevention',
+                    card16Title: 'Mental health<b>and prevention</b>',
+                    card16Text: 'Neuroprotection and balance in a preventive care strategy.',
+                    card17Tag: 'Usage Guide',
+                    card17Title: 'Different ways<b>to consume CBD</b>',
+                    card17Text: 'Oils, gummies, capsules, creams and balms: how to choose your format.',
+                    card18Tag: 'Awareness',
+                    card18Title: 'Harm reduction<b>and high quality</b>',
+                    card18Text: 'Contaminants, alternatives to combustion and safe consumption practices.',
+                    card19Tag: 'Plant Science',
+                    card19Title: 'Extractions<b>and concentrates</b>',
+                    card19Text: 'Full spectrum, isolates and distillates: how extraction defines the result.',
+                    card20Tag: 'Edition <b>10</b>',
+                    card20Title: 'Science is defeating<b>the stigma</b>',
+                    card20Text: 'Rescheduling in the US, more research in Europe and the new Brazilian regulatory framework.',
+                    card22Tag: 'Edition <b>12</b>',
+                    card22Title: '4 years of Zeleno<b>the founder&rsquo;s story</b>',
+                    card22Text: 'Felipe Brollo, CEO of Zeleno, on how the company started, the market challenges and why information beats prejudice.',
+                    card21Tag: 'Edition <b>11</b>',
+                    card21Title: 'Coming out of<b>the hidden place</b>',
+                    card21Text: 'Carlos Jeronymo, CGO at Zeleno, on the patient journey and what comes after the prescription.',
+                    readBtn: 'Explore',
+                    footerText: 'Leading the medicinal cannabis revolution through scientific rigor and absolute purity.',
+                    footerNav: 'Navigation',
+                    footerSupport: 'Support',
+                    footerAbout: 'About Us',
+                    footerProducts: 'Products',
+                    footerPrivacy: 'Privacy Policy',
+                    footerFaq: 'Frequently Asked Questions',
+                    footerBlog: 'Blog',
+                    footerContact: 'Contact',
+                    footerWork: 'Work With Us',
+                    footerRights: '© 2026 Zeleno Meds. All rights reserved.'
+                }
+            };
+
+            function applyBlogLanguage(lang) {
+                document.documentElement.lang = lang === 'en' ? 'en' : 'pt-br';
+                document.title = blogTranslations[lang].pageTitle;
+
+                const leftLinks = document.querySelectorAll('#navGroupLeft .nav-link');
+                const rightLinks = document.querySelectorAll('#mainNav .nav-link');
+                const storeBtn = document.querySelector('.btn-store-header');
+
+                if (leftLinks[0]) leftLinks[0].textContent = blogTranslations[lang].navSchedule;
+                if (leftLinks[1]) leftLinks[1].textContent = blogTranslations[lang].navAbout;
+                if (leftLinks[2]) leftLinks[2].textContent = blogTranslations[lang].navProducts;
+                if (leftLinks[3]) leftLinks[3].textContent = blogTranslations[lang].navBlog;
+
+                if (rightLinks[0]) rightLinks[0].textContent = blogTranslations[lang].navContact;
+                if (rightLinks[1]) rightLinks[1].textContent = blogTranslations[lang].navQuestions;
+                if (rightLinks[2]) rightLinks[2].textContent = blogTranslations[lang].navDoctors;
+                if (storeBtn) storeBtn.textContent = blogTranslations[lang].navStore;
+
+                const heroTag = document.querySelector('.blog-hero .editorial-tag');
+                const heroTitle = document.querySelector('.blog-hero .title-chic');
+                const heroText = document.querySelector('.blog-hero .info-text');
+                if (heroTag) heroTag.textContent = blogTranslations[lang].heroTag;
+                if (heroTitle) heroTitle.innerHTML = blogTranslations[lang].heroTitle;
+                if (heroText) heroText.innerHTML = blogTranslations[lang].heroText;
+
+                // Cada card é traduzido pela chave fixa em data-card, não pela posição,
+                // para que a ordem de exibição possa mudar sem embaralhar os textos. Se um card novo
+                // for adicionado sem tradução correspondente, o texto original é mantido.
+                const articleCards = document.querySelectorAll('.editorial-card');
+                articleCards.forEach((card) => {
+                    const n = card.dataset.card;
+                    const dict = blogTranslations[lang];
+                    const tag = card.querySelector('.editorial-tag');
+                    const title = card.querySelector('.title-chic');
+                    const text = card.querySelector('.info-text');
+                    const btn = card.querySelector('.btn-read');
+                    if (tag && dict['card' + n + 'Tag']) tag.innerHTML = dict['card' + n + 'Tag'];
+                    if (title && dict['card' + n + 'Title']) title.innerHTML = dict['card' + n + 'Title'];
+                    if (text && dict['card' + n + 'Text']) text.textContent = dict['card' + n + 'Text'];
+                    if (btn) btn.textContent = dict.readBtn;
+                });
+
+                const footerBrandText = document.querySelector('.footer-brand p');
+                const footerTitles = document.querySelectorAll('.footer-title');
+                const footerNavLinks = document.querySelectorAll('.footer-col-nav .footer-links a');
+                const footerSupportLinks = document.querySelectorAll('.footer-col:not(.footer-col-nav) .footer-links a');
+                const footerBottom = document.querySelector('.footer-bottom p');
+
+                if (footerBrandText) footerBrandText.textContent = blogTranslations[lang].footerText;
+                if (footerTitles[0]) footerTitles[0].textContent = blogTranslations[lang].footerNav;
+                if (footerTitles[1]) footerTitles[1].textContent = blogTranslations[lang].footerSupport;
+                if (footerNavLinks[0]) footerNavLinks[0].textContent = blogTranslations[lang].footerAbout;
+                if (footerNavLinks[1]) footerNavLinks[1].textContent = blogTranslations[lang].footerProducts;
+                if (footerNavLinks[2]) footerNavLinks[2].textContent = blogTranslations[lang].footerPrivacy;
+                if (footerSupportLinks[0]) footerSupportLinks[0].textContent = blogTranslations[lang].footerFaq;
+                if (footerSupportLinks[1]) footerSupportLinks[1].textContent = blogTranslations[lang].footerBlog;
+                if (footerSupportLinks[2]) footerSupportLinks[2].textContent = blogTranslations[lang].footerContact;
+                if (footerSupportLinks[3]) footerSupportLinks[3].textContent = blogTranslations[lang].footerWork;
+                if (footerBottom) footerBottom.textContent = blogTranslations[lang].footerRights;
+
+                const languageToggle = document.getElementById('languageToggle');
+                if (languageToggle) languageToggle.textContent = lang === 'pt' ? 'EN' : 'PT';
+                localStorage.setItem('zelenoLang', lang);
+            }
+
+            function applyTheme(theme) {
+                const isDark = theme === 'dark';
+                document.body.classList.toggle('dark-mode', isDark);
+                const themeToggle = document.getElementById('themeToggle');
+                if (themeToggle) {
+                    themeToggle.innerHTML = isDark ? '<svg class="icon-theme" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>' : '<svg class="icon-theme" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.7 14.6A8.6 8.6 0 0 1 9.4 3.3a.6.6 0 0 0-.8-.7 9.9 9.9 0 1 0 12.8 12.8.6.6 0 0 0-.7-.8z"/></svg>';
+                    themeToggle.setAttribute('aria-label', isDark ? 'Alternar para modo claro' : 'Alternar para modo escuro');
+                }
+                localStorage.setItem('zelenoTheme', theme);
+            }
+
+            const savedLang = localStorage.getItem('zelenoLang') || 'pt';
+            const savedTheme = localStorage.getItem('zelenoTheme') || 'light';
+            applyBlogLanguage(savedLang);
+            applyTheme(savedTheme);
+
+            const languageToggle = document.getElementById('languageToggle');
+            const themeToggle = document.getElementById('themeToggle');
+
+            if (languageToggle) {
+                languageToggle.addEventListener('click', function () {
+                    const currentLang = localStorage.getItem('zelenoLang') || 'pt';
+                    const nextLang = currentLang === 'pt' ? 'en' : 'pt';
+                    applyBlogLanguage(nextLang);
+                });
+            }
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function () {
+                    const currentTheme = localStorage.getItem('zelenoTheme') || 'light';
+                    const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    applyTheme(nextTheme);
+                });
+            }
+        })();
+
+    </script>
+
+<!-- ============ ZELENO HEATMAP • coletor embutido ============ -->
+<!-- Para desativar, remova deste comentario ate o </script> abaixo. -->
+<script>
+(function () {
+  'use strict';
+
+  /* ----------------------- CONFIGURAÇÃO ----------------------------- */
+  var CFG = {
+    APP_URL: 'https://script.google.com/macros/s/AKfycbzAqAqZbnHQVVTzHuWEpUrQDVUVpSJOZLE886lWA2aBOyCh6HyyVdZIM3rUJAZVfm7z/exec',
+
+    AMOSTRAGEM:        1.0,    // 1.0 = 100% dos visitantes. Use 0.3 p/ 30%.
+    CAPTURAR_MOVIMENTO:false,  // true = mapa de movimento do mouse (mais pesado)
+    CAPTURAR_SCROLL:   true,   // profundidade de rolagem por página
+    BATCH_TAMANHO:     12,     // envia quando acumula N eventos
+    BATCH_INTERVALO:   6000,   // ...ou a cada N ms
+    MOV_INTERVALO:     220,    // amostra de movimento a cada N ms
+    RESPEITAR_DNT:     false,  // true = não rastreia quem tem Do-Not-Track
+    DEBUG:             false   // true = mostra logs no Console (deixe false em produção)
+  };
+  /* ------------------------------------------------------------------ */
+
+  if (CFG.RESPEITAR_DNT && (navigator.doNotTrack === '1' || window.doNotTrack === '1')) return;
+  if (Math.random() > CFG.AMOSTRAGEM) return;
+  if (!CFG.APP_URL || CFG.APP_URL.indexOf('SEU_ID') > -1) {
+    console.warn('[Zeleno Heatmap] Configure APP_URL no zeleno-heatmap.js');
+    return;
+  }
+
+  if (CFG.DEBUG) console.log('%c[Zeleno Heatmap] ✅ ativo nesta página', 'color:#499375;font-weight:bold');
+
+  var fila = [];
+  var timer = null;
+
+  /* --------------------------- Sessão ------------------------------- */
+  function uid() {
+    return 'z' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+  }
+  var SID = (function () {
+    try {
+      var s = sessionStorage.getItem('zh_sid');
+      if (!s) { s = uid(); sessionStorage.setItem('zh_sid', s); }
+      return s;
+    } catch (e) { return uid(); }
+  })();
+
+  // visitante_id: PERSISTENTE (localStorage) — sobrevive entre visitas.
+  // Serve p/ distinguir visitante novo (1 sessão) de recorrente (2+ sessões).
+  var VID = (function () {
+    try {
+      var v = localStorage.getItem('zh_vid');
+      if (!v) { v = uid(); localStorage.setItem('zh_vid', v); }
+      return v;
+    } catch (e) { return SID; }
+  })();
+
+  /* ------------------------ Dimensões/Device ------------------------ */
+  function docW() {
+    return Math.max(document.documentElement.scrollWidth, document.body ? document.body.scrollWidth : 0, window.innerWidth);
+  }
+  function docH() {
+    return Math.max(document.documentElement.scrollHeight, document.body ? document.body.scrollHeight : 0, window.innerHeight);
+  }
+  function dispositivo() {
+    var w = window.innerWidth;
+    if (w < 768)  return 'mobile';
+    if (w < 1024) return 'tablet';
+    return 'desktop';
+  }
+
+  /* ----------------- Caminho CSS do elemento clicado ---------------- */
+  function seletor(el) {
+    if (!el || el.nodeType !== 1) return '';
+    var partes = [], prof = 0;
+    while (el && el.nodeType === 1 && prof < 6) {
+      var nome = el.nodeName.toLowerCase();
+      if (el.id) { partes.unshift('#' + el.id); break; }
+      var cls = (el.className && typeof el.className === 'string')
+        ? '.' + el.className.trim().split(/\s+/).slice(0, 2).join('.')
+        : '';
+      var i = 1, irmao = el;
+      while ((irmao = irmao.previousElementSibling)) {
+        if (irmao.nodeName.toLowerCase() === nome) i++;
+      }
+      partes.unshift(nome + cls + ':nth-of-type(' + i + ')');
+      el = el.parentElement; prof++;
+    }
+    return partes.join(' > ');
+  }
+
+  function textoDe(el) {
+    var t = (el.innerText || el.textContent || '').replace(/\s+/g, ' ').trim();
+    if (!t && el.getAttribute) t = el.getAttribute('aria-label') || el.getAttribute('alt') || el.getAttribute('title') || '';
+    return t.slice(0, 80);
+  }
+
+  /* --------------------------- Envio -------------------------------- */
+  function enviar() {
+    if (!fila.length) return;
+    var lote = fila.splice(0, fila.length);
+    var corpo = JSON.stringify(lote);
+    if (CFG.DEBUG) console.log('[Zeleno Heatmap] enviando', lote.length, 'evento(s) →', CFG.APP_URL);
+    // fetch no-cors + keepalive: entrega de forma confiável (segue o redirect
+    // do Apps Script) e sobrevive ao fechamento da aba. Sem sendBeacon p/
+    // evitar duplicidade e problemas de redirect.
+    try {
+      fetch(CFG.APP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        keepalive: true,
+        headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+        body: corpo
+      }).catch(function () {});
+    } catch (e) {
+      // último recurso, caso keepalive não seja suportado
+      try {
+        var blob = new Blob([corpo], { type: 'text/plain;charset=UTF-8' });
+        if (navigator.sendBeacon) navigator.sendBeacon(CFG.APP_URL, blob);
+      } catch (e2) {}
+    }
+  }
+
+  function agendar() {
+    if (fila.length >= CFG.BATCH_TAMANHO) { clearTimeout(timer); timer = null; enviar(); return; }
+    if (!timer) timer = setTimeout(function () { timer = null; enviar(); }, CFG.BATCH_INTERVALO);
+  }
+
+  function registrar(ev) {
+    ev.criado_em    = new Date().toISOString();
+    ev.sessao_id    = SID;
+    ev.visitante_id = VID;
+    ev.pagina       = location.pathname || '/';
+    ev.url_completa = location.href;
+    ev.vp_w         = window.innerWidth;
+    ev.vp_h         = window.innerHeight;
+    ev.dispositivo  = dispositivo();
+    fila.push(ev);
+    if (CFG.DEBUG) console.log('[Zeleno Heatmap] capturado:', ev.tipo, ev.texto || ev.seletor || '', '| fila:', fila.length);
+    agendar();
+  }
+
+  /* --------------------------- Cliques ------------------------------ */
+  var historico = [];
+  function ehRage(x, y, t) {
+    historico = historico.filter(function (h) { return t - h.t < 1500; });
+    historico.push({ x: x, y: y, t: t });
+    var n = 0;
+    for (var i = 0; i < historico.length; i++) {
+      var dx = historico[i].x - x, dy = historico[i].y - y;
+      if (dx * dx + dy * dy < 50 * 50) n++;
+    }
+    return n >= 3;
+  }
+
+  document.addEventListener('click', function (e) {
+    var dw = docW(), dh = docH();
+    var alvo = e.target;
+    var link = alvo && alvo.closest ? alvo.closest('a') : null;
+    var rage = ehRage(e.pageX, e.pageY, Date.now());
+
+    registrar({
+      tipo:   'clique',                 // rage também é clique; flag separada abaixo
+      page_x: Math.round(e.pageX),
+      page_y: Math.round(e.pageY),
+      x_frac: dw ? +(e.pageX / dw).toFixed(5) : null,
+      y_frac: dh ? +(e.pageY / dh).toFixed(5) : null,
+      doc_w:  dw,
+      doc_h:  dh,
+      seletor: seletor(alvo),
+      tag:    alvo ? alvo.nodeName.toLowerCase() : null,
+      texto:  alvo ? textoDe(alvo) : null,
+      href:   link ? link.getAttribute('href') : null,
+      rage:   rage
+    });
+  }, true);
+
+  /* ------------------------ Movimento (opcional) -------------------- */
+  if (CFG.CAPTURAR_MOVIMENTO) {
+    var ultMov = 0;
+    document.addEventListener('mousemove', function (e) {
+      var agora = Date.now();
+      if (agora - ultMov < CFG.MOV_INTERVALO) return;
+      ultMov = agora;
+      var dw = docW(), dh = docH();
+      registrar({
+        tipo:   'movimento',
+        page_x: Math.round(e.pageX),
+        page_y: Math.round(e.pageY),
+        x_frac: dw ? +(e.pageX / dw).toFixed(5) : null,
+        y_frac: dh ? +(e.pageY / dh).toFixed(5) : null,
+        doc_w:  dw,
+        doc_h:  dh,
+        rage:   false
+      });
+    }, { passive: true });
+  }
+
+  /* ----------------------- Profundidade de scroll ------------------- */
+  var maxScroll = 0, scrollEnviado = false;
+  if (CFG.CAPTURAR_SCROLL) {
+    window.addEventListener('scroll', function () {
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+      var alcance = docH() - window.innerHeight;
+      var pct = alcance > 0 ? Math.round((st / alcance) * 100) : 100;
+      if (pct > maxScroll) maxScroll = Math.min(100, pct);
+    }, { passive: true });
+  }
+  function enviarScroll() {
+    if (!CFG.CAPTURAR_SCROLL || scrollEnviado) return;
+    scrollEnviado = true;
+    registrar({ tipo: 'scroll', scroll_pct: maxScroll, doc_h: docH(), rage: false });
+  }
+
+  /* ------------------ Flush ao sair / trocar de aba ----------------- */
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'hidden') { enviarScroll(); enviar(); }
+  });
+  window.addEventListener('pagehide', function () { enviarScroll(); enviar(); });
+  window.addEventListener('beforeunload', function () { enviarScroll(); enviar(); });
+})();
+</script>
+<!-- ============ fim ZELENO HEATMAP ============ -->
+    <script src="agendamento-modal.js" defer></script>
+</body>
+</html>
