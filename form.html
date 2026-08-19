@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-53QCQY7DLP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-53QCQY7DLP');
+    </script>
+    <link rel="icon" type="image/png" href="/fav.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puxada Rápida e Pesada</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .combo-puxada {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            /* Removido o white-space: nowrap para não quebrar o layout interno do form */
+            left: 60%; 
+            transform: translateX(-50%);
+            animation: puxadaForte 3s ease-out forwards;
+        }
+
+        video {
+            width: 450px;
+            height: auto;
+        }
+
+        .meu-form {
+            background: #fff;
+            padding: 30px;
+            border: 2px solid #ddd;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 320px;
+            margin-left: -60px; 
+            z-index: 2;
+            
+            /* Garante que os itens internos fiquem em coluna */
+            display: flex;
+            flex-direction: column;
+            
+            animation: tremor 0.5s ease-in-out infinite;
+        }
+
+        @keyframes puxadaForte {
+            0% { left: 65%; }
+            50% { left: 58%; }
+            100% { left: 50%; }
+        }
+
+        @keyframes tremor {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(1px, -2px) rotate(-1deg); }
+            50% { transform: translate(-1px, 1px) rotate(1deg); }
+            75% { transform: translate(1px, 1px) rotate(0deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+        /* Estilos do Form atualizados */
+        .meu-form h2 { 
+            margin: 0 0 15px 0; 
+            color: #333; 
+            white-space: normal; /* Garante que o texto do título possa quebrar linha se necessário */
+        }
+
+        .meu-form input { 
+            width: 100%; 
+            padding: 12px; 
+            margin-bottom: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            box-sizing: border-box; /* Essencial para o padding não aumentar a largura */
+        }
+
+        .meu-form button { 
+            width: 100%; 
+            padding: 12px; 
+            background: #2ecc71; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            font-weight: bold; 
+            cursor: pointer; 
+        }
+    
+        /* --- SEM PALAVRA SOZINHA NA LINHA ---
+           Nenhum texto do site pode quebrar deixando uma palavra orfa na
+           ultima linha. balance reparte as linhas em comprimentos parecidos
+           (bom para titulo curto); pretty evita a viuva no fim do paragrafo.
+           Navegador sem suporte ignora e quebra do jeito tradicional. */
+        h1, h2, h3, h4, h5, h6,
+        .giant-title, .title-chic, .section-title, .product-title,
+        .footer-title, .editorial-tag, .floating-tag, .step-card h3,
+        .diff-item h4, .science-box h4, .value-card h3, .card-content h3,
+        .property-card h3, .review-text, .big-quote h2, .cta-block h2,
+        .booking-copy h1, .booking-intro h1, .contact-info h1,
+        .policy-section h1, .policy-section h2, .faq-question,
+        .btn-more, .btn-read, .btn-main, .detail-list b, .stat-label {
+            text-wrap: balance;
+        }
+
+        p, li, figcaption, blockquote, .info-text, .product-description,
+        .section-lead, .section-head p, .text-reveal p, .photo-credit,
+        .article-meta, .author-box p, .consult-note, .review-author,
+        .booking-cta-note, .mini-review p, .footer-brand p, .footer-bottom p {
+            text-wrap: pretty;
+        }</style>
+</head>
+<body>
+
+    <div class="combo-puxada" id="container">
+        <video autoplay loop muted playsinline>
+            <source src="/Design sem nome.mp4" type="video/mp4">
+        </video>
+
+        <div class="meu-form">
+            <h2>Quase lá...</h2>
+            <input type="text" placeholder="Seu Nome">
+            <input type="email" placeholder="Seu E-mail">
+            <button>Me avise!</button>
+        </div>
+    </div>
+
+    <script>
+        const container = document.getElementById('container');
+        const form = document.querySelector('.meu-form');
+        
+        container.addEventListener('animationend', () => {
+            form.style.animation = 'none';
+        });
+    </script>
+
+</body>
+</html>
