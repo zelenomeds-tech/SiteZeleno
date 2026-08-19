@@ -1,0 +1,2316 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-53QCQY7DLP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-53QCQY7DLP');
+    </script>
+    <link rel="icon" type="image/png" href="/fav.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>ZELENO | Premium Cannabis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <style>
+        :root {
+            --primary: #00543d; 
+            --accent: #499375;
+            --bg-light: #f4f4f4;      
+            --white: #ffffff;
+            --glass: rgba(0, 84, 61, 0.05);
+            --transition: cubic-bezier(0.85, 0, 0.15, 1);
+            --bg-dark: #00261b;
+            --zeleno-dark: #00543d;
+        }
+
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) var(--bg-light);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+            border: 2px solid var(--bg-light);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        
+        body { 
+            background: var(--bg-light); 
+            color: #00261b; 
+            font-family: 'Poppins', sans-serif; 
+            overflow-x: hidden;
+            width: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* --- HEADER --- */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; 
+            padding: 15px 4%; 
+            z-index: 10000;
+            background: transparent;
+            backdrop-filter: none;
+            border-bottom: none;
+            transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease, transform 0.35s ease, opacity 0.35s ease;
+        }
+
+        .main-header.header-hidden {
+            transform: translateY(-120%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .nav-group { 
+            display: flex; 
+            align-items: center; 
+            gap: 32px; 
+            flex: 1; 
+        }
+
+        #navGroupLeft { justify-content: flex-end; }
+        #mainNav { justify-content: flex-start; }
+        .header-logo { flex: 0 0 auto; padding: 0 40px; }
+
+        .logo-color-fix {
+            filter: brightness(0) invert(1);
+            transition: filter 0.3s ease;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px; 
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover { color: var(--accent); }
+
+        .nav-link.active-box {
+            background: var(--primary);
+            color: #ffffff;
+            padding: 10px 22px; 
+            border-radius: 4px;
+            font-weight: 900 !important;
+            font-size: 12px;
+            display: inline-block;
+        }
+
+        .header-logo img { height: 48px; width: auto; display: block; }
+
+        .btn-store-header {
+            background: var(--primary);
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px; 
+            font-weight: 900;
+            padding: 10px 22px; 
+            border-radius: 4px;
+            white-space: nowrap;
+            margin-left: 10px; 
+        }
+
+        .main-header.header-light .nav-link:not(.active-box) {
+            color: var(--primary);
+        }
+
+        .main-header.header-light .mobile-menu-toggle {
+            color: var(--primary);
+        }
+
+        .main-header.header-light .logo-color-fix {
+            filter: brightness(0) saturate(100%) invert(21%) sepia(26%) saturate(3660%) hue-rotate(133deg) brightness(91%) contrast(101%);
+        }
+
+        .btn-language-toggle {
+            background: transparent;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 10px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-left: 12px;
+            text-transform: uppercase;
+        }
+
+        .btn-language-toggle:hover {
+            background: #ffffff;
+            color: var(--primary);
+        }
+
+        .main-header.header-light ~ .header-controls .btn-language-toggle {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .main-header.header-light ~ .header-controls .btn-language-toggle:hover {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .header-controls {
+            position: fixed;
+            left: 30px;
+            bottom: 30px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-theme-toggle {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .btn-theme-toggle:hover {
+            background: #ffffff;
+            color: var(--primary);
+        }
+
+        .main-header.header-light ~ .header-controls .btn-theme-toggle {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .main-header.header-light ~ .header-controls .btn-theme-toggle:hover {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        body.dark-mode {
+            background: #081711;
+            color: #e8f5ef;
+        }
+
+        body.dark-mode .progress-container-alt {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        body.dark-mode .h-journey-modern,
+        body.dark-mode .reviews-section,
+        body.dark-mode .main-footer {
+            background: #081711;
+        }
+
+        body.dark-mode .reviews-section {
+            background-image: none;
+        }
+
+        body.dark-mode .title-chic,
+        body.dark-mode .reviews-header h2,
+        body.dark-mode .footer-title,
+        body.dark-mode .reviewer-details h4,
+        body.dark-mode .step-icon,
+        body.dark-mode .editorial-tag {
+            color: #ffffff !important;
+        }
+
+        body.dark-mode .title-chic b,
+        body.dark-mode .reviews-header h2 span,
+        body.dark-mode .footer-title,
+        body.dark-mode .footer-col-nav .footer-links a:hover,
+        body.dark-mode .footer-links a:hover,
+        body.dark-mode .social-links a,
+        body.dark-mode .step-card-glass h3,
+        body.dark-mode .step-point,
+        body.dark-mode .step-icon {
+            color: var(--accent);
+        }
+
+        body.dark-mode .h-line-main {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        body.dark-mode .step-point {
+            background: #0e241b;
+            border-color: var(--accent);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        body.dark-mode .h-step-item:hover .step-point {
+            background: var(--accent);
+            color: #ffffff;
+            box-shadow: 0 0 30px rgba(73, 147, 117, 0.45);
+        }
+
+        body.dark-mode .step-card-glass,
+        body.dark-mode .review-card {
+            background: #0e241b;
+            border-color: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+        }
+
+        body.dark-mode .step-card-glass:hover,
+        body.dark-mode .review-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+        }
+
+        body.dark-mode .step-card-glass p,
+        body.dark-mode .review-text,
+        body.dark-mode .footer-brand p,
+        body.dark-mode .footer-links a,
+        body.dark-mode .footer-bottom p,
+        body.dark-mode .reviewer-details span {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        body.dark-mode .reviewer-avatar {
+            background: #143126;
+            border-color: rgba(73, 147, 117, 0.25);
+        }
+
+        body.dark-mode .main-footer {
+            border-top-color: rgba(255, 255, 255, 0.08);
+        }
+
+        body.dark-mode .footer-bottom {
+            border-top-color: rgba(255, 255, 255, 0.08);
+        }
+
+        body.dark-mode .logo-color-fix {
+            filter: brightness(0) invert(1);
+        }
+
+        body.dark-mode .main-header.header-light .logo-color-fix {
+            filter: brightness(0) invert(1);
+        }
+
+        body.dark-mode .main-header.header-light .nav-link:not(.active-box) {
+            color: #ffffff;
+        }
+
+        body.dark-mode .main-header.header-light .mobile-menu-toggle {
+            color: #ffffff;
+        }
+
+        body.dark-mode .main-header.header-light ~ .header-controls .btn-language-toggle {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        body.dark-mode .main-header.header-light ~ .header-controls .btn-language-toggle:hover {
+            background: #ffffff;
+            color: var(--primary);
+        }
+
+        body.dark-mode .main-header.header-light ~ .header-controls .btn-theme-toggle {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        body.dark-mode .main-header.header-light ~ .header-controls .btn-theme-toggle:hover {
+            background: #ffffff;
+            color: var(--primary);
+        }
+
+        /* --- MOBILE MENU --- */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 26px;
+            cursor: pointer;
+            z-index: 10001;
+            transition: color 0.3s ease;
+        }
+
+        @media (max-width: 1023px) {
+            .main-header { justify-content: space-between; padding: 12px 6%; gap: 0; }
+            .mobile-menu-toggle { display: block; }
+            .header-logo img { height: 42px; }
+            .header-controls {
+                position: fixed;
+                left: 20px;
+                bottom: 20px;
+                top: auto;
+                right: auto;
+                z-index: 10002;
+                margin-left: 0;
+            }
+            .btn-language-toggle {
+                border-color: #ffffff;
+                color: #ffffff;
+            }
+            .main-header.header-light ~ .header-controls .btn-language-toggle {
+                border-color: var(--primary);
+                color: var(--primary);
+            }
+            .nav-group {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%; 
+                min-height: 100dvh;
+                height: 100dvh;
+                background: #ffffff; 
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                transition: 0.5s var(--transition);
+                z-index: 10000;
+                overflow-y: auto;
+                padding: 90px 24px 40px;
+                flex: none; 
+            }
+            .nav-group.active { right: 0; }
+            .nav-link { font-size: 11px; font-weight: 900; color: var(--primary); background: transparent !important; }
+            .nav-group.active .cloned-0 { background: var(--primary) !important; color: #ffffff !important; padding: 10px 25px !important; border-radius: 4px; min-width: 180px; }
+            .btn-store-header { margin-left: 0; font-size: 10px !important; padding: 10px 25px !important; width: auto; min-width: 180px; text-align: center; background: var(--primary); color: #ffffff; }
+            .main-header .nav-group:first-of-type { display: none; }
+        }
+
+        .hero-slider { 
+            width: 100%; 
+            height: 100vh; 
+            position: sticky; 
+            top: 0;
+            z-index: 1;
+            transition: transform 0.8s var(--transition), opacity 0.8s ease;
+        }
+
+        .section-shutter {
+            position: relative;
+            z-index: 10;
+            background: var(--bg-dark);
+            box-shadow: 0 -30px 100px rgb(0, 0, 0);
+            border-top: 2px solid var(--accent);
+            clip-path: inset(100% 0 0 0); 
+            transition: clip-path 1.2s var(--transition);
+        }
+
+        .section-shutter.active { clip-path: inset(0% 0 0 0); }
+
+        .swiper { width: 100%; height: 100%; }
+        .swiper-slide { position: relative; display: flex; align-items: center; overflow: hidden; }
+        
+        .slide-bg { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            filter: brightness(0.4);
+            z-index: 1; 
+            transform: scale(1.1);
+            transition: transform 8s linear;
+        }
+        
+        .swiper-slide-active .slide-bg { transform: scale(1); }
+
+        .slide-content {
+            position: relative;
+            z-index: 10;
+            padding-left: 10%;
+            max-width: 900px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s var(--transition) 0.3s;
+        }
+
+        .swiper-slide-active .slide-content { opacity: 1; transform: translateY(0); }
+
+        .slide-content h1 {
+            font-size: clamp(32px, 8vw, 60px);
+            font-weight: 700;
+            line-height: 1;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #fff;
+            letter-spacing: -1px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .slide-content h1 span { color: var(--accent); display: block; }
+
+        .slide-content p {
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem); 
+            line-height: 1.4;
+            margin-bottom: 35px;
+            color: rgba(255,255,255,0.85);
+            max-width: 500px;
+            font-weight: 400;
+            border-left: 3px solid var(--accent);
+            padding-left: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .slide-content {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+            .slide-content h1 {
+                line-height: 1.1;
+                margin-bottom: 15px;
+            }
+            .slide-content p {
+                margin-bottom: 25px;
+                padding-left: 15px;
+            }
+        }
+
+        .btn-explore-collection {
+            display: inline-flex;
+            align-items: center;
+            background: var(--accent);
+            color: #ffffff;
+            padding: 16px 35px; 
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            font-size: 13px;
+            transition: 0.4s;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-explore-collection:hover { transform: translateY(-5px); background: #fff; }
+
+        .swiper-pagination-bullet { width: 10px; height: 10px; border-radius: 50%; margin: 0 6px !important; background: #fff !important; opacity: 0.3; transition: all 0.3s ease; }
+        .swiper-pagination-bullet-active { background: var(--accent) !important; opacity: 1; }
+
+        @media (max-width: 768px) {
+            .swiper-pagination-bullet { width: 8px; height: 8px; margin: 0 5px !important; }
+        }
+
+        .reveal-overlay {
+            position: relative; 
+            z-index: 15; 
+            min-height: 100vh; 
+            width: 100%;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center;
+            background-color: #000; 
+            overflow: hidden;
+            padding: 0 5%;
+        }
+
+        .reveal-content-wrapper {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .reveal-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            filter: brightness(0.4);
+        }
+
+        .reveal-title-container {
+            position: relative;
+            z-index: 10;
+            text-align: left;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s var(--transition);
+            margin-bottom: 20px;
+        }
+
+        .reveal-title-container h2 {
+            font-size: 50px;
+            font-weight: 400; 
+            line-height: 0.85;
+            text-transform: uppercase;
+            color: #fff;
+            letter-spacing: -2px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .reveal-title-container h2 span {
+            color: var(--accent);
+            display: block;
+            font-weight: 900; 
+        }
+
+        .reveal-overlay.active .reveal-title-container {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .side-text-creative { 
+            position: relative; 
+            z-index: 25; 
+            opacity: 0; 
+            transition: 1.8s var(--transition); 
+            display: flex; 
+            flex-direction: column; 
+            align-items: flex-start; 
+            gap: 8px; 
+            color: #ffffff; 
+            width: 100%; 
+            max-width: 320px; 
+            margin-top: 20px; 
+        } 
+
+        .editorial-vertical { text-transform: uppercase; font-weight: 900; font-size: 0.7rem; letter-spacing: 2px; background: var(--primary); padding: 6px 10px; } 
+        .editorial-main-content { width: 100%; background: rgba(0, 84, 61, 0.8); backdrop-filter: blur(5px); padding: 20px; border-left: 5px solid var(--accent); text-align: left; }
+        .editorial-main-content h3 { font-size: 1.2rem; margin-bottom: 8px; font-weight: 900; } 
+        .editorial-main-content p { font-size: 0.9rem; line-height: 1.5; opacity: 0.9; } 
+
+        @media (max-width: 1023px) {
+            .reveal-content-wrapper { align-items: center; }
+            .reveal-title-container { text-align: center; }
+            .side-text-creative { align-items: center; }
+            .editorial-main-content { text-align: center; }
+        }
+
+        .reveal-overlay.active .side-text-creative { opacity: 1; transform: translateY(0); }
+
+        .properties-slider-section { 
+            position: relative;
+            padding: 100px 0 160px;
+            background: url('/BG-sitebranco2.png') no-repeat center center;
+            background-size: cover;
+            z-index: 100;
+            overflow: hidden;
+            box-shadow: none;
+            border-top: 2px solid var(--accent);
+        }
+
+        .properties-slider-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to bottom, transparent, var(--bg-light));
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .slider-header {
+            padding: 0 10% 50px;
+            text-align: center; 
+        }
+
+        .slider-header h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            line-height: 1;
+            font-weight: 400; 
+            text-transform: uppercase;
+            color: #00261b;
+            letter-spacing: -1px;
+        }
+
+        .slider-header h2 span { 
+            color: var(--primary); 
+            display: block;
+            font-weight: 900; 
+        }
+
+        .properties-container {
+            width: 100%;
+            padding: 0 5%;
+            position: relative;
+            z-index: 3;
+        }
+
+        .property-card {
+            width: 100%;
+            height: 450px; 
+            background: #000; 
+            border: 2px solid #ffffff;            
+            display: flex; 
+            flex-direction: column; 
+            justify-content: flex-end; 
+            padding: 25px; 
+            border-radius: 12px;
+            position: relative; 
+            overflow: hidden; 
+            transition: all 0.6s var(--transition);
+        }
+
+        .card-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; }
+        .card-content { position: relative; z-index: 2; }
+        .property-card h3 { color: #ffffff; font-size: 1.1rem; font-weight: 900; text-transform: uppercase; margin-bottom: 10px; }
+        .property-card p { font-size: 0.9rem; color: #fff; line-height: 1.4; opacity: 0.9; }
+
+        .property-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            color: #ffffff !important;
+            background: var(--accent);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .swiper-button-next:after, .swiper-button-prev:after { font-size: 20px !important; font-weight: 900; }
+
+        .particles-container { position: fixed; width: 100%; height: 100%; pointer-events: none; z-index: 5; }
+        .particle { position: absolute; background: var(--accent); border-radius: 50%; opacity: 0.15; animation: float 12s infinite linear; }
+        @keyframes float { 0% { transform: translateY(110vh); } 100% { transform: translateY(-10vh); } }
+
+        .reviews-section {
+            padding: 320px 6% 140px; 
+            background: url('/BG-sitebranco4.png') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            z-index: 110;
+            margin-top: -180px;
+            background-color: #ffffff;
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 180px, #000 100%);
+            mask-image: linear-gradient(to bottom, transparent 0, #000 180px, #000 100%);
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+        }
+
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+        
+        .reviews-header h2 {
+            font-size: clamp(2rem, 5vw, 3rem); 
+            font-weight: 400;
+            text-transform: uppercase;
+            color: #00261b;
+            line-height: 1;
+            letter-spacing: -1px;
+        }
+        
+        .reviews-header h2 span { 
+            color: var(--primary);
+            display: block; 
+            font-weight: 900;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px; 
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background: #fff;
+            border: 1px solid rgba(0, 38, 27, 0.08);
+            padding: 60px 40px; 
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.5s var(--transition);
+            text-align: center;
+            position: relative;
+        }
+
+        .review-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--accent);
+            box-shadow: 0 30px 60px rgba(0, 84, 61, 0.1);
+        }
+
+        .star-rating {
+            color: var(--accent);
+            font-size: 14px;
+            margin-bottom: 30px;
+            letter-spacing: 5px;
+        }
+
+        .review-text {
+            font-size: 1rem; 
+            color: #333;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .reviewer-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .reviewer-avatar {
+            width: 70px; 
+            height: 70px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 2px solid rgba(73, 147, 117, 0.2);
+            overflow: hidden;
+            background: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.4s var(--transition);
+        }
+
+        .reviewer-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .review-card:hover .reviewer-avatar {
+            border-color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        .reviewer-details h4 {
+            font-size: 0.9rem; 
+            color: #00261b;
+            text-transform: uppercase;
+            font-weight: 900;
+            margin-bottom: 5px;
+        }
+
+        .reviewer-details span {
+            font-size: 0.7rem; 
+            color: #888;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        body.dark-mode #excelencia-section.reviews-section {
+            background: url('/BG-sitebranco4.png') no-repeat center center !important;
+            background-size: cover !important;
+            background-color: #ffffff !important;
+        }
+
+        body.dark-mode #excelencia-section .reviews-header h2 {
+            color: #00261b !important;
+        }
+
+        body.dark-mode #excelencia-section .reviews-header h2 span {
+            color: var(--primary) !important;
+        }
+
+        body.dark-mode #excelencia-section .review-card {
+            background: #ffffff;
+            border-color: rgba(0, 38, 27, 0.08);
+            box-shadow: none;
+        }
+
+        body.dark-mode #excelencia-section .review-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 30px 60px rgba(0, 84, 61, 0.1);
+        }
+
+        body.dark-mode #excelencia-section .review-text {
+            color: #333;
+        }
+
+        body.dark-mode #excelencia-section .reviewer-details h4 {
+            color: #00261b !important;
+        }
+
+        body.dark-mode #excelencia-section .reviewer-details span {
+            color: #888;
+        }
+
+        body.dark-mode #excelencia-section .reviewer-avatar {
+            background: #f4f4f4;
+            border-color: rgba(73, 147, 117, 0.2);
+        }
+
+        @media (max-width: 1023px) {
+            .reviews-grid { grid-template-columns: 1fr; gap: 40px; }
+            .review-card { padding: 50px 30px; }
+        }
+
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; z-index: 9999; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); text-decoration: none; transition: 0.3s; animation: pulse-whatsapp 2s infinite; }
+        .whatsapp-float:hover { transform: scale(1.1); background: #20ba5a; }
+        @keyframes pulse-whatsapp { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+
+        .h-journey-modern { 
+            padding: 80px 5%; 
+            background: var(--bg-light); 
+            position: relative; 
+            overflow: hidden; 
+            perspective: 1000px;
+            z-index: 20;
+        }
+        
+        .h-header-compact { 
+            text-align: center; 
+            margin-bottom: 70px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 1s var(--transition);
+        }
+        
+        .h-journey-modern.revealed .h-header-compact {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .title-chic { 
+            font-weight: 400 !important; 
+            color: #00261b;
+        }
+        .title-chic b { 
+            color: var(--primary); 
+            font-weight: 900 !important; 
+        }
+
+        .h-timeline-container { position: relative; max-width: 1200px; margin: 0 auto; padding: 20px 0; }
+        
+        .h-line-main { 
+            position: absolute; 
+            top: 35px; 
+            left: 5%; 
+            right: 5%; 
+            height: 2px; 
+            background: rgba(0, 84, 61, 0.1); 
+            overflow: hidden;
+        }
+        .h-line-glow { 
+            width: 0%; 
+            height: 100%; 
+            background: linear-gradient(90deg, transparent, var(--primary), transparent); 
+            box-shadow: 0 0 20px var(--primary);
+            transition: width 2.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
+        }
+        
+        .h-steps-grid { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 20px; 
+            position: relative; 
+            z-index: 2; 
+        }
+
+        .h-step-item { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            height: 100%; 
+            opacity: 0;
+            transform: scale(0.8) rotateY(-30deg) translateY(100px);
+            transition: all 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        .h-journey-modern.revealed .h-step-item {
+            opacity: 1;
+            transform: scale(1) rotateY(0deg) translateY(0);
+        }
+
+        .h-journey-modern.revealed .h-step-item:nth-child(1) { transition-delay: 0.2s; }
+        .h-journey-modern.revealed .h-step-item:nth-child(2) { transition-delay: 0.4s; }
+        .h-journey-modern.revealed .h-step-item:nth-child(3) { transition-delay: 0.6s; }
+        .h-journey-modern.revealed .h-step-item:nth-child(4) { transition-delay: 0.8s; }
+
+        .step-point { 
+            width: 45px; 
+            height: 45px; 
+            background: #ffffff; 
+            border: 2px solid var(--primary); 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 14px; 
+            font-weight: 900; 
+            color: var(--primary); 
+            margin-bottom: 30px; 
+            box-shadow: 0 5px 15px rgba(0, 84, 61, 0.1); 
+            flex-shrink: 0;
+            transition: 0.5s;
+        }
+
+        .h-step-item:hover .step-point {
+            transform: scale(1.2);
+            background: var(--primary);
+            color: #ffffff;
+            box-shadow: 0 0 30px var(--primary);
+        }
+
+        .step-card-glass { 
+            width: 100%; 
+            height: 100%; 
+            background: #ffffff; 
+            border: 1px solid rgba(0, 84, 61, 0.05); 
+            padding: 35px 20px; 
+            border-radius: 20px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            transition: 0.5s var(--transition);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        .step-card-glass::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 84, 61, 0.05), transparent);
+            transition: 0.6s;
+        }
+
+        .step-card-glass:hover { 
+            background: #ffffff; 
+            border-color: var(--primary); 
+            transform: translateY(-15px); 
+            box-shadow: 0 20px 40px rgba(0, 84, 61, 0.1);
+        }
+
+        .step-card-glass:hover::after { left: 100%; }
+        .step-card-glass h3 { font-size: 1rem; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700; }
+        .step-card-glass p { font-size: 0.8rem; color: #666; line-height: 1.6; }
+        
+        @media (max-width: 900px) { .h-steps-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; } .h-line-main { display: none; } }
+        @media (max-width: 500px) { .h-steps-grid { grid-template-columns: 1fr; } .h-step-item { transform: translateX(-50px); opacity: 0; } .h-journey-modern.revealed .h-step-item { transform: translateX(0); opacity: 1; } }
+
+        html { scroll-behavior: smooth; }
+
+        .progress-container-alt {
+            position: fixed;
+            right: 25px; 
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px; 
+            height: 150px; 
+            background: rgba(0, 84, 61, 0.1); 
+            border-radius: 20px;
+            z-index: 10001; 
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0, 84, 61, 0.05);
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            width: 100%;
+            height: 0%; 
+            background: linear-gradient(to bottom, #00543d, #499375); 
+            border-radius: 20px;
+            transition: height 0.15s ease-out;
+        }
+
+        @media (max-width: 768px) { .progress-container-alt { right: 12px; height: 100px; } }
+
+        .step-icon {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            opacity: 0.9;
+            transition: 0.4s;
+        }
+
+        .h-step-item:hover .step-icon { transform: rotateY(360deg) scale(1.1); opacity: 1; }
+
+        .main-footer {
+            background: #ffffff;
+            padding: 50px 10% 15px;
+            border-top: 1px solid rgba(0, 84, 61, 0.1);
+            position: relative;
+            z-index: 120;
+            margin-top: auto;
+        }
+
+        .footer-grid { display: flex; justify-content: flex-start; gap: 50px; max-width: 1200px; margin: 0 auto 60px auto; flex-wrap: wrap; text-align: left; }
+        .footer-brand { flex: 2; min-width: 280px; }
+        .footer-brand .footer-logo { height: 60px; margin-bottom: 20px; }
+        .footer-brand .footer-logo.logo-color-fix {
+            filter: brightness(0) saturate(100%) invert(21%) sepia(26%) saturate(3660%) hue-rotate(133deg) brightness(91%) contrast(101%) !important;
+        }
+
+        .footer-brand p { color: #666; font-size: 11px; line-height: 1.6; max-width: 300px; }
+        .footer-title { color: var(--primary); font-size: 1.1rem; font-weight: 700; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links { list-style: none; }
+        .footer-links a { color: #666; text-decoration: none; font-size: 11px; transition: 0.3s; }
+        .footer-links a:hover { color: var(--primary); padding-left: 5px; }
+        .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 30px; border-top: 1px solid rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .footer-bottom p { font-size: 11px; color: #999; }
+        .footer-seal { margin-left: auto; display: flex; justify-content: flex-end; align-items: center; }
+        .social-links { display: flex; gap: 20px; margin-top: 25px; }
+        .social-links a { color: var(--primary); font-size: 22px; transition: 0.3s; text-decoration: none; }
+        .social-links a:hover { color: var(--accent); transform: translateY(-3px); }
+
+        @media (max-width: 600px) {
+            .footer-grid { text-align: center; justify-content: center; }
+            .footer-brand { align-items: center; text-align: center; }
+            .footer-col, .footer-col-nav { margin-left: 0; text-align: center; }
+            .social-links { justify-content: center; }
+        }
+        /* --- MENU FLUTUANTE ---
+           Barra destacada das rgba(73, 147, 117, 0.20)s, com cantos arredondados, que acompanha
+           o usuario em toda a navegacao e nao se esconde mais ao rolar.
+           IMPORTANTE: sem transform e sem backdrop-filter aqui. Os dois criam
+           containing block e prendem o painel do menu mobile (position: fixed)
+           dentro da area da barra. */
+        .main-header {
+            position: fixed;
+            height: auto;
+            padding: 9px 20px;
+            top: 14px;
+            left: 3%;
+            right: 3%;
+            width: auto;
+            border-radius: 18px;
+            border: 1px solid rgba(73, 147, 117, 0.20);
+            background: rgba(0, 30, 22, 0.92);
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.40);
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+
+        /* O menu acompanha o usuario: a regra de esconder no scroll fica sem efeito. */
+        .main-header.header-hidden {
+            transform: none;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        @media (max-width: 1023px) {
+            .main-header {
+                top: 10px;
+                left: 3%;
+                right: 3%;
+                border-radius: 14px;
+                padding: 7px 14px;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+        }
+        /* Nas secoes claras os links ficam verdes: a barra acompanha e fica clara. */
+        .main-header.header-light {
+            background: rgba(255, 255, 255, 0.96) !important;
+            border-color: rgba(0, 84, 61, 0.10);
+            box-shadow: 0 12px 34px rgba(0, 38, 27, 0.13);
+        }
+
+        /* No modo escuro os links voltam a ser brancos: barra escura nos dois estados. */
+        body.dark-mode .main-header,
+        body.dark-mode .main-header.header-light {
+            background: rgba(14, 36, 27, 0.96) !important;
+            border-color: rgba(255, 255, 255, 0.10);
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.40);
+        }
+        /* --- AJUSTES MOBILE ---
+           No modo escuro o painel do menu continuava branco, enquanto os links
+           e o botao de fechar ficam brancos: o menu abria ilegivel. */
+        @media (max-width: 1023px) {
+            body.dark-mode .nav-group,
+            body.dark-mode .mobile-nav-full {
+                background: #081711;
+            }
+            body.dark-mode .nav-group .nav-link,
+            body.dark-mode .mobile-nav-full .nav-link {
+                color: #ffffff;
+            }
+            body.dark-mode .mobile-menu-toggle { color: #ffffff; }
+        }
+        /* Com o painel aberto o fundo fica claro: o X precisa escurecer para
+           nao desaparecer sobre ele. */
+        @media (max-width: 1023px) {
+            .main-header:has(.nav-group.active) .mobile-menu-toggle { color: var(--primary); }
+            body.dark-mode .main-header:has(.nav-group.active) .mobile-menu-toggle { color: #ffffff; }
+        }
+        /* --- PADRAO DE CORES DO MENU ---
+           A barra alterna conforme a secao. Barra escura -> textos e logo
+           brancos. Barra clara -> textos e logo em verde escuro. */
+        .main-header .nav-link:not(.active-box):not(.btn-store-header):not(.btn-green-box),
+        .main-header .mobile-menu-toggle { color: #ffffff; }
+        .main-header .header-logo img,
+        .main-header .logo-color-fix { filter: brightness(0) invert(1); }
+
+        .main-header.header-light .nav-link:not(.active-box):not(.btn-store-header):not(.btn-green-box),
+        .main-header.header-light .mobile-menu-toggle { color: #00543d; }
+        .main-header.header-light .header-logo img,
+        .main-header.header-light .logo-color-fix { filter: brightness(0) saturate(100%) invert(21%) sepia(26%) saturate(3660%) hue-rotate(133deg) brightness(91%) contrast(101%); }
+
+        /* No modo escuro a barra fica escura nos dois estados. */
+        body.dark-mode .main-header .nav-link:not(.active-box):not(.btn-store-header):not(.btn-green-box),
+        body.dark-mode .main-header.header-light .nav-link:not(.active-box):not(.btn-store-header):not(.btn-green-box),
+        body.dark-mode .main-header .mobile-menu-toggle,
+        body.dark-mode .main-header.header-light .mobile-menu-toggle { color: #ffffff; }
+        body.dark-mode .main-header .header-logo img,
+        body.dark-mode .main-header .logo-color-fix,
+        body.dark-mode .main-header.header-light .header-logo img,
+        body.dark-mode .main-header.header-light .logo-color-fix { filter: brightness(0) invert(1); }
+
+        /* Botoes: verde escuro com texto branco em todos os modos. */
+        .main-header .nav-link.active-box,
+        .main-header .btn-store-header,
+        .main-header.header-light .nav-link.active-box,
+        .main-header.header-light .btn-store-header {
+            background: #00543d !important;
+            color: #ffffff !important;
+        }
+        .main-header:not(.header-light) .nav-link.active-box,
+        .main-header:not(.header-light) .btn-store-header,
+        body.dark-mode .main-header .nav-link.active-box,
+        body.dark-mode .main-header .btn-store-header { border: 1px solid rgba(255,255,255,0.18); }
+
+        @media (max-width: 1023px) {
+            /* Dentro do painel aberto o fundo e claro: os links nao podem
+               herdar o branco da barra escura. */
+            .main-header .nav-group .nav-link:not(.active-box):not(.btn-store-header):not(.btn-green-box) { color: #00543d; }
+            body.dark-mode .main-header .nav-group .nav-link:not(.active-box):not(.btn-store-header):not(.btn-green-box) { color: #ffffff; }
+        }
+        /* --- SEM PALAVRA SOZINHA NA LINHA ---
+           Nenhum texto do site pode quebrar deixando uma palavra orfa na
+           ultima linha. balance reparte as linhas em comprimentos parecidos
+           (bom para titulo curto); pretty evita a viuva no fim do paragrafo.
+           Navegador sem suporte ignora e quebra do jeito tradicional. */
+        h1, h2, h3, h4, h5, h6,
+        .giant-title, .title-chic, .section-title, .product-title,
+        .footer-title, .editorial-tag, .floating-tag, .step-card h3,
+        .diff-item h4, .science-box h4, .value-card h3, .card-content h3,
+        .property-card h3, .review-text, .big-quote h2, .cta-block h2,
+        .booking-copy h1, .booking-intro h1, .contact-info h1,
+        .policy-section h1, .policy-section h2, .faq-question,
+        .btn-more, .btn-read, .btn-main, .detail-list b, .stat-label {
+            text-wrap: balance;
+        }
+
+        p, li, figcaption, blockquote, .info-text, .product-description,
+        .section-lead, .section-head p, .text-reveal p, .photo-credit,
+        .article-meta, .author-box p, .consult-note, .review-author,
+        .booking-cta-note, .mini-review p, .footer-brand p, .footer-bottom p {
+            text-wrap: pretty;
+        }
+        /* --- BOTOES FLUTUANTES DE TEMA E IDIOMA ---
+           Eles ficam sobre o conteudo da pagina, nao sobre a barra do menu,
+           entao nao podem depender do estado dela: ganham fundo proprio e
+           passam a ter contraste sobre qualquer coisa que esteja atras. */
+        .btn-theme-toggle,
+        .btn-language-toggle {
+            background: rgba(255, 255, 255, 0.94) !important;
+            border: 1px solid rgba(0, 84, 61, 0.20) !important;
+            color: #00543d !important;
+            box-shadow: 0 6px 18px rgba(0, 38, 27, 0.12);
+            text-shadow: none !important;
+        }
+
+        .btn-theme-toggle:hover,
+        .btn-language-toggle:hover {
+            background: #00543d !important;
+            border-color: #00543d !important;
+            color: #ffffff !important;
+        }
+
+        body.dark-mode .btn-theme-toggle,
+        body.dark-mode .btn-language-toggle {
+            background: rgba(14, 36, 27, 0.94) !important;
+            border-color: rgba(255, 255, 255, 0.22) !important;
+            color: #ffffff !important;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+        }
+
+        body.dark-mode .btn-theme-toggle:hover,
+        body.dark-mode .btn-language-toggle:hover {
+            background: #ffffff !important;
+            border-color: #ffffff !important;
+            color: #00543d !important;
+        }
+        /* --- LARGURA DA BARRA DO MENU ---
+           No desktop a barra passa a ter a largura do proprio conteudo:
+           comeca na borda do botao "Agendar Consulta" e termina na do
+           "Loja Exclusiva". Centralizada com margin auto, nunca com
+           translateX, que criaria containing block e prenderia o painel
+           do menu mobile. No celular ela continua ocupando a largura toda. */
+        @media (min-width: 1024px) {
+            .main-header {
+                left: 0;
+                right: 0;
+                width: fit-content;
+                max-width: 94%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .main-header .nav-group {
+                flex: 0 0 auto;
+                width: auto;
+                max-width: none;
+            }
+        }</style>
+</head>
+<body>
+    <div class="progress-container-alt">
+        <div class="progress-bar-fill" id="scrollProgress"></div>
+    </div>
+
+
+    <a href="https://hubs.ly/Q04sNmtw0" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header class="main-header">
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="nav-group" id="navGroupLeft">
+            <a href="/agendamento" class="nav-link active-box">Agendar Consulta</a>
+            <a href="/sobre-nos" class="nav-link">Sobre Nós</a>
+            <a href="/produtos" class="nav-link">Produtos</a>
+            <a href="/blog" class="nav-link">Blog</a>
+        </div>
+
+        <div class="header-logo">
+            <a href="/">
+                <img src="/logo.png" alt="Zeleno" class="logo-color-fix">
+            </a>
+        </div>
+
+        <div class="nav-group" id="mainNav">
+            <a href="/contato" class="nav-link">Contato</a>
+            <a href="/perguntas-frequentes" class="nav-link">Perguntas</a>
+            <a href="/para-medicos" class="nav-link">Para Médicos</a>
+            <a href="https://zelenostore.com/" class="btn-store-header">Loja Exclusiva</a>
+        </div>
+    </header>
+
+    <div class="header-controls">
+            <button id="themeToggle" class="btn-theme-toggle" aria-label="Alternar modo escuro">
+                <svg class="icon-theme" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.7 14.6A8.6 8.6 0 0 1 9.4 3.3a.6.6 0 0 0-.8-.7 9.9 9.9 0 1 0 12.8 12.8.6.6 0 0 0-.7-.8z"/></svg>
+            </button>
+            <button id="languageToggle" class="btn-language-toggle">EN</button>
+        </div>
+
+    <div class="particles-container" id="particles"></div>
+
+    <section class="hero-slider" id="heroSlider">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <video autoplay muted loop playsinline class="slide-bg">
+                        <source src="/Banner1.mp4" type="video/mp4">
+                    </video>
+                    <div class="slide-content" >
+                        <h1>
+                            SUA JORNADA <br> 
+                            COM CANNABIS <span>MEDICINAL <br> 
+                            COMEÇA AQUI</span>
+                        </h1>
+                        <p>Consulta, prescrição e acesso legal com acompanhamento seguro em cada etapa.</p>
+                        <a href="/sobre-nos" class="btn-explore-collection">Quero ser Paciente  </a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <video muted loop playsinline preload="none" class="slide-bg" data-src="/Banner 2.mp4"></video>
+                    <div class="slide-content">
+                        <h1>Prescrição<br> <span>com segurança<br> e excelência.</span></h1>
+                        <p>Estrutura regulatória, suporte técnico e produtos com padrão internacional e Associativo.</p>
+                        <button onclick="document.getElementById('ciclo-zeleno').scrollIntoView({ behavior: 'smooth' })" class="btn-explore-collection">Conhecer Processo</button>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <video muted loop playsinline preload="none" class="slide-bg" data-src="/Banner3.mp4"></video>
+                    <div class="slide-content">
+                        <h1>Qualidade <br><span>que sustenta <br>resultados.</span></h1>
+                        <p>Portfólio terapêutico com rastreabilidade, pureza e rigor farmacêutico em cada formulação.</p>
+                        <a href="/produtos" class="btn-explore-collection">Conhecer Produtos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <div class="section-shutter" id="shutterReveal">
+        <div class="reveal-overlay" id="quemSomosSection">
+            <video muted loop playsinline preload="none" class="reveal-video-bg" data-src="/segunda-div-home.mp4"></video>
+            
+            <div class="reveal-content-wrapper">
+                <div class="reveal-title-container">
+                    <h2>A CIÊNCIA <br><span>À SERVIÇO<br> DA VIDA</span></h2>
+                </div>
+                
+                <div class="side-text-creative">
+                    <div class="editorial-vertical">Baseado em ciência.</div>
+                    <div class="editorial-main-content">
+                        <h3>Zeleno Meds</h3>
+                        <p>Rigor técnico e inovação científica aplicados ao potencial terapêutico da cannabis, com segurança, controle e excelência.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="h-journey-modern" id="ciclo-zeleno">
+            <div class="journey-glow"></div>
+            <div class="h-header-compact">
+                <span class="editorial-tag" style="display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--primary); margin-bottom: 10px;">Um fluxo seguro, regulado e acompanhado</span>
+                <h2 class="title-chic" style="font-size: 2.5rem; margin-bottom: 0;">JORNADA <b>ZELENO</b></h2>
+            </div>
+            <div class="h-timeline-container">
+                <div class="h-line-main"><div class="h-line-glow"></div></div>
+                <div class="h-steps-grid">
+                    <div class="h-step-item">
+                        <div class="step-point">01</div>
+                        <div class="step-card-glass">
+                            <div class="step-icon"><i class="fas fa-stethoscope"></i></div>
+                            <h3>Consulta especializada</h3>
+                            <p>Conectamos você a médico parceiro para avaliação e prescrição adequada.</p>
+                        </div>
+                    </div>
+                    <div class="h-step-item">
+                        <div class="step-point">02</div>
+                        <div class="step-card-glass">
+                            <div class="step-icon"><i class="fas fa-file-contract"></i></div>
+                            <h3>Regularização</h3>
+                            <p>Auxiliamos na documentação necessária junto à Anvisa ou modelo associativo, com total conformidade.</p>
+                        </div>
+                    </div>
+                    <div class="h-step-item">
+                        <div class="step-point">03</div>
+                        <div class="step-card-glass">
+                            <div class="step-icon"><i class="fas fa-cart-shopping"></i></div>
+                            <h3>Aquisição segura</h3>
+                            <p>Pedido realizado com rastreabilidade, transparência e suporte dedicado.</p>
+                        </div>
+                    </div>
+                    <div class="h-step-item">
+                        <div class="step-point">04</div>
+                        <div class="step-card-glass">
+                            <div class="step-icon"><i class="fas fa-truck-fast"></i></div>
+                            <h3>Entrega e acompanhamento</h3>
+                            <p>Recebimento com segurança e continuidade no cuidado terapêutico.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="properties-slider-section" id="padrao-zeleno">
+            <div class="slider-header">
+                <h2>PADRÃO ZELENO<br><span>DE EXCELÊNCIA</span></h2>
+            </div>
+            <div class="properties-container">
+                <div class="swiper propertiesSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><div class="property-card"><img src="/person-lab-coat-holds-glowing-brain-model-symbolizing-knowledge (1).jpg" class="card-video" loading="lazy" decoding="async" alt="Neuroprotetor"><div class="card-content"><h3>Neuroprotetor</h3><p>Estudado por sua ação na proteção das células do sistema nervoso.</p></div></div></div>
+                        <div class="swiper-slide"><div class="property-card"><img src="/Antioxidante.jpg" class="card-video" loading="lazy" decoding="async" alt="Antioxidante"><div class="card-content"><h3>Antioxidante</h3><p>Auxilia no combate ao estresse oxidativo e ao envelhecimento celular.</p></div></div></div>
+                        <div class="swiper-slide"><div class="property-card"><img src="/Anticonvulsionante.jpg" class="card-video" loading="lazy" decoding="async" alt="Anticonvulsionante"><div class="card-content"><h3>Anticonvulsionante</h3><p> Utilizado como opção terapêutica no controle de crises epilépticas.</p></div></div></div>
+                        <div class="swiper-slide"><div class="property-card"><img src="/Antidepressivo.jpg" class="card-video" loading="lazy" decoding="async" alt="Antidepressivo"><div class="card-content"><h3>Antidepressivo</h3><p> Pode contribuir para o equilíbrio do humor em protocolos individualizados.</p></div></div></div>
+                        <div class="swiper-slide"><div class="property-card"><img src="/Antipsicótico.jpg" class="card-video" loading="lazy" decoding="async" alt="Antipsicótico"><div class="card-content"><h3>Antipsicótico</h3><p> Investigado por seu papel na modulação neuroquímica.</p></div></div></div>
+                        <div class="swiper-slide"><div class="property-card"><img src="/Anti-inflamatório.jpg" class="card-video" loading="lazy" decoding="async" alt="Anti-inflamatório"><div class="card-content"><h3>Anti-inflamatório</h3><p>Associado ao manejo de processos inflamatórios e dores crônicas.</p></div></div></div>
+                        <div class="swiper-slide"><div class="property-card"><img src="/Ansiolítico.jpg" class="card-video" loading="lazy" decoding="async" alt="Ansiolítico"><div class="card-content"><h3>Ansiolítico</h3><p> Contribui para a redução da ansiedade e melhora da estabilidade emocional.</p></div></div></div>
+                        <div class="swiper-slide"><div class="property-card"><img src="/Analgésico.jpg" class="card-video" loading="lazy" decoding="async" alt="Analgésico"><div class="card-content"><h3>Analgésico</h3><p> Auxilia no controle da dor em diferentes contextos clínicos.</p></div></div></div>
+                        <div class="swiper-slide"><div class="property-card"><img src="/Antitumoral.jpg_Oncoterápico.jpg" class="card-video" loading="lazy" decoding="async" alt="Antitumoral"><div class="card-content"><h3>Oncoterápico</h3><p>Estudado como suporte complementar em alguns protocolos oncológicos.</p></div></div></div>
+                        <div class="swiper-slide"><div class="property-card"><img src="/Relaxante Muscular.jpg" class="card-video" loading="lazy" decoding="async" alt="Relaxante muscular"><div class="card-content"><h3>Relaxante muscular</h3><p> Pode auxiliar na redução de espasmos e tensões musculares.</p></div></div></div>
+                        <div class="swiper-slide"><div class="property-card"><img src="/Indutor de sono.jpg" class="card-video" loading="lazy" decoding="async" alt="Indutor de Sono"><div class="card-content"><h3>Indutor de Sono</h3><p>Contribui para a regulação do ciclo do sono e descanso reparador.</p></div></div></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews-section" id="excelencia-section">
+            <div class="reviews-header">
+                <h2>HISTÓRIAS QUE<span>COMPROVAM O PADRÃO</span></h2>
+            </div>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="star-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"A pureza do óleo é percetível logo no primeiro uso. Um nível de profissionalismo que transmite total confiança e seriedade em todo o processo."</p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">
+                            <img src="/man.png" alt="Ricardo Alves" loading="lazy" decoding="async">
+                        </div>
+                        <div class="reviewer-details">
+                            <h4>Ricardo Alves</h4>
+                            <span>Paciente Crônico</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="star-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Como profissional, o rigor científico da Zeleno dá-me a segurança necessária para prescrever com excelência técnica em cada protocolo individualizado."</p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">
+                            <img src="/doctor.png" alt="Dr. Renato Lima" loading="lazy" decoding="async">
+                        </div>
+                        <div class="reviewer-details">
+                            <h4>Dr. Renato Lima</h4>
+                            <span>Médico Especialista</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="star-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Mais que um produto, encontrei na Zeleno um suporte humanizado que foi o diferencial na minha adaptação, garantindo equilíbrio no meu dia a dia."</p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">
+                            <img src="/woman.png" alt="Mariana Silva" loading="lazy" decoding="async">
+                        </div>
+                        <div class="reviewer-details">
+                            <h4>Mariana Silva</h4>
+                            <span>Bem-estar e Performance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/">
+                        <img src="/logo.png" alt="Zeleno Logo" class="footer-logo logo-color-fix" style="position: relative;left: -10px;">
+                    </a>
+                    <p>Liderando a revolução da cannabis medicinal através do rigor científico e da pureza absoluta.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/zeleno.meds/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@zelenomeds"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/company/zeleno-meds/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col footer-col-nav">
+                    <h4 class="footer-title">Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="/sobre-nos">Sobre Nós</a></li>
+                        <li><a href="/produtos">Produtos</a></li>
+                        <li><a href="/politica-de-privacidade">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Suporte</h4>
+                    <ul class="footer-links">
+                        <li><a href="/perguntas-frequentes">Dúvidas Frequentes</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/contato">Contato</a></li>
+                        <li><a href="/trabalhe-conosco">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Zeleno Meds. Todos os direitos reservados.</p>
+                <div class="footer-seal">
+                    <div id="ra-verified-seal"><script type="text/javascript" id="ra-embed-verified-seal" src="https://s3.amazonaws.com/raichu-beta/ra-verified/bundle.js" data-id="VXlMMVBFOG5BYkUyTk5NMjp6ZWxlbm8tbWVkcw==" data-target="ra-verified-seal" data-model="horizontal_1"></script></div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            const progressBar = document.getElementById("scrollProgress");
+            if (progressBar) progressBar.style.height = scrolled + "%";
+        });
+
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mainNav = document.getElementById('mainNav');
+        const navLeft = document.getElementById('navGroupLeft');
+        const header = document.querySelector('.main-header');
+        let lastScrollYMenu = window.scrollY;
+
+        function updateHeaderVisibilityByScrollDirection() {
+            if (!header) return;
+
+            const currentScrollY = window.scrollY;
+            const heroSection = document.getElementById('heroSlider');
+            const heroLimit = heroSection ? heroSection.offsetHeight - 80 : window.innerHeight - 80;
+            const menuIsOpen = mainNav && mainNav.classList.contains('active');
+
+            if (menuIsOpen || currentScrollY <= heroLimit) {
+                header.classList.remove('header-hidden');
+                lastScrollYMenu = currentScrollY;
+                return;
+            }
+
+            if (currentScrollY > lastScrollYMenu + 8) {
+                header.classList.add('header-hidden');
+            } else if (currentScrollY < lastScrollYMenu - 8) {
+                header.classList.remove('header-hidden');
+            }
+
+            lastScrollYMenu = currentScrollY;
+        }
+
+        window.addEventListener('scroll', updateHeaderVisibilityByScrollDirection, { passive: true });
+
+        mobileMenuToggle.addEventListener('click', () => {
+            const icon = mobileMenuToggle.querySelector('i');
+            if (!mainNav.classList.contains('active')) {
+                if (window.innerWidth <= 1023) {
+                    const linksLeft = Array.from(navLeft.querySelectorAll('.nav-link')).reverse();
+                    linksLeft.forEach((link, index) => {
+                        const originalIndex = linksLeft.length - 1 - index;
+                        if (!mainNav.querySelector(`.cloned-${originalIndex}`)) {
+                            const clone = link.cloneNode(true);
+                            clone.classList.add('cloned-link', `cloned-${originalIndex}`);
+                            mainNav.prepend(clone);
+                        }
+                    });
+                }
+                header.classList.remove('header-hidden');
+                mainNav.classList.add('active');
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                mainNav.classList.remove('active');
+                icon.classList.replace('fa-times', 'fa-bars');
+                mainNav.querySelectorAll('.cloned-link').forEach(el => el.remove());
+            }
+        });
+
+        var swiperHero = new Swiper(".mySwiper", {
+            loop: true, effect: "fade", speed: 1000,
+            autoplay: { delay: 6000, disableOnInteraction: false },
+            pagination: { el: ".swiper-pagination", clickable: true },
+        });
+
+        /* --- CARREGAMENTO SOB DEMANDA DOS VIDEOS ---
+           Antes, os 4 videos da home baixavam todos de uma vez no primeiro acesso.
+           Agora so o video do primeiro slide carrega de imediato; os demais entram
+           quando realmente aparecem na tela. */
+        function ativarVideo(video) {
+            if (!video || video.dataset.loaded) return;
+            video.dataset.loaded = '1';
+            video.src = video.dataset.src;
+            video.load();
+            var p = video.play();
+            if (p && p.catch) p.catch(function () {});
+        }
+
+        // Slides 2 e 3 do hero: carregam quando o carrossel chega neles.
+        swiperHero.on('slideChangeTransitionStart', function () {
+            var ativo = swiperHero.slides[swiperHero.activeIndex];
+            if (ativo) ativarVideo(ativo.querySelector('video[data-src]'));
+        });
+
+        // Video da secao "A ciencia a servico da vida": carrega ao se aproximar da tela.
+        var revealVideo = document.querySelector('.reveal-video-bg[data-src]');
+        if (revealVideo) {
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver(function (entries, obs) {
+                    entries.forEach(function (e) {
+                        if (e.isIntersecting) { ativarVideo(e.target); obs.unobserve(e.target); }
+                    });
+                }, { rootMargin: '300px' }).observe(revealVideo);
+            } else {
+                ativarVideo(revealVideo);
+            }
+        }
+
+        var swiperProperties = new Swiper(".propertiesSwiper", {
+            slidesPerView: 1, spaceBetween: 20,
+            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+            breakpoints: { 640: { slidesPerView: 2, spaceBetween: 20 }, 1024: { slidesPerView: 4, spaceBetween: 30 } }
+        });
+
+        const isMobile = () => window.innerWidth <= 1023;
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const reveal = document.getElementById('quemSomosSection');
+            const shutter = document.getElementById('shutterReveal');
+            const hero = document.getElementById('heroSlider');
+            
+            if (scrollY > 50) {
+                shutter.classList.add('active');
+                hero.style.transform = "scale(0.95)";
+                hero.style.opacity = "0.5";
+            } else {
+                shutter.classList.remove('active');
+                hero.style.transform = "scale(1)";
+                hero.style.opacity = "1";
+            }
+
+            if (scrollY > (isMobile() ? 100 : 300)) reveal.classList.add('active');
+            else reveal.classList.remove('active');
+        });
+
+        const sections = [
+            { id: 'heroSlider', theme: 'dark' },
+            { id: 'quemSomosSection', theme: 'dark' },
+            { id: 'ciclo-zeleno', theme: 'light' },
+            { id: 'padrao-zeleno', theme: 'dark' },
+            { id: 'excelencia-section', theme: 'light' }
+        ];
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const section = sections.find(s => s.id === entry.target.id);
+                    if (!section) return;
+
+                    if (section.theme === 'light') {
+                        header.classList.add('header-light');
+                    } else {
+                        header.classList.remove('header-light');
+                    }
+                }
+            });
+        }, {
+            threshold: 0.6
+        });
+
+        sections.forEach(sec => {
+            const el = document.getElementById(sec.id);
+            if (el) observer.observe(el);
+        });
+
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = Math.random() * 100 + 'vw';
+            p.style.width = p.style.height = Math.random() * 3 + 2 + 'px';
+            p.style.animationDelay = Math.random() * 12 + 's';
+            p.style.opacity = Math.random() * 0.3;
+            particlesContainer.appendChild(p);
+        }
+
+        const journeySection = document.getElementById('ciclo-zeleno');
+        const observerOptions = { 
+            threshold: 0.25,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const journeyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    const lineGlow = entry.target.querySelector('.h-line-glow');
+                    if (lineGlow) lineGlow.style.width = '100%';
+                    journeyObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        journeyObserver.observe(journeySection);
+        const translations = {
+            pt: {
+                pageTitle: "ZELENO | Premium Cannabis",
+                navSchedule: "Agendar Consulta",
+                navAbout: "Sobre Nós",
+                navProducts: "Produtos",
+                navBlog: "Blog",
+                navContact: "Contato",
+                navQuestions: "Perguntas",
+                navDoctors: "Para Médicos",
+                navStore: "Loja Exclusiva",
+                hero1Title: `SUA JORNADA <br> 
+                            COM CANNABIS <span>MEDICINAL <br> 
+                            COMEÇA AQUI</span>`,
+                hero1Text: "Consulta, prescrição e acesso legal com acompanhamento seguro em cada etapa.",
+                hero1Btn: "Quero ser Paciente",
+                hero2Title: `Prescrição<br> <span>com segurança<br> e excelência.</span>`,
+                hero2Text: "Estrutura regulatória, suporte técnico e produtos com padrão internacional e Associativo.",
+                hero2Btn: "Conhecer Processo",
+                hero3Title: `Qualidade <br><span>que sustenta <br>resultados.</span>`,
+                hero3Text: "Portfólio terapêutico com rastreabilidade, pureza e rigor farmacêutico em cada formulação.",
+                hero3Btn: "Conhecer Produtos",
+                scienceTitle: `A CIÊNCIA <br><span>À SERVIÇO<br> DA VIDA</span>`,
+                scienceTag: "Baseado em ciência.",
+                scienceText: "Rigor técnico e inovação científica aplicados ao potencial terapêutico da cannabis, com segurança, controle e excelência.",
+                journeyTag: "Um fluxo seguro, regulado e acompanhado",
+                journeyTitle: `JORNADA <b>ZELENO</b>`,
+                step1Title: "Consulta especializada",
+                step1Text: "Conectamos você a médico parceiro para avaliação e prescrição adequada.",
+                step2Title: "Regularização",
+                step2Text: "Auxiliamos na documentação necessária junto à Anvisa ou modelo associativo, com total conformidade.",
+                step3Title: "Aquisição segura",
+                step3Text: "Pedido realizado com rastreabilidade, transparência e suporte dedicado.",
+                step4Title: "Entrega e acompanhamento",
+                step4Text: "Recebimento com segurança e continuidade no cuidado terapêutico.",
+                excellenceTitle1: `PADRÃO ZELENO<br><span>DE EXCELÊNCIA</span>`,
+                excellenceTitle2: `HISTÓRIAS QUE<span>COMPROVAM O PADRÃO</span>`,
+                prop1Title: "Neuroprotetor",
+                prop1Text: "Estudado por sua ação na proteção das células do sistema nervoso.",
+                prop2Title: "Antioxidante",
+                prop2Text: "Auxilia no combate ao estresse oxidativo e ao envelhecimento celular.",
+                prop3Title: "Anticonvulsionante",
+                prop3Text: "Utilizado como opção terapêutica no controle de crises epilépticas.",
+                prop4Title: "Antidepressivo",
+                prop4Text: "Pode contribuir para o equilíbrio do humor em protocolos individualizados.",
+                prop5Title: "Antipsicótico",
+                prop5Text: "Investigado por seu papel na modulação neuroquímica.",
+                prop6Title: "Anti-inflamatório",
+                prop6Text: "Associado ao manejo de processos inflamatórios e dores crônicas.",
+                prop7Title: "Ansiolítico",
+                prop7Text: "Contribui para a redução da ansiedade e melhora da estabilidade emocional.",
+                prop8Title: "Analgésico",
+                prop8Text: "Auxilia no controle da dor em diferentes contextos clínicos.",
+                prop9Title: "Oncoterápico",
+                prop9Text: "Estudado como suporte complementar em alguns protocolos oncológicos.",
+                prop10Title: "Relaxante muscular",
+                prop10Text: "Pode auxiliar na redução de espasmos e tensões musculares.",
+                prop11Title: "Indutor de Sono",
+                prop11Text: "Contribui para a regulação do ciclo do sono e descanso reparador.",
+                review1Text: `"A pureza do óleo é percetível logo no primeiro uso. Um nível de profissionalismo que transmite total confiança e seriedade em todo o processo."`,
+                review1Role: "Paciente Crônico",
+                review2Text: `"Como profissional, o rigor científico da Zeleno dá-me a segurança necessária para prescrever com excelência técnica em cada protocolo individualizado."`,
+                review2Role: "Médico Especialista",
+                review3Text: `"Mais que um produto, encontrei na Zeleno um suporte humanizado que foi o diferencial na minha adaptação, garantindo equilíbrio no meu dia a dia."`,
+                review3Role: "Bem-estar e Performance",
+                footerText: "Liderando a revolução da cannabis medicinal através do rigor científico e da pureza absoluta.",
+                footerNav: "Navegação",
+                footerSupport: "Suporte",
+                footerAbout: "Sobre Nós",
+                footerProducts: "Produtos",
+                footerPrivacy: "Política de Privacidade",
+                footerFaq: "Dúvidas Frequentes",
+                footerContact: "Contato",
+                footerWork: "Trabalhe Conosco",
+                footerRights: "© 2026 Zeleno Meds. Todos os direitos reservados."
+            },
+            en: {
+                pageTitle: "ZELENO | Premium Cannabis",
+                navSchedule: "Book Consultation",
+                navAbout: "About Us",
+                navProducts: "Products",
+                navBlog: "Blog",
+                navContact: "Contact",
+                navQuestions: "Questions",
+                navDoctors: "For Doctors",
+                navStore: "Exclusive Store",
+                hero1Title: `YOUR JOURNEY <br> 
+                            WITH MEDICINAL <span>CANNABIS <br> 
+                            STARTS HERE</span>`,
+                hero1Text: "Consultation, prescription, and legal access with safe guidance at every stage.",
+                hero1Btn: "I Want to Be a Patient",
+                hero2Title: `Prescription<br> <span>with safety<br> and excellence.</span>`,
+                hero2Text: "Regulatory structure, technical support, and products with international and associative standards.",
+                hero2Btn: "Learn the Process",
+                hero3Title: `Quality <br><span>that supports <br>results.</span>`,
+                hero3Text: "Therapeutic portfolio with traceability, purity, and pharmaceutical rigor in every formulation.",
+                hero3Btn: "Explore Products",
+                scienceTitle: `SCIENCE <br><span>IN THE SERVICE<br> OF LIFE</span>`,
+                scienceTag: "Science-based.",
+                scienceText: "Technical rigor and scientific innovation applied to the therapeutic potential of cannabis, with safety, control, and excellence.",
+                journeyTag: "A safe, regulated, and guided flow",
+                journeyTitle: `ZELENO <b>JOURNEY</b>`,
+                step1Title: "Specialized consultation",
+                step1Text: "We connect you with a partner physician for evaluation and proper prescription.",
+                step2Title: "Legal regularization",
+                step2Text: "We assist with the required documentation through Anvisa or the associative model, with full compliance.",
+                step3Title: "Safe purchase",
+                step3Text: "Order placed with traceability, transparency, and dedicated support.",
+                step4Title: "Delivery and follow-up",
+                step4Text: "Safe delivery and continuity in therapeutic care.",
+                excellenceTitle1: `ZELENO STANDARD<br><span>OF EXCELLENCE</span>`,
+                excellenceTitle2: `STORIES THAT<span>PROVE THE STANDARD</span>`,
+                prop1Title: "Neuroprotective",
+                prop1Text: "Studied for its action in protecting nervous system cells.",
+                prop2Title: "Antioxidant",
+                prop2Text: "Helps fight oxidative stress and cellular aging.",
+                prop3Title: "Anticonvulsant",
+                prop3Text: "Used as a therapeutic option for controlling epileptic seizures.",
+                prop4Title: "Antidepressant",
+                prop4Text: "May contribute to mood balance in individualized protocols.",
+                prop5Title: "Antipsychotic",
+                prop5Text: "Investigated for its role in neurochemical modulation.",
+                prop6Title: "Anti-inflammatory",
+                prop6Text: "Associated with the management of inflammatory processes and chronic pain.",
+                prop7Title: "Anxiolytic",
+                prop7Text: "Contributes to reducing anxiety and improving emotional stability.",
+                prop8Title: "Analgesic",
+                prop8Text: "Helps control pain in different clinical contexts.",
+                prop9Title: "Oncotherapeutic",
+                prop9Text: "Studied as complementary support in some oncology protocols.",
+                prop10Title: "Muscle relaxant",
+                prop10Text: "May help reduce spasms and muscle tension.",
+                prop11Title: "Sleep inducer",
+                prop11Text: "Contributes to sleep cycle regulation and restorative rest.",
+                review1Text: `"The purity of the oil is noticeable from the very first use. A level of professionalism that conveys total trust and seriousness throughout the process."`,
+                review1Role: "Chronic Patient",
+                review2Text: `"As a professional, Zeleno's scientific rigor gives me the confidence I need to prescribe with technical excellence in every individualized protocol."`,
+                review2Role: "Specialist Physician",
+                review3Text: `"More than a product, I found humanized support at Zeleno that made all the difference in my adaptation, ensuring balance in my daily life."`,
+                review3Role: "Wellness and Performance",
+                footerText: "Leading the medicinal cannabis revolution through scientific rigor and absolute purity.",
+                footerNav: "Navigation",
+                footerSupport: "Support",
+                footerAbout: "About Us",
+                footerProducts: "Products",
+                footerPrivacy: "Privacy Policy",
+                footerFaq: "Frequently Asked Questions",
+                footerContact: "Contact",
+                footerWork: "Work With Us",
+                footerRights: "© 2026 Zeleno Meds. All rights reserved."
+            }
+        };
+
+        function applyLanguage(lang) {
+            document.documentElement.lang = lang === "en" ? "en" : "pt-br";
+            document.title = translations[lang].pageTitle;
+
+            const navLinksLeft = document.querySelectorAll('#navGroupLeft .nav-link');
+            const navLinksRight = document.querySelectorAll('#mainNav .nav-link');
+            const storeBtn = document.querySelector('.btn-store-header');
+
+            if (navLinksLeft[0]) navLinksLeft[0].textContent = translations[lang].navSchedule;
+            if (navLinksLeft[1]) navLinksLeft[1].textContent = translations[lang].navAbout;
+            if (navLinksLeft[2]) navLinksLeft[2].textContent = translations[lang].navProducts;
+            if (navLinksLeft[3]) navLinksLeft[3].textContent = translations[lang].navBlog;
+
+            if (navLinksRight[0]) navLinksRight[0].textContent = translations[lang].navContact;
+            if (navLinksRight[1]) navLinksRight[1].textContent = translations[lang].navQuestions;
+            if (navLinksRight[2]) navLinksRight[2].textContent = translations[lang].navDoctors;
+            if (storeBtn) storeBtn.textContent = translations[lang].navStore;
+
+            const heroSlides = document.querySelectorAll('.hero-slider .swiper-slide');
+            if (heroSlides[0]) {
+                heroSlides[0].querySelector('h1').innerHTML = translations[lang].hero1Title;
+                heroSlides[0].querySelector('p').textContent = translations[lang].hero1Text;
+                heroSlides[0].querySelector('.btn-explore-collection').textContent = translations[lang].hero1Btn;
+            }
+            if (heroSlides[1]) {
+                heroSlides[1].querySelector('h1').innerHTML = translations[lang].hero2Title;
+                heroSlides[1].querySelector('p').textContent = translations[lang].hero2Text;
+                heroSlides[1].querySelector('.btn-explore-collection').textContent = translations[lang].hero2Btn;
+            }
+            if (heroSlides[2]) {
+                heroSlides[2].querySelector('h1').innerHTML = translations[lang].hero3Title;
+                heroSlides[2].querySelector('p').textContent = translations[lang].hero3Text;
+                heroSlides[2].querySelector('.btn-explore-collection').textContent = translations[lang].hero3Btn;
+            }
+
+            const scienceTitle = document.querySelector('.reveal-title-container h2');
+            const scienceTag = document.querySelector('.editorial-vertical');
+            const scienceText = document.querySelector('.editorial-main-content p');
+            if (scienceTitle) scienceTitle.innerHTML = translations[lang].scienceTitle;
+            if (scienceTag) scienceTag.textContent = translations[lang].scienceTag;
+            if (scienceText) scienceText.textContent = translations[lang].scienceText;
+
+            const journeyTag = document.querySelector('.h-header-compact .editorial-tag');
+            const journeyTitle = document.querySelector('.h-header-compact .title-chic');
+            if (journeyTag) journeyTag.textContent = translations[lang].journeyTag;
+            if (journeyTitle) journeyTitle.innerHTML = translations[lang].journeyTitle;
+
+            const journeySteps = document.querySelectorAll('.h-step-item');
+            if (journeySteps[0]) {
+                journeySteps[0].querySelector('h3').textContent = translations[lang].step1Title;
+                journeySteps[0].querySelector('p').textContent = translations[lang].step1Text;
+            }
+            if (journeySteps[1]) {
+                journeySteps[1].querySelector('h3').textContent = translations[lang].step2Title;
+                journeySteps[1].querySelector('p').textContent = translations[lang].step2Text;
+            }
+            if (journeySteps[2]) {
+                journeySteps[2].querySelector('h3').textContent = translations[lang].step3Title;
+                journeySteps[2].querySelector('p').textContent = translations[lang].step3Text;
+            }
+            if (journeySteps[3]) {
+                journeySteps[3].querySelector('h3').textContent = translations[lang].step4Title;
+                journeySteps[3].querySelector('p').textContent = translations[lang].step4Text;
+            }
+
+            const excellenceHeader1 = document.querySelector('.slider-header h2');
+            const excellenceHeader2 = document.querySelector('.reviews-header h2');
+            if (excellenceHeader1) excellenceHeader1.innerHTML = translations[lang].excellenceTitle1;
+            if (excellenceHeader2) excellenceHeader2.innerHTML = translations[lang].excellenceTitle2;
+
+            const propertyCards = document.querySelectorAll('.property-card');
+            const propertyMap = [
+                ['prop1Title', 'prop1Text'],
+                ['prop2Title', 'prop2Text'],
+                ['prop3Title', 'prop3Text'],
+                ['prop4Title', 'prop4Text'],
+                ['prop5Title', 'prop5Text'],
+                ['prop6Title', 'prop6Text'],
+                ['prop7Title', 'prop7Text'],
+                ['prop8Title', 'prop8Text'],
+                ['prop9Title', 'prop9Text'],
+                ['prop10Title', 'prop10Text'],
+                ['prop11Title', 'prop11Text']
+            ];
+
+            propertyCards.forEach((card, index) => {
+                const map = propertyMap[index];
+                if (!map) return;
+                const title = card.querySelector('h3');
+                const text = card.querySelector('p');
+                if (title) title.textContent = translations[lang][map[0]];
+                if (text) text.textContent = translations[lang][map[1]];
+            });
+
+            const reviewCards = document.querySelectorAll('.review-card');
+            if (reviewCards[0]) {
+                reviewCards[0].querySelector('.review-text').textContent = translations[lang].review1Text;
+                reviewCards[0].querySelector('.reviewer-details span').textContent = translations[lang].review1Role;
+            }
+            if (reviewCards[1]) {
+                reviewCards[1].querySelector('.review-text').textContent = translations[lang].review2Text;
+                reviewCards[1].querySelector('.reviewer-details span').textContent = translations[lang].review2Role;
+            }
+            if (reviewCards[2]) {
+                reviewCards[2].querySelector('.review-text').textContent = translations[lang].review3Text;
+                reviewCards[2].querySelector('.reviewer-details span').textContent = translations[lang].review3Role;
+            }
+
+            const footerBrandText = document.querySelector('.footer-brand p');
+            const footerTitles = document.querySelectorAll('.footer-title');
+            const footerNavLinks = document.querySelectorAll('.footer-col-nav .footer-links a');
+            const footerSupportLinks = document.querySelectorAll('.footer-col:not(.footer-col-nav) .footer-links a');
+            const footerBottom = document.querySelector('.footer-bottom p');
+
+            if (footerBrandText) footerBrandText.textContent = translations[lang].footerText;
+            if (footerTitles[0]) footerTitles[0].textContent = translations[lang].footerNav;
+            if (footerTitles[1]) footerTitles[1].textContent = translations[lang].footerSupport;
+
+            if (footerNavLinks[0]) footerNavLinks[0].textContent = translations[lang].footerAbout; 
+            if (footerNavLinks[1]) footerNavLinks[1].textContent = translations[lang].footerProducts;
+            if (footerNavLinks[2]) footerNavLinks[2].textContent = translations[lang].footerPrivacy;
+
+            if (footerSupportLinks[0]) footerSupportLinks[0].textContent = translations[lang].footerFaq;
+            if (footerSupportLinks[1]) footerSupportLinks[1].textContent = translations[lang].navBlog;
+            if (footerSupportLinks[2]) footerSupportLinks[2].textContent = translations[lang].footerContact;
+            if (footerSupportLinks[3]) footerSupportLinks[3].textContent = translations[lang].footerWork;
+
+            if (footerBottom) footerBottom.textContent = translations[lang].footerRights;
+
+            const toggleBtn = document.getElementById('languageToggle');
+            if (toggleBtn) toggleBtn.textContent = lang === 'pt' ? 'EN' : 'PT';
+
+            localStorage.setItem('zelenoLang', lang);
+        }
+
+        const languageToggle = document.getElementById('languageToggle');
+        const themeToggle = document.getElementById('themeToggle');
+        const savedLanguage = localStorage.getItem('zelenoLang') || 'pt';
+        const savedTheme = localStorage.getItem('zelenoTheme') || 'light';
+
+        function applyTheme(theme) {
+            const isDark = theme === 'dark';
+            document.body.classList.toggle('dark-mode', isDark);
+            if (themeToggle) {
+                themeToggle.innerHTML = isDark
+                    ? '<svg class="icon-theme" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>'
+                    : '<svg class="icon-theme" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.7 14.6A8.6 8.6 0 0 1 9.4 3.3a.6.6 0 0 0-.8-.7 9.9 9.9 0 1 0 12.8 12.8.6.6 0 0 0-.7-.8z"/></svg>';
+                themeToggle.setAttribute('aria-label', isDark ? 'Alternar para modo claro' : 'Alternar para modo escuro');
+            }
+            localStorage.setItem('zelenoTheme', theme);
+        }
+
+        applyLanguage(savedLanguage);
+        applyTheme(savedTheme);
+
+        if (languageToggle) {
+            languageToggle.addEventListener('click', () => {
+                const currentLanguage = localStorage.getItem('zelenoLang') || 'pt';
+                const nextLanguage = currentLanguage === 'pt' ? 'en' : 'pt';
+                applyLanguage(nextLanguage);
+            });
+        }
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = localStorage.getItem('zelenoTheme') || 'light';
+                const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                applyTheme(nextTheme);
+            });
+        }
+
+    </script>
+
+
+
+<!-- ============ ZELENO HEATMAP • coletor embutido ============ -->
+<!-- Para desativar, remova deste comentario ate o </script> abaixo. -->
+<script>
+(function () {
+  'use strict';
+
+  /* ----------------------- CONFIGURAÇÃO ----------------------------- */
+  var CFG = {
+    APP_URL: 'https://script.google.com/macros/s/AKfycbzAqAqZbnHQVVTzHuWEpUrQDVUVpSJOZLE886lWA2aBOyCh6HyyVdZIM3rUJAZVfm7z/exec',
+
+    AMOSTRAGEM:        1.0,    // 1.0 = 100% dos visitantes. Use 0.3 p/ 30%.
+    CAPTURAR_MOVIMENTO:false,  // true = mapa de movimento do mouse (mais pesado)
+    CAPTURAR_SCROLL:   true,   // profundidade de rolagem por página
+    BATCH_TAMANHO:     12,     // envia quando acumula N eventos
+    BATCH_INTERVALO:   6000,   // ...ou a cada N ms
+    MOV_INTERVALO:     220,    // amostra de movimento a cada N ms
+    RESPEITAR_DNT:     false,  // true = não rastreia quem tem Do-Not-Track
+    DEBUG:             true    // true = mostra logs no Console (deixe false em produção)
+  };
+  /* ------------------------------------------------------------------ */
+
+  if (CFG.RESPEITAR_DNT && (navigator.doNotTrack === '1' || window.doNotTrack === '1')) return;
+  if (Math.random() > CFG.AMOSTRAGEM) return;
+  if (!CFG.APP_URL || CFG.APP_URL.indexOf('SEU_ID') > -1) {
+    console.warn('[Zeleno Heatmap] Configure APP_URL no zeleno-heatmap.js');
+    return;
+  }
+
+  console.log('%c[Zeleno Heatmap] ✅ ativo nesta página', 'color:#499375;font-weight:bold');
+
+  var fila = [];
+  var timer = null;
+
+  /* --------------------------- Sessão ------------------------------- */
+  function uid() {
+    return 'z' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+  }
+  var SID = (function () {
+    try {
+      var s = sessionStorage.getItem('zh_sid');
+      if (!s) { s = uid(); sessionStorage.setItem('zh_sid', s); }
+      return s;
+    } catch (e) { return uid(); }
+  })();
+
+  // visitante_id: PERSISTENTE (localStorage) — sobrevive entre visitas.
+  // Serve p/ distinguir visitante novo (1 sessão) de recorrente (2+ sessões).
+  var VID = (function () {
+    try {
+      var v = localStorage.getItem('zh_vid');
+      if (!v) { v = uid(); localStorage.setItem('zh_vid', v); }
+      return v;
+    } catch (e) { return SID; }
+  })();
+
+  /* ------------------------ Dimensões/Device ------------------------ */
+  function docW() {
+    return Math.max(document.documentElement.scrollWidth, document.body ? document.body.scrollWidth : 0, window.innerWidth);
+  }
+  function docH() {
+    return Math.max(document.documentElement.scrollHeight, document.body ? document.body.scrollHeight : 0, window.innerHeight);
+  }
+  function dispositivo() {
+    var w = window.innerWidth;
+    if (w < 768)  return 'mobile';
+    if (w < 1024) return 'tablet';
+    return 'desktop';
+  }
+
+  /* ----------------- Caminho CSS do elemento clicado ---------------- */
+  function seletor(el) {
+    if (!el || el.nodeType !== 1) return '';
+    var partes = [], prof = 0;
+    while (el && el.nodeType === 1 && prof < 6) {
+      var nome = el.nodeName.toLowerCase();
+      if (el.id) { partes.unshift('#' + el.id); break; }
+      var cls = (el.className && typeof el.className === 'string')
+        ? '.' + el.className.trim().split(/\s+/).slice(0, 2).join('.')
+        : '';
+      var i = 1, irmao = el;
+      while ((irmao = irmao.previousElementSibling)) {
+        if (irmao.nodeName.toLowerCase() === nome) i++;
+      }
+      partes.unshift(nome + cls + ':nth-of-type(' + i + ')');
+      el = el.parentElement; prof++;
+    }
+    return partes.join(' > ');
+  }
+
+  function textoDe(el) {
+    var t = (el.innerText || el.textContent || '').replace(/\s+/g, ' ').trim();
+    if (!t && el.getAttribute) t = el.getAttribute('aria-label') || el.getAttribute('alt') || el.getAttribute('title') || '';
+    return t.slice(0, 80);
+  }
+
+  /* --------------------------- Envio -------------------------------- */
+  function enviar() {
+    if (!fila.length) return;
+    var lote = fila.splice(0, fila.length);
+    var corpo = JSON.stringify(lote);
+    if (CFG.DEBUG) console.log('[Zeleno Heatmap] enviando', lote.length, 'evento(s) →', CFG.APP_URL);
+    // fetch no-cors + keepalive: entrega de forma confiável (segue o redirect
+    // do Apps Script) e sobrevive ao fechamento da aba. Sem sendBeacon p/
+    // evitar duplicidade e problemas de redirect.
+    try {
+      fetch(CFG.APP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        keepalive: true,
+        headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+        body: corpo
+      }).catch(function () {});
+    } catch (e) {
+      // último recurso, caso keepalive não seja suportado
+      try {
+        var blob = new Blob([corpo], { type: 'text/plain;charset=UTF-8' });
+        if (navigator.sendBeacon) navigator.sendBeacon(CFG.APP_URL, blob);
+      } catch (e2) {}
+    }
+  }
+
+  function agendar() {
+    if (fila.length >= CFG.BATCH_TAMANHO) { clearTimeout(timer); timer = null; enviar(); return; }
+    if (!timer) timer = setTimeout(function () { timer = null; enviar(); }, CFG.BATCH_INTERVALO);
+  }
+
+  function registrar(ev) {
+    ev.criado_em    = new Date().toISOString();
+    ev.sessao_id    = SID;
+    ev.visitante_id = VID;
+    ev.pagina       = location.pathname || '/';
+    ev.url_completa = location.href;
+    ev.vp_w         = window.innerWidth;
+    ev.vp_h         = window.innerHeight;
+    ev.dispositivo  = dispositivo();
+    fila.push(ev);
+    if (CFG.DEBUG) console.log('[Zeleno Heatmap] capturado:', ev.tipo, ev.texto || ev.seletor || '', '| fila:', fila.length);
+    agendar();
+  }
+
+  /* --------------------------- Cliques ------------------------------ */
+  var historico = [];
+  function ehRage(x, y, t) {
+    historico = historico.filter(function (h) { return t - h.t < 1500; });
+    historico.push({ x: x, y: y, t: t });
+    var n = 0;
+    for (var i = 0; i < historico.length; i++) {
+      var dx = historico[i].x - x, dy = historico[i].y - y;
+      if (dx * dx + dy * dy < 50 * 50) n++;
+    }
+    return n >= 3;
+  }
+
+  document.addEventListener('click', function (e) {
+    var dw = docW(), dh = docH();
+    var alvo = e.target;
+    var link = alvo && alvo.closest ? alvo.closest('a') : null;
+    var rage = ehRage(e.pageX, e.pageY, Date.now());
+
+    registrar({
+      tipo:   'clique',                 // rage também é clique; flag separada abaixo
+      page_x: Math.round(e.pageX),
+      page_y: Math.round(e.pageY),
+      x_frac: dw ? +(e.pageX / dw).toFixed(5) : null,
+      y_frac: dh ? +(e.pageY / dh).toFixed(5) : null,
+      doc_w:  dw,
+      doc_h:  dh,
+      seletor: seletor(alvo),
+      tag:    alvo ? alvo.nodeName.toLowerCase() : null,
+      texto:  alvo ? textoDe(alvo) : null,
+      href:   link ? link.getAttribute('href') : null,
+      rage:   rage
+    });
+  }, true);
+
+  /* ------------------------ Movimento (opcional) -------------------- */
+  if (CFG.CAPTURAR_MOVIMENTO) {
+    var ultMov = 0;
+    document.addEventListener('mousemove', function (e) {
+      var agora = Date.now();
+      if (agora - ultMov < CFG.MOV_INTERVALO) return;
+      ultMov = agora;
+      var dw = docW(), dh = docH();
+      registrar({
+        tipo:   'movimento',
+        page_x: Math.round(e.pageX),
+        page_y: Math.round(e.pageY),
+        x_frac: dw ? +(e.pageX / dw).toFixed(5) : null,
+        y_frac: dh ? +(e.pageY / dh).toFixed(5) : null,
+        doc_w:  dw,
+        doc_h:  dh,
+        rage:   false
+      });
+    }, { passive: true });
+  }
+
+  /* ----------------------- Profundidade de scroll ------------------- */
+  var maxScroll = 0, scrollEnviado = false;
+  if (CFG.CAPTURAR_SCROLL) {
+    window.addEventListener('scroll', function () {
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+      var alcance = docH() - window.innerHeight;
+      var pct = alcance > 0 ? Math.round((st / alcance) * 100) : 100;
+      if (pct > maxScroll) maxScroll = Math.min(100, pct);
+    }, { passive: true });
+  }
+  function enviarScroll() {
+    if (!CFG.CAPTURAR_SCROLL || scrollEnviado) return;
+    scrollEnviado = true;
+    registrar({ tipo: 'scroll', scroll_pct: maxScroll, doc_h: docH(), rage: false });
+  }
+
+  /* ------------------ Flush ao sair / trocar de aba ----------------- */
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'hidden') { enviarScroll(); enviar(); }
+  });
+  window.addEventListener('pagehide', function () { enviarScroll(); enviar(); });
+  window.addEventListener('beforeunload', function () { enviarScroll(); enviar(); });
+})();
+</script>
+<!-- ============ fim ZELENO HEATMAP ============ -->
+    <script src="agendamento-modal.js" defer></script>
+</body>
+</html>
