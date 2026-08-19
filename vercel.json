@@ -1,5 +1,10 @@
 {
+  "cleanUrls": true,
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/sobre-nos", "destination": "/quemsomos.html" },
+    { "source": "/para-medicos", "destination": "/medicos.html" },
+    { "source": "/perguntas-frequentes", "destination": "/faq.html" },
+    { "source": "/politica-de-privacidade", "destination": "/politica.html" },
+    { "source": "/trabalhe-conosco", "destination": "/trabalhe.html" }
   ]
 }
