@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-53QCQY7DLP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-53QCQY7DLP');
+    </script>
+    <link rel="icon" type="image/png" href="/fav.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-5.0, user-scalable=yes, viewport-fit=cover">
+    <title>FAQ | ZELENO Premium Cannabis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #499375;
+            --accent: #499375;
+            --bg-dark: #ffffff;
+            --zeleno-dark: #00543d;
+            --glass: rgba(0, 84, 61, 0.05);
+            --transition: cubic-bezier(0.85, 0, 0.15, 1);
+        }
+
+        /* --- CUSTOM SCROLLBAR --- */
+        * { scrollbar-width: thin; scrollbar-color: var(--zeleno-dark) #f0f0f0; }
+        ::-webkit-scrollbar { width: 10px; height: 10px; }
+        ::-webkit-scrollbar-track { background: #f0f0f0; }
+        ::-webkit-scrollbar-thumb { background: var(--zeleno-dark); border-radius: 10px; border: 2px solid #f0f0f0; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        body { background: #ffffff; color: #103126; font-family: 'Poppins', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+        /* --- HEADER (PADRONIZADO) --- */
+        .main-header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            display: flex; align-items: center; justify-content: center;
+            padding: 20px 4%; z-index: 10000;
+            background: transparent; backdrop-filter: none;
+            border-bottom: none;
+            height: 100px;
+            transition: transform 0.35s ease, opacity 0.35s ease;
+        }
+
+        .main-header.header-hidden {
+            transform: translateY(-120%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .header-logo { 
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10002;
+        }
+        .header-logo img { 
+            height: 48px;
+            width: auto;
+            display: block;
+            filter: brightness(0) saturate(100%) invert(18%) sepia(38%) saturate(1496%) hue-rotate(128deg) brightness(97%) contrast(102%);
+        }
+
+        .nav-group { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1600px;
+            gap: 32px;
+        }
+
+        .nav-side {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex: 1;
+        }
+        
+        .nav-side.left { justify-content: flex-end; padding-right: 120px; }
+        .nav-side.right { justify-content: flex-start; padding-left: 120px; }
+
+        .nav-link { 
+            color: var(--zeleno-dark);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+        .nav-link:hover { color: var(--primary); }
+        
+        .nav-link.active-box { 
+            background: #00543d;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 900;
+        }
+        
+        .btn-store-header { 
+            background: #00543d;
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 900;
+            padding: 10px 20px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .mobile-menu-toggle { 
+            display: none;
+            background: none;
+            border: none;
+            color: var(--zeleno-dark);
+            font-size: 26px;
+            cursor: pointer;
+            z-index: 10001;
+        }
+
+        @media (max-width: 1023px) {
+            .main-header { justify-content: space-between; padding: 10px 6%; height: 80px; }
+            .mobile-menu-toggle { display: block; position: relative; }
+            .header-logo { position: relative; left: auto; top: auto; transform: none; margin: 0; }
+            .header-logo img { height: 42px; }
+            .nav-group { 
+                position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
+                background: #ffffff; flex-direction: column; justify-content: center;
+                align-items: center; gap: 30px; transition: 0.5s; z-index: 10000;
+            }
+            .nav-side { flex-direction: column; gap: 30px; padding: 0 !important; flex: none; }
+            .nav-group.active { right: 0; }
+        }
+
+        /* --- CONTEÚDO FAQ --- */
+        .faq-hero { padding: 180px 5% 60px; text-align: center; max-width: 1200px; margin: 0 auto; }
+        .editorial-tag { font-size: 9px; text-transform: uppercase; letter-spacing: 4px; color: var(--accent); margin-bottom: 15px; display: block; }
+        .title-chic { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 200; line-height: 0.85; text-transform: uppercase; margin-bottom: 25px; color: var(--zeleno-dark); }
+        .title-chic b { font-weight: 900; display: block; color: var(--accent); }
+
+        .faq-container { max-width: 900px; margin: 0 auto 100px; padding: 0 5%; }
+        .faq-item { background: rgba(0, 84, 61, 0.02); border: 1px solid rgba(0, 84, 61, 0.08); border-radius: 12px; margin-bottom: 15px; overflow: hidden; transition: 0.3s; box-shadow: 0 8px 24px rgba(0, 84, 61, 0.04); }
+        .faq-item:hover { border-color: var(--primary); }
+        .faq-question { padding: 25px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-question h3 { font-size: 1.1rem; font-weight: 400; color: var(--zeleno-dark); }
+        .faq-question i { color: var(--primary); transition: 0.4s; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: 0.4s var(--transition); background: rgba(73, 147, 117, 0.03); }
+        .faq-answer-inner { padding: 0 25px 25px; color: rgba(16, 49, 38, 0.75); font-size: 0.95rem; line-height: 1.6; font-weight: 300; }
+        .faq-item.active .faq-answer { max-height: 800px; }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+
+        /* --- FOOTER --- */
+        .main-footer { background: #f7fbf8; padding: 60px 10% 20px; border-top: 1px solid rgba(0, 84, 61, 0.1); position: relative; z-index: 70; }
+        .footer-grid { display: flex; justify-content: flex-start; gap: 50px; max-width: 1200px; margin: 0 auto 60px auto; flex-wrap: wrap; }
+        .footer-brand { flex: 2; min-width: 280px; }
+        .footer-brand .footer-logo { height: 60px; margin-bottom: 20px; filter: brightness(0) saturate(100%) invert(18%) sepia(38%) saturate(1496%) hue-rotate(128deg) brightness(97%) contrast(102%); }
+        .footer-brand p { color: rgba(16, 49, 38, 0.6); font-size: 11px; line-height: 1.6; max-width: 300px; }
+        .footer-title { color: var(--zeleno-dark); font-size: 1.1rem; font-weight: 700; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 8px; }
+        .footer-links a { color: rgba(16, 49, 38, 0.6); text-decoration: none; font-size: 11px; transition: 0.3s; }
+        .footer-links a:hover { color: var(--primary); padding-left: 5px; }
+        .social-links { display: flex; gap: 20px; margin-top: 25px; }
+        .social-links a { color: var(--zeleno-dark); font-size: 22px; transition: 0.3s; text-decoration: none; }
+        .social-links a:hover { color: var(--primary); }
+
+        @media (max-width: 900px) {
+            .main-footer { padding: 60px 5% 30px !important; text-align: center !important; }
+            .footer-grid { flex-direction: column !important; align-items: center !important; gap: 40px !important; }
+            .footer-brand { display: flex; flex-direction: column; align-items: center; text-align: center; min-width: auto !important; flex: none !important; }
+            .footer-brand p { margin: 0 auto !important; }
+            .footer-col { margin-left: 0 !important; width: 100%; }
+            .footer-links { padding: 0 !important; text-align: center !important; list-style: none !important; }
+            .footer-links li { text-align: center !important; }
+            .footer-links a { display: inline-block !important; margin: 0 auto 8px !important; padding-left: 0 !important; }
+            .footer-bottom { flex-direction: column-reverse !important; text-align: center !important; justify-content: center !important; }
+        }
+    
+
+.btn-language-toggle {
+    background: transparent;
+    border: 1px solid var(--zeleno-dark);
+    color: var(--zeleno-dark);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.btn-language-toggle:hover {
+    background: var(--zeleno-dark);
+    color: #ffffff;
+}
+
+.btn-theme-toggle {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--zeleno-dark);
+    color: var(--zeleno-dark);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.btn-theme-toggle:hover {
+    background: var(--zeleno-dark);
+    color: #ffffff;
+}
+
+.floating-controls {
+    position: fixed;
+    left: 30px;
+    bottom: 30px;
+    z-index: 10002;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+body.dark-mode {
+    background: #081711;
+    color: #e8f5ef;
+}
+
+body.dark-mode .main-header {
+    background: transparent;
+}
+
+body.dark-mode .header-logo img,
+body.dark-mode .footer-brand .footer-logo {
+    filter: brightness(0) invert(1);
+}
+
+body.dark-mode .nav-link {
+    color: #ffffff;
+}
+
+body.dark-mode .mobile-menu-toggle {
+    color: #ffffff;
+}
+
+body.dark-mode .btn-language-toggle,
+body.dark-mode .btn-theme-toggle {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+body.dark-mode .btn-language-toggle:hover,
+body.dark-mode .btn-theme-toggle:hover {
+    background: #ffffff;
+    color: var(--zeleno-dark);
+}
+
+body.dark-mode .faq-hero,
+body.dark-mode .faq-container,
+body.dark-mode .main-footer {
+    background: transparent;
+}
+
+body.dark-mode .faq-hero p,
+body.dark-mode .faq-answer-inner,
+body.dark-mode .footer-brand p,
+body.dark-mode .footer-links a,
+body.dark-mode .footer-bottom p {
+    color: rgba(255,255,255,0.75) !important;
+}
+
+body.dark-mode .title-chic,
+body.dark-mode .faq-question h3,
+body.dark-mode .footer-title,
+body.dark-mode .social-links a {
+    color: #ffffff;
+}
+
+body.dark-mode .title-chic b,
+body.dark-mode .editorial-tag,
+body.dark-mode .faq-question i,
+body.dark-mode .social-links a:hover,
+body.dark-mode .footer-links a:hover {
+    color: var(--primary);
+}
+
+body.dark-mode .faq-item {
+    background: #0e241b;
+    border-color: rgba(255,255,255,0.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+}
+
+body.dark-mode .faq-answer {
+    background: rgba(73, 147, 117, 0.05);
+}
+
+body.dark-mode .main-footer {
+    background: #081711;
+    border-top-color: rgba(255,255,255,0.08);
+}
+
+body.dark-mode .footer-bottom {
+    border-top-color: rgba(255,255,255,0.08) !important;
+}
+
+@media (max-width: 1023px) {
+    .floating-controls {
+        left: 20px;
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-controls {
+        left: 16px;
+        bottom: 16px;
+    }
+}
+
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; z-index: 9999; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); text-decoration: none; transition: 0.3s; animation: pulse-whatsapp 2s infinite; }
+        .whatsapp-float:hover { transform: scale(1.1); background: #20ba5a; }
+        @keyframes pulse-whatsapp { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+</style>
+</head>
+<body>
+<div class="progress-container-alt">
+    <div class="progress-bar-fill" id="scrollProgress"></div>
+</div>
+<a href="https://hubs.ly/Q04sNmtw0" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+
+<style>
+    .progress-container-alt {
+        position: fixed;
+        right: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 150px;
+        background: rgba(0, 84, 61, 0.08);
+        border-radius: 20px;
+        z-index: 10001;
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(0, 84, 61, 0.08);
+        overflow: hidden;
+    }
+
+    .progress-bar-fill {
+        width: 100%;
+        height: 0%;
+        background: linear-gradient(to bottom, #499375, #00543d);
+        border-radius: 20px;
+        box-shadow: 0 0 15px rgba(73, 147, 117, 0.4);
+        transition: height 0.15s ease-out;
+    }
+
+    @media (max-width: 768px) {
+        .progress-container-alt {
+            right: 12px;
+            height: 100px;
+        }
+    }
+        /* --- MENU FLUTUANTE ---
+           Barra destacada das rgba(0, 84, 61, 0.10)s, com cantos arredondados, que acompanha
+           o usuario em toda a navegacao e nao se esconde mais ao rolar.
+           IMPORTANTE: sem transform e sem backdrop-filter aqui. Os dois criam
+           containing block e prendem o painel do menu mobile (position: fixed)
+           dentro da area da barra. */
+        .main-header {
+            position: fixed;
+            height: auto;
+            padding: 9px 20px;
+            top: 14px;
+            left: 3%;
+            right: 3%;
+            width: auto;
+            border-radius: 18px;
+            border: 1px solid rgba(0, 84, 61, 0.10);
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 12px 34px rgba(0, 38, 27, 0.13);
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+
+        /* O menu acompanha o usuario: a regra de esconder no scroll fica sem efeito. */
+        .main-header.header-hidden {
+            transform: none;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        @media (max-width: 1023px) {
+            .main-header {
+                top: 10px;
+                left: 3%;
+                right: 3%;
+                border-radius: 14px;
+                padding: 7px 14px;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+        }
+        body.dark-mode .main-header {
+            background: rgba(14, 36, 27, 0.96) !important;
+            border-color: rgba(255, 255, 255, 0.10);
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.40);
+        }
+        /* --- AJUSTES MOBILE ---
+           No modo escuro o painel do menu continuava branco, enquanto os links
+           e o botao de fechar ficam brancos: o menu abria ilegivel. */
+        @media (max-width: 1023px) {
+            body.dark-mode .nav-group,
+            body.dark-mode .mobile-nav-full {
+                background: #081711;
+            }
+            body.dark-mode .nav-group .nav-link,
+            body.dark-mode .mobile-nav-full .nav-link {
+                color: #ffffff;
+            }
+            body.dark-mode .mobile-menu-toggle { color: #ffffff; }
+        }
+        /* --- PADRAO DE CORES DO MENU ---
+           Barra clara -> textos e logo em verde escuro.
+           Barra escura (modo escuro) -> textos e logo brancos. */
+        .main-header .nav-link:not(.active-box):not(.btn-store-header):not(.btn-green-box),
+        .main-header .mobile-menu-toggle { color: #00543d; }
+        .main-header .header-logo img { filter: brightness(0) saturate(100%) invert(21%) sepia(26%) saturate(3660%) hue-rotate(133deg) brightness(91%) contrast(101%); }
+
+        body.dark-mode .main-header .nav-link:not(.active-box):not(.btn-store-header):not(.btn-green-box),
+        body.dark-mode .main-header .mobile-menu-toggle { color: #ffffff; }
+        body.dark-mode .main-header .header-logo img { filter: brightness(0) invert(1); }
+
+        /* Botoes do menu: verde escuro com texto branco em todos os modos.
+           Contorno leve para nao se confundir com a barra escura. */
+        .main-header .nav-link.active-box,
+        .main-header .btn-store-header,
+        .main-header .btn-green-box {
+            background: #00543d !important;
+            color: #ffffff !important;
+        }
+        body.dark-mode .main-header .nav-link.active-box,
+        body.dark-mode .main-header .btn-store-header,
+        body.dark-mode .main-header .btn-green-box { border: 1px solid rgba(255,255,255,0.18); }
+        /* --- SEM PALAVRA SOZINHA NA LINHA ---
+           Nenhum texto do site pode quebrar deixando uma palavra orfa na
+           ultima linha. balance reparte as linhas em comprimentos parecidos
+           (bom para titulo curto); pretty evita a viuva no fim do paragrafo.
+           Navegador sem suporte ignora e quebra do jeito tradicional. */
+        h1, h2, h3, h4, h5, h6,
+        .giant-title, .title-chic, .section-title, .product-title,
+        .footer-title, .editorial-tag, .floating-tag, .step-card h3,
+        .diff-item h4, .science-box h4, .value-card h3, .card-content h3,
+        .property-card h3, .review-text, .big-quote h2, .cta-block h2,
+        .booking-copy h1, .booking-intro h1, .contact-info h1,
+        .policy-section h1, .policy-section h2, .faq-question,
+        .btn-more, .btn-read, .btn-main, .detail-list b, .stat-label {
+            text-wrap: balance;
+        }
+
+        p, li, figcaption, blockquote, .info-text, .product-description,
+        .section-lead, .section-head p, .text-reveal p, .photo-credit,
+        .article-meta, .author-box p, .consult-note, .review-author,
+        .booking-cta-note, .mini-review p, .footer-brand p, .footer-bottom p {
+            text-wrap: pretty;
+        }
+        /* --- BOTOES FLUTUANTES DE TEMA E IDIOMA ---
+           Eles ficam sobre o conteudo da pagina, nao sobre a barra do menu,
+           entao nao podem depender do estado dela: ganham fundo proprio e
+           passam a ter contraste sobre qualquer coisa que esteja atras. */
+        .btn-theme-toggle,
+        .btn-language-toggle {
+            background: rgba(255, 255, 255, 0.94) !important;
+            border: 1px solid rgba(0, 84, 61, 0.20) !important;
+            color: #00543d !important;
+            box-shadow: 0 6px 18px rgba(0, 38, 27, 0.12);
+            text-shadow: none !important;
+        }
+
+        .btn-theme-toggle:hover,
+        .btn-language-toggle:hover {
+            background: #00543d !important;
+            border-color: #00543d !important;
+            color: #ffffff !important;
+        }
+
+        body.dark-mode .btn-theme-toggle,
+        body.dark-mode .btn-language-toggle {
+            background: rgba(14, 36, 27, 0.94) !important;
+            border-color: rgba(255, 255, 255, 0.22) !important;
+            color: #ffffff !important;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+        }
+
+        body.dark-mode .btn-theme-toggle:hover,
+        body.dark-mode .btn-language-toggle:hover {
+            background: #ffffff !important;
+            border-color: #ffffff !important;
+            color: #00543d !important;
+        }
+        /* --- LARGURA DA BARRA DO MENU ---
+           No desktop a barra passa a ter a largura do proprio conteudo:
+           comeca na borda do botao "Agendar Consulta" e termina na do
+           "Loja Exclusiva". Centralizada com margin auto, nunca com
+           translateX, que criaria containing block e prenderia o painel
+           do menu mobile. No celular ela continua ocupando a largura toda. */
+        @media (min-width: 1024px) {
+            .main-header {
+                left: 0;
+                right: 0;
+                width: fit-content;
+                max-width: 94%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .main-header .nav-group {
+                flex: 0 0 auto;
+                width: auto;
+                max-width: none;
+            }
+        }</style>
+
+<script>
+    window.addEventListener('scroll', function() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        
+        const progressBar = document.getElementById("scrollProgress");
+        if (progressBar) {
+            progressBar.style.height = scrolled + "%";
+        }
+    });
+</script>
+    <header class="main-header">
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="header-logo">
+            <a href="/">
+                <img src="/logo.png" alt="Zeleno">
+            </a>
+        </div>
+
+        <nav class="nav-group" id="mainNav">
+            <div class="nav-side left">
+                <a href="/agendamento" class="nav-link active-box">Agendar Consulta</a>
+                <a href="/sobre-nos" class="nav-link">Sobre Nós</a>
+                <a href="/produtos" class="nav-link">Produtos</a>
+                <a href="/blog" class="nav-link">Blog</a>
+            </div>
+
+            <div class="nav-side right">
+                <a href="/contato" class="nav-link">Contato</a>
+                <a href="/perguntas-frequentes" class="nav-link">Perguntas</a>
+                <a href="/para-medicos" class="nav-link">Para Médicos</a>
+                <a href="https://zelenostore.com/" class="btn-store-header">Loja Exclusiva</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="floating-controls">
+        <button id="themeToggle" class="btn-theme-toggle" aria-label="Alternar modo escuro">
+            <svg class="icon-theme" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.7 14.6A8.6 8.6 0 0 1 9.4 3.3a.6.6 0 0 0-.8-.7 9.9 9.9 0 1 0 12.8 12.8.6.6 0 0 0-.7-.8z"/></svg>
+        </button>
+        <button id="languageToggle" class="btn-language-toggle">EN</button>
+    </div>
+
+    <main>
+        <section class="faq-hero">
+            <span class="editorial-tag">Suporte ao Paciente</span>
+            <h1 class="title-chic">DÚVIDAS<b>FREQUENTES</b></h1>
+            <p style="color: rgba(16,49,38,0.6); max-width: 700px; margin: 0 auto; font-weight: 300;">Tudo o que você precisa saber sobre o tratamento com cannabis medicinal e os processos da Zeleno.</p>
+        </section>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Como faço para iniciar o tratamento?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+O primeiro passo é uma consulta com médico ou cirurgião-dentista legalmente habilitado, que avaliará seu caso e decidirá, de forma autônoma, sobre a indicação do tratamento. Você pode agendar pelo botão "Agendar Consulta". Havendo prescrição, nossa equipe oferece suporte administrativo e logístico nas etapas de acesso ao produto.                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>É legalizado no Brasil?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+O uso medicinal não é "legalizado" de forma ampla, mas é permitido sob requisitos específicos. A ANVISA autoriza a importação por pessoa física, para uso próprio, mediante prescrição e autorização de importação (RDC 660/2022), e regula os produtos industrializados do mercado nacional (RDC 1.015/2026). O fornecimento por associações apoia-se em autorização judicial (habeas corpus coletivo), com regras próprias para cada via.                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>O que é o efeito "Full Spectrum"?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+"Full spectrum" (espectro completo) designa o extrato que preserva o conjunto de compostos naturalmente presentes na planta — diversos canabinoides, terpenos e flavonoides —, diferenciando-se do "broad spectrum" (sem THC) e do isolado (apenas CBD). A escolha do tipo de produto e da indicação cabe exclusivamente ao profissional prescritor, conforme cada caso clínico.                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Quais documentos são necessários para comprar?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Acesso nacional (via associação): prescrição válida, documento oficial com foto, comprovante de residência atualizado e declaração de associado.
+Importação (RDC 660/2022): prescrição válida, documento oficial com foto, comprovante de residência e autorização de importação da ANVISA.
+Auxiliamos com orientação sobre a documentação administrativa e regulatória; a prescrição depende sempre de avaliação médica independente.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Como funcionam as entregas nacionais?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+As entregas nacionais destinam-se a pacientes associados com prescrição válida, dentro do modelo associativo amparado por autorização judicial. Após a confirmação da documentação, organizamos a logística de envio ao endereço cadastrado do associado, com rastreabilidade. Para São Paulo Capital, a entrega é feita via motoboy, geralmente no mesmo dia. As entregas nas demais localidades são realizadas via transportadora. Prazos e cobertura podem variar conforme a localidade e a disponibilidade do produto.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Como funcionam e quais os prazos para entregas internacionais?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+As entregas internacionais seguem a importação por pessoa física, para uso próprio (RDC 660/2022), em que o paciente é o importador, com a sua autorização da ANVISA. Os produtos são despachados a partir dos Estados Unidos por transportadora especializada e seguem para o endereço do paciente, passando por desembaraço aduaneiro (Receita Federal e vigilância sanitária). O prazo estimado é de cerca de 20 a 30 dias corridos, podendo variar conforme o tempo de liberação alfandegária.                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Por qual motivo preciso me associar?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+As associações que possuem habeas corpus coletivo têm autorização judicial para o cultivo e o fornecimento de produtos aos seus associados, nos limites e condições fixados na respectiva decisão. O acesso ocorre por meio da relação associativa e não como compra no mercado comum. Por isso, para acessar os produtos por essa via, é necessário ser associado. A proteção jurídica decorre e se limita ao alcance de cada decisão judicial.                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/">
+                    <img src="/logo.png" alt="Zeleno Logo" class="footer-logo logo-color-fix" style="position: relative;left: -10px;">
+                </a>
+                <p>Liderando a revolução da cannabis medicinal através do rigor científico e da pureza absoluta.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/zeleno.meds/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@zelenomeds"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.linkedin.com/company/zeleno-meds/"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col footer-col-nav">
+                <h4 class="footer-title">Navegação</h4>
+                <ul class="footer-links">
+                    <li><a href="/sobre-nos">Sobre Nós</a></li>
+                    <li><a href="/produtos">Produtos</a></li>
+                    <li><a href="/politica-de-privacidade">Política de Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">Suporte</h4>
+                <ul class="footer-links">
+                    <li><a href="/perguntas-frequentes">Dúvidas Frequentes</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contato">Contato</a></li>
+                    <li><a href="/trabalhe-conosco">Trabalhe Conosco</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Zeleno Meds. Todos os direitos reservados.</p>
+            <div class="footer-seal">
+                <div id="ra-verified-seal"><script type="text/javascript" id="ra-embed-verified-seal" src="https://s3.amazonaws.com/raichu-beta/ra-verified/bundle.js" data-id="VXlMMVBFOG5BYkUyTk5NMjp6ZWxlbm8tbWVkcw==" data-target="ra-verified-seal" data-model="horizontal_1"></script></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mainNav = document.getElementById('mainNav');
+        const header = document.querySelector('.main-header');
+        let lastScrollYMenu = window.scrollY;
+
+        function updateHeaderVisibilityByScrollDirection() {
+            if (!header) return;
+
+            const currentScrollY = window.scrollY;
+            const firstSection = document.querySelector('.faq-hero');
+            const firstSectionLimit = firstSection
+                ? firstSection.offsetTop + firstSection.offsetHeight - 80
+                : window.innerHeight - 80;
+            const menuIsOpen = mainNav && mainNav.classList.contains('active');
+
+            if (menuIsOpen || currentScrollY <= firstSectionLimit) {
+                header.classList.remove('header-hidden');
+                lastScrollYMenu = currentScrollY;
+                return;
+            }
+
+            if (currentScrollY > lastScrollYMenu + 8) {
+                header.classList.add('header-hidden');
+            } else if (currentScrollY < lastScrollYMenu - 8) {
+                header.classList.remove('header-hidden');
+            }
+
+            lastScrollYMenu = currentScrollY;
+        }
+
+        window.addEventListener('scroll', updateHeaderVisibilityByScrollDirection, { passive: true });
+
+        mobileMenuToggle.addEventListener('click', () => {
+            header.classList.remove('header-hidden');
+            mainNav.classList.toggle('active');
+            const icon = mobileMenuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                faqItems.forEach(other => { if(other !== item) other.classList.remove('active'); });
+                item.classList.toggle('active');
+            });
+        });
+    
+
+        function applyTheme(theme) {
+            const isDark = theme === 'dark';
+            document.body.classList.toggle('dark-mode', isDark);
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                themeToggle.innerHTML = isDark ? '<svg class="icon-theme" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>' : '<svg class="icon-theme" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.7 14.6A8.6 8.6 0 0 1 9.4 3.3a.6.6 0 0 0-.8-.7 9.9 9.9 0 1 0 12.8 12.8.6.6 0 0 0-.7-.8z"/></svg>';
+                themeToggle.setAttribute('aria-label', isDark ? 'Alternar para modo claro' : 'Alternar para modo escuro');
+            }
+            localStorage.setItem('zelenoTheme', theme);
+        }
+
+        const savedTheme = localStorage.getItem('zelenoTheme') || 'light';
+        applyTheme(savedTheme);
+
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = localStorage.getItem('zelenoTheme') || 'light';
+                applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            });
+        }
+
+
+(function(){
+  // PT é a fonte da verdade: capturamos os textos direto do HTML.
+  // Assim, qualquer edição feita no HTML aparece em PT sem precisar mexer aqui.
+  var $tag    = document.querySelector('.editorial-tag');
+  var $title  = document.querySelector('.title-chic');
+  var $hero   = document.querySelector('.faq-hero p');
+  var $footer = document.querySelector('.footer-bottom p');
+  var items   = document.querySelectorAll('.faq-item');
+
+  var PT = {
+    docTitle: document.title,
+    tag:    $tag    ? $tag.innerHTML    : '',
+    title:  $title  ? $title.innerHTML  : '',
+    hero:   $hero   ? $hero.innerHTML   : '',
+    footer: $footer ? $footer.innerHTML : '',
+    faq: []
+  };
+  items.forEach(function(it){
+    var q = it.querySelector('h3');
+    var a = it.querySelector('.faq-answer-inner');
+    PT.faq.push({ q: q ? q.innerHTML : '', a: a ? a.innerHTML : '' });
+  });
+
+  var EN = {
+    docTitle: 'FAQ | ZELENO Premium Cannabis',
+    tag:    'Patient Support',
+    title:  'FREQUENTLY<b>ASKED QUESTIONS</b>',
+    hero:   "Everything you need to know about medicinal cannabis treatment and Zeleno's processes.",
+    footer: '&copy; 2024 ZELENO PREMIUM CANNABIS. All rights reserved.',
+    faq: [
+      { q:'How do I start treatment?',
+        a:"The first step is a consultation with a legally licensed doctor or dental surgeon, who will assess your case and autonomously decide on the treatment indication. You can schedule it using the \"Agendar Consulta\" button. Once prescribed, our team provides administrative and logistical support throughout the product-access stages." },
+      { q:'Is it legal in Brazil?',
+        a:'Medicinal use is not broadly "legalized", but it is permitted under specific requirements. ANVISA authorizes importation by an individual, for personal use, upon prescription and an import authorization (RDC 660/2022), and regulates the industrialized products of the national market (RDC 1.015/2026). Supply through associations relies on judicial authorization (collective habeas corpus), with specific rules for each route.' },
+      { q:'What is the "Full Spectrum" effect?',
+        a:'"Full spectrum" refers to an extract that preserves the set of compounds naturally present in the plant — several cannabinoids, terpenes and flavonoids —, differing from "broad spectrum" (without THC) and from the isolate (CBD only). The choice of product type and indication rests exclusively with the prescribing professional, according to each clinical case.' },
+      { q:'Which documents are required to purchase?',
+        a:'National access (via association): valid prescription, official photo ID, up-to-date proof of residence and member declaration. Importation (RDC 660/2022): valid prescription, official photo ID, proof of residence and ANVISA import authorization. We assist with guidance on administrative and regulatory documentation; the prescription always depends on an independent medical assessment.' },
+      { q:'How do national deliveries work?',
+        a:"National deliveries are intended for member patients with a valid prescription, within the associative model backed by judicial authorization. After document confirmation, we organize shipping logistics to the member's registered address, with tracking. For São Paulo Capital, delivery is by motorcycle courier, usually same day. Deliveries to other locations are made by carrier. Deadlines and coverage may vary according to location and product availability." },
+      { q:'How do international deliveries work and what are the deadlines?',
+        a:"International deliveries follow importation by an individual, for personal use (RDC 660/2022), in which the patient is the importer, with their own ANVISA authorization. Products are dispatched from the United States by a specialized carrier and sent to the patient's address, going through customs clearance (Federal Revenue and health surveillance). The estimated time is around 20 to 30 calendar days, and may vary depending on customs-release time." },
+      { q:'Why do I need to become a member?',
+        a:'Associations holding collective habeas corpus have judicial authorization to cultivate and supply products to their members, within the limits and conditions set in the respective decision. Access occurs through the associative relationship and not as a purchase on the ordinary market. For that reason, to access the products via this route you must be a member. The legal protection derives from, and is limited to, the scope of each judicial decision.' }
+    ]
+  };
+
+  function apply(lang){
+    var d = (lang === 'en') ? EN : PT;
+    document.title = (lang === 'en') ? EN.docTitle : PT.docTitle;
+    if ($tag)    $tag.innerHTML    = d.tag;
+    if ($title)  $title.innerHTML  = d.title;
+    if ($hero)   $hero.innerHTML   = d.hero;
+    if ($footer) $footer.innerHTML = d.footer;
+    items.forEach(function(it, i){
+      var src = d.faq[i];
+      if (!src) return;
+      var q = it.querySelector('h3');
+      var a = it.querySelector('.faq-answer-inner');
+      if (q) q.innerHTML = src.q;
+      if (a) a.innerHTML = src.a;
+    });
+    var btn = document.getElementById('languageToggle');
+    if (btn) btn.textContent = (lang === 'pt') ? 'EN' : 'PT';
+    localStorage.setItem('zelenoLang', lang);
+  }
+
+  var saved = localStorage.getItem('zelenoLang') || 'pt';
+  apply(saved);
+
+  var toggle = document.getElementById('languageToggle');
+  if (toggle) toggle.onclick = function(){
+    apply((localStorage.getItem('zelenoLang') || 'pt') === 'pt' ? 'en' : 'pt');
+  };
+})();
+
+</script>
+<!-- ============ ZELENO HEATMAP • coletor embutido ============ -->
+<!-- Para desativar, remova deste comentario ate o </script> abaixo. -->
+<script>
+(function () {
+  'use strict';
+
+  /* ----------------------- CONFIGURAÇÃO ----------------------------- */
+  var CFG = {
+    APP_URL: 'https://script.google.com/macros/s/AKfycbzAqAqZbnHQVVTzHuWEpUrQDVUVpSJOZLE886lWA2aBOyCh6HyyVdZIM3rUJAZVfm7z/exec',
+
+    AMOSTRAGEM:        1.0,    // 1.0 = 100% dos visitantes. Use 0.3 p/ 30%.
+    CAPTURAR_MOVIMENTO:false,  // true = mapa de movimento do mouse (mais pesado)
+    CAPTURAR_SCROLL:   true,   // profundidade de rolagem por página
+    BATCH_TAMANHO:     12,     // envia quando acumula N eventos
+    BATCH_INTERVALO:   6000,   // ...ou a cada N ms
+    MOV_INTERVALO:     220,    // amostra de movimento a cada N ms
+    RESPEITAR_DNT:     false,  // true = não rastreia quem tem Do-Not-Track
+    DEBUG:             true    // true = mostra logs no Console (deixe false em produção)
+  };
+  /* ------------------------------------------------------------------ */
+
+  if (CFG.RESPEITAR_DNT && (navigator.doNotTrack === '1' || window.doNotTrack === '1')) return;
+  if (Math.random() > CFG.AMOSTRAGEM) return;
+  if (!CFG.APP_URL || CFG.APP_URL.indexOf('SEU_ID') > -1) {
+    console.warn('[Zeleno Heatmap] Configure APP_URL no zeleno-heatmap.js');
+    return;
+  }
+
+  console.log('%c[Zeleno Heatmap] ✅ ativo nesta página', 'color:#499375;font-weight:bold');
+
+  var fila = [];
+  var timer = null;
+
+  /* --------------------------- Sessão ------------------------------- */
+  function uid() {
+    return 'z' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+  }
+  var SID = (function () {
+    try {
+      var s = sessionStorage.getItem('zh_sid');
+      if (!s) { s = uid(); sessionStorage.setItem('zh_sid', s); }
+      return s;
+    } catch (e) { return uid(); }
+  })();
+
+  /* ------------------------ Dimensões/Device ------------------------ */
+  function docW() {
+    return Math.max(document.documentElement.scrollWidth, document.body ? document.body.scrollWidth : 0, window.innerWidth);
+  }
+  function docH() {
+    return Math.max(document.documentElement.scrollHeight, document.body ? document.body.scrollHeight : 0, window.innerHeight);
+  }
+  function dispositivo() {
+    var w = window.innerWidth;
+    if (w < 768)  return 'mobile';
+    if (w < 1024) return 'tablet';
+    return 'desktop';
+  }
+
+  /* ----------------- Caminho CSS do elemento clicado ---------------- */
+  function seletor(el) {
+    if (!el || el.nodeType !== 1) return '';
+    var partes = [], prof = 0;
+    while (el && el.nodeType === 1 && prof < 6) {
+      var nome = el.nodeName.toLowerCase();
+      if (el.id) { partes.unshift('#' + el.id); break; }
+      var cls = (el.className && typeof el.className === 'string')
+        ? '.' + el.className.trim().split(/\s+/).slice(0, 2).join('.')
+        : '';
+      var i = 1, irmao = el;
+      while ((irmao = irmao.previousElementSibling)) {
+        if (irmao.nodeName.toLowerCase() === nome) i++;
+      }
+      partes.unshift(nome + cls + ':nth-of-type(' + i + ')');
+      el = el.parentElement; prof++;
+    }
+    return partes.join(' > ');
+  }
+
+  function textoDe(el) {
+    var t = (el.innerText || el.textContent || '').replace(/\s+/g, ' ').trim();
+    if (!t && el.getAttribute) t = el.getAttribute('aria-label') || el.getAttribute('alt') || el.getAttribute('title') || '';
+    return t.slice(0, 80);
+  }
+
+  /* --------------------------- Envio -------------------------------- */
+  function enviar() {
+    if (!fila.length) return;
+    var lote = fila.splice(0, fila.length);
+    var corpo = JSON.stringify(lote);
+    if (CFG.DEBUG) console.log('[Zeleno Heatmap] enviando', lote.length, 'evento(s) →', CFG.APP_URL);
+    // fetch no-cors + keepalive: entrega de forma confiável (segue o redirect
+    // do Apps Script) e sobrevive ao fechamento da aba. Sem sendBeacon p/
+    // evitar duplicidade e problemas de redirect.
+    try {
+      fetch(CFG.APP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        keepalive: true,
+        headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+        body: corpo
+      }).catch(function () {});
+    } catch (e) {
+      // último recurso, caso keepalive não seja suportado
+      try {
+        var blob = new Blob([corpo], { type: 'text/plain;charset=UTF-8' });
+        if (navigator.sendBeacon) navigator.sendBeacon(CFG.APP_URL, blob);
+      } catch (e2) {}
+    }
+  }
+
+  function agendar() {
+    if (fila.length >= CFG.BATCH_TAMANHO) { clearTimeout(timer); timer = null; enviar(); return; }
+    if (!timer) timer = setTimeout(function () { timer = null; enviar(); }, CFG.BATCH_INTERVALO);
+  }
+
+  function registrar(ev) {
+    ev.criado_em   = new Date().toISOString();
+    ev.sessao_id   = SID;
+    ev.pagina      = location.pathname || '/';
+    ev.url_completa= location.href;
+    ev.vp_w        = window.innerWidth;
+    ev.vp_h        = window.innerHeight;
+    ev.dispositivo = dispositivo();
+    fila.push(ev);
+    if (CFG.DEBUG) console.log('[Zeleno Heatmap] capturado:', ev.tipo, ev.texto || ev.seletor || '', '| fila:', fila.length);
+    agendar();
+  }
+
+  /* --------------------------- Cliques ------------------------------ */
+  var historico = [];
+  function ehRage(x, y, t) {
+    historico = historico.filter(function (h) { return t - h.t < 1500; });
+    historico.push({ x: x, y: y, t: t });
+    var n = 0;
+    for (var i = 0; i < historico.length; i++) {
+      var dx = historico[i].x - x, dy = historico[i].y - y;
+      if (dx * dx + dy * dy < 50 * 50) n++;
+    }
+    return n >= 3;
+  }
+
+  document.addEventListener('click', function (e) {
+    var dw = docW(), dh = docH();
+    var alvo = e.target;
+    var link = alvo && alvo.closest ? alvo.closest('a') : null;
+    var rage = ehRage(e.pageX, e.pageY, Date.now());
+
+    registrar({
+      tipo:   'clique',                 // rage também é clique; flag separada abaixo
+      page_x: Math.round(e.pageX),
+      page_y: Math.round(e.pageY),
+      x_frac: dw ? +(e.pageX / dw).toFixed(5) : null,
+      y_frac: dh ? +(e.pageY / dh).toFixed(5) : null,
+      doc_w:  dw,
+      doc_h:  dh,
+      seletor: seletor(alvo),
+      tag:    alvo ? alvo.nodeName.toLowerCase() : null,
+      texto:  alvo ? textoDe(alvo) : null,
+      href:   link ? link.getAttribute('href') : null,
+      rage:   rage
+    });
+  }, true);
+
+  /* ------------------------ Movimento (opcional) -------------------- */
+  if (CFG.CAPTURAR_MOVIMENTO) {
+    var ultMov = 0;
+    document.addEventListener('mousemove', function (e) {
+      var agora = Date.now();
+      if (agora - ultMov < CFG.MOV_INTERVALO) return;
+      ultMov = agora;
+      var dw = docW(), dh = docH();
+      registrar({
+        tipo:   'movimento',
+        page_x: Math.round(e.pageX),
+        page_y: Math.round(e.pageY),
+        x_frac: dw ? +(e.pageX / dw).toFixed(5) : null,
+        y_frac: dh ? +(e.pageY / dh).toFixed(5) : null,
+        doc_w:  dw,
+        doc_h:  dh,
+        rage:   false
+      });
+    }, { passive: true });
+  }
+
+  /* ----------------------- Profundidade de scroll ------------------- */
+  var maxScroll = 0, scrollEnviado = false;
+  if (CFG.CAPTURAR_SCROLL) {
+    window.addEventListener('scroll', function () {
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+      var alcance = docH() - window.innerHeight;
+      var pct = alcance > 0 ? Math.round((st / alcance) * 100) : 100;
+      if (pct > maxScroll) maxScroll = Math.min(100, pct);
+    }, { passive: true });
+  }
+  function enviarScroll() {
+    if (!CFG.CAPTURAR_SCROLL || scrollEnviado) return;
+    scrollEnviado = true;
+    registrar({ tipo: 'scroll', scroll_pct: maxScroll, doc_h: docH(), rage: false });
+  }
+
+  /* ------------------ Flush ao sair / trocar de aba ----------------- */
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'hidden') { enviarScroll(); enviar(); }
+  });
+  window.addEventListener('pagehide', function () { enviarScroll(); enviar(); });
+  window.addEventListener('beforeunload', function () { enviarScroll(); enviar(); });
+})();
+</script>
+<!-- ============ fim ZELENO HEATMAP ============ -->
+    <script src="agendamento-modal.js" defer></script>
+</body>
+</html>

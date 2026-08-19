@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-53QCQY7DLP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-53QCQY7DLP');
+    </script>
+    <link rel="icon" type="image/png" href="/fav.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>Política de Privacidade | ZELENO</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- VARIÁVEIS E ESTILOS GERAIS (IGUAIS AO INDEX) --- */
+        :root {
+            --primary: #499375;
+            --accent: #ffffff;
+            --y2k-purple: #499375;
+            --y2k-lime: #00543d;
+            --bg-dark: #00261b;      
+            --white: #499375;
+            --zeleno-dark: #00543d; 
+            --glass: rgba(255, 255, 255, 0.1);
+            --transition: cubic-bezier(0.85, 0, 0.15, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        
+        body { 
+            background: var(--bg-dark); 
+            color: #ffffff; 
+            font-family: 'Poppins', sans-serif; 
+            overflow-x: hidden;
+            width: 100%;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- HEADER (LAYOUT EXATO DO INDEX) --- */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; 
+            padding: 15px 4%; 
+            z-index: 10000;
+            background: rgba(0, 38, 27, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(73, 147, 117, 0.1);
+        }
+
+        .nav-group { display: flex; align-items: center; gap: 32px; flex: 1; }
+        #navGroupLeft { justify-content: flex-end; }
+        #mainNav { justify-content: flex-start; }
+        .header-logo { flex: 0 0 auto; padding: 0 40px; }
+        .header-logo img { height: 48px; width: auto; display: block; }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px; 
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+        .nav-link:hover { color: var(--primary); }
+        
+        .nav-link.active-box {
+            background: #00543d;
+            color: #ffffff;
+            padding: 10px 22px; 
+            border-radius: 4px;
+            font-weight: 900 !important;
+        }
+
+        .btn-store-header {
+            background: #00543d;
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px; 
+            font-weight: 900;
+            padding: 10px 22px; 
+            border-radius: 4px;
+            white-space: nowrap;
+            margin-left: 10px; 
+        }
+
+        /* --- MOBILE MENU (LÓGICA DO INDEX) --- */
+        .mobile-menu-toggle {
+            display: none;
+            background: none; border: none; color: #fff; font-size: 26px; cursor: pointer; z-index: 10001;
+        }
+
+        @media (max-width: 1023px) {
+            .mobile-menu-toggle { display: block; }
+            .main-header { padding: 12px 6%; }
+            .header-logo img { height: 42px; }
+            .nav-group {
+                position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
+                background: #001a13; flex-direction: column; justify-content: center;
+                align-items: center; gap: 30px; transition: 0.5s var(--transition);
+                z-index: 10000;
+            }
+            .nav-group.active { right: 0; }
+            .main-header #navGroupLeft { display: none; }
+        }
+
+        /* --- CONTEÚDO DA POLÍTICA --- */
+        .content-wrapper {
+            max-width: 1000px;
+            margin: 150px auto 100px;
+            padding: 0 6%;
+        }
+
+        .policy-section { margin-bottom: 50px; }
+        .policy-section h1 { 
+            font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: var(--primary); 
+            text-transform: uppercase; line-height: 1; margin-bottom: 30px;
+        }
+        .policy-section h2 { 
+            font-size: 1.2rem; color: var(--primary); text-transform: uppercase; 
+            margin: 40px 0 20px; font-weight: 700; border-left: 3px solid var(--primary); padding-left: 15px;
+        }
+        .policy-section p { color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 20px; font-size: 0.95rem; }
+        
+        /* Tabela igual ao estilo do site */
+        .table-container { overflow-x: auto; margin: 30px 0; border-radius: 12px; border: 1px solid rgba(73, 147, 117, 0.2); }
+        table { width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.03); }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid rgba(73, 147, 117, 0.1); font-size: 0.85rem; }
+        th { color: var(--primary); text-transform: uppercase; font-weight: 900; background: rgba(0, 84, 61, 0.3); }
+
+        /* --- FOOTER (EXATO DO INDEX) --- */
+        .main-footer { background: #001a13; padding: 60px 10% 30px; border-top: 1px solid rgba(73, 147, 117, 0.1); }
+        .footer-grid { display: flex; justify-content: flex-start; gap: 50px; flex-wrap: wrap; margin-bottom: 60px; }
+        .footer-brand { flex: 2; min-width: 280px; }
+        .footer-logo { height: 60px; margin-bottom: 20px; }
+        .footer-brand p { color: rgba(255,255,255,0.6); font-size: 11px; max-width: 300px; }
+        .footer-title { color: #fff; font-size: 1.1rem; font-weight: 700; margin-bottom: 25px; text-transform: uppercase; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 11px; transition: 0.3s; }
+        .footer-links a:hover { color: var(--primary); padding-left: 5px; }
+        .footer-col-nav { margin-left: auto; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .footer-bottom p { font-size: 11px; color: rgba(255,255,255,0.4); }
+        .legal-links a { font-size: 0.8rem; color: rgba(255,255,255,0.4); text-decoration: none; margin-left: 20px; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; z-index: 9999; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); text-decoration: none; transition: 0.3s; animation: pulse-whatsapp 2s infinite; }
+        .whatsapp-float:hover { transform: scale(1.1); background: #20ba5a; }
+        @keyframes pulse-whatsapp { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+        /* --- MENU FLUTUANTE ---
+           Barra destacada das rgba(73, 147, 117, 0.20)s, com cantos arredondados, que acompanha
+           o usuario em toda a navegacao e nao se esconde mais ao rolar.
+           IMPORTANTE: sem transform e sem backdrop-filter aqui. Os dois criam
+           containing block e prendem o painel do menu mobile (position: fixed)
+           dentro da area da barra. */
+        .main-header {
+            position: fixed;
+            height: auto;
+            padding: 9px 20px;
+            top: 14px;
+            left: 3%;
+            right: 3%;
+            width: auto;
+            border-radius: 18px;
+            border: 1px solid rgba(73, 147, 117, 0.20);
+            background: rgba(0, 30, 22, 0.94);
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+
+        /* O menu acompanha o usuario: a regra de esconder no scroll fica sem efeito. */
+        .main-header.header-hidden {
+            transform: none;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        @media (max-width: 1023px) {
+            .main-header {
+                top: 10px;
+                left: 3%;
+                right: 3%;
+                border-radius: 14px;
+                padding: 7px 14px;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+        }
+        /* --- PADRAO DE CORES DO MENU ---
+           Barra escura -> textos e logo sempre brancos. */
+        .main-header .nav-link:not(.active-box):not(.btn-store-header):not(.btn-green-box),
+        .main-header .mobile-menu-toggle { color: #ffffff; }
+        .main-header .header-logo img { filter: brightness(0) invert(1); }
+
+        /* Botoes do menu: verde escuro com texto branco em todos os modos.
+           Contorno leve para nao se confundir com a barra escura. */
+        .main-header .nav-link.active-box,
+        .main-header .btn-store-header,
+        .main-header .btn-green-box {
+            background: #00543d !important;
+            color: #ffffff !important;
+        }
+        .main-header .nav-link.active-box,
+        .main-header .btn-store-header,
+        .main-header .btn-green-box { border: 1px solid rgba(255,255,255,0.18); }
+        /* --- SEM PALAVRA SOZINHA NA LINHA ---
+           Nenhum texto do site pode quebrar deixando uma palavra orfa na
+           ultima linha. balance reparte as linhas em comprimentos parecidos
+           (bom para titulo curto); pretty evita a viuva no fim do paragrafo.
+           Navegador sem suporte ignora e quebra do jeito tradicional. */
+        h1, h2, h3, h4, h5, h6,
+        .giant-title, .title-chic, .section-title, .product-title,
+        .footer-title, .editorial-tag, .floating-tag, .step-card h3,
+        .diff-item h4, .science-box h4, .value-card h3, .card-content h3,
+        .property-card h3, .review-text, .big-quote h2, .cta-block h2,
+        .booking-copy h1, .booking-intro h1, .contact-info h1,
+        .policy-section h1, .policy-section h2, .faq-question,
+        .btn-more, .btn-read, .btn-main, .detail-list b, .stat-label {
+            text-wrap: balance;
+        }
+
+        p, li, figcaption, blockquote, .info-text, .product-description,
+        .section-lead, .section-head p, .text-reveal p, .photo-credit,
+        .article-meta, .author-box p, .consult-note, .review-author,
+        .booking-cta-note, .mini-review p, .footer-brand p, .footer-bottom p {
+            text-wrap: pretty;
+        }
+        /* --- LARGURA DA BARRA DO MENU ---
+           No desktop a barra passa a ter a largura do proprio conteudo:
+           comeca na borda do botao "Agendar Consulta" e termina na do
+           "Loja Exclusiva". Centralizada com margin auto, nunca com
+           translateX, que criaria containing block e prenderia o painel
+           do menu mobile. No celular ela continua ocupando a largura toda. */
+        @media (min-width: 1024px) {
+            .main-header {
+                left: 0;
+                right: 0;
+                width: fit-content;
+                max-width: 94%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .main-header .nav-group {
+                flex: 0 0 auto;
+                width: auto;
+                max-width: none;
+            }
+        }</style>
+</head>
+<body>
+    <a href="https://hubs.ly/Q04sNmtw0" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+
+    <header class="main-header">
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="nav-group" id="navGroupLeft">
+            <a href="/agendamento" class="nav-link active-box">Agendar Consulta</a>
+            <a href="/sobre-nos" class="nav-link">Sobre Nós</a>
+            <a href="/produtos" class="nav-link">Produtos</a>
+            <a href="/blog" class="nav-link">Blog</a>
+        </div>
+
+        <div class="header-logo">
+            <a href="/">
+                <img src="/logo.png" alt="Zeleno">
+            </a>
+        </div>
+
+        <div class="nav-group" id="mainNav">
+            <a href="/contato" class="nav-link">Contato</a>
+            <a href="/perguntas-frequentes" class="nav-link">Perguntas </a>
+            <a href="/para-medicos" class="nav-link">Para Médicos</a>
+            <a href="https://zelenostore.com/" class="btn-store-header">Loja Exclusiva</a>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        <section class="policy-section">
+            <h1>POLÍTICA DE PRIVACIDADE <br><span>E GESTÃO DE DADOS - Zeleno</span></h1>
+            
+            <p>A ZELENO (doravante "Zeleno" ou "Nós"), comprometida com a transparência, a ética e a segurança da informação, apresenta esta Política de Privacidade para informar como tratamos os dados pessoais de nossos pacientes, usuários e parceiros ("Titulares" ou "Você"). Nossa operação é pautada pelo estrito cumprimento da Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 – LGPD) e pelas normas setoriais de saúde e vigilância sanitária. 
+AO ACESSAR A OS CANAIS DA ZELENO, ENVIAR COMUNICAÇÕES OU FORNECER QUALQUER TIPO DE DADO PESSOAL, VOCÊ DECLARA ESTAR CIENTE COM RELAÇÃO AOS TERMOS AQUI PREVISTOS E DE ACORDO COM A POLÍTICA DE PRIVACIDADE, A QUAL DESCREVE AS FINALIDADES E FORMAS DE TRATAMENTO DE SEUS DADOS PESSOAIS QUE VOCÊ DISPONIBILIZAR PARA A ZELENO. 
+</p>
+
+   <h2>1. DEFINIÇÕES</h2>
+   <p>Para os fins desta Política de Privacidade, os termos abaixo, quando iniciados em letra maiúscula, terão os seguintes significados: 
+</p>
+            <p><strong>Dados Pessoais:</strong> significa qualquer informação que, direta ou indiretamente, identifique ou possa identificar uma pessoa natural, como por exemplo, nome, CPF, data de nascimento, endereço IP, dentre outros;  <br> </p>
+               <strong>Dados Pessoais Sensíveis: </strong> significa qualquer informação que revele, em relação a uma pessoa natural, origem racial ou étnica, convicção religiosa, opinião política, filiação a sindicato ou a organização de caráter religioso, filosófico ou político, dado referente à saúde ou à vida sexual, dado genético ou biométrico;  <br> </p>
+               <strong>Tratamento de Dados Pessoais:</strong> significa qualquer operação efetuada no âmbito dos Dados Pessoais, por meio de meios automáticos ou não, tal como a recolha, gravação, organização, estruturação, armazenamento, adaptação ou alteração, recuperação, consulta, utilização, divulgação por transmissão, disseminação ou, alternativamente, disponibilização, harmonização ou associação, restrição, eliminação ou destruição. Também é considerado Tratamento de Dados Pessoais qualquer outra operação prevista nos termos da legislação aplicável;  <br> </p>
+               <strong>Leis de Proteção de Dados:</strong> significa todas as disposições legais que regulem o Tratamento de Dados Pessoais, incluindo, porém sem se limitar, a Lei nº 13.709/18, Lei Geral de Proteção de Dados Pessoais (“LGPD”); </p>
+               <strong>Titular:</strong> pessoa natural a quem se referem os dados pessoais que são objeto de tratamento, referida nesta política como “Você” ou “Usuário”; </p>
+               <strong>Titular:</strong> pessoa natural a quem se referem os dados pessoais que são objeto de tratamento, referida nesta política como “Você” ou “Usuário”; </p>
+               <strong>Controlador:</strong>pessoa jurídica a quem competem as decisões referentes ao tratamento de dados pessoais, neste ato representada pela Zeleno; </p>
+               <strong>Encarregado (DPO):</strong>pessoa indicada pelo Controlador para atuar como canal de comunicação entre o controlador, os titulares dos dados e a Autoridade Nacional de Proteção de Dados (ANPD); </p>
+               <strong>Plataforma: </strong>designa o site, canais de atendimento, formulários e demais ambientes digitais operados pela Zeleno;  </p>
+               <strong>Autoridade Nacional de Proteção de Dados (ANPD):</strong>órgão da administração pública responsável por zelar, implementar e fiscalizar o cumprimento da LGPD em todo o território nacional.
+ </p>
+
+
+
+            <h2>2. CONTROLADOR E ENCARREGADO DE DADOS (DPO)</h2>
+            <p>A ZELENO atua como Controladora dos dados pessoais coletados neste site.</p>
+            <p><strong>Razão Social:</strong> DEUCHER SERVIÇOS DE APOIO ADMINISTRATIVO LTDA <br></p>
+               <strong>CNPJ:</strong> 43.879.753/0001-21 <br></p>
+               <strong>Encarregado de Dados (DPO):</strong> Laysla Silva <br></p>
+               <strong>Canal de Contato:</strong> atendimento@zelenomeds.com</p>
+
+            <h2>3. CATEGORIAS DE DADOS E BASES LEGAIS</h2>
+            <p>Tratamos seus dados apenas quando legitimamente amparados pela Lei Geral de Proteção de Dados (Lei n.º 13.709/2018)</p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Categoria de Dado</th>
+                            <th>Exemplos</th>
+                            <th>Finalidade</th>
+                            <th>Base Legal (LGPD)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dados Cadastrais</td>
+                            <td>Nome, CPF, e-mail, telefone, endereço.</td>
+                            <td>Identificação do paciente, viabilização de consultas e logística de entrega.</td>
+                            <td>Execução de Contrato (Art. 7º, V) e Obrigação Legal/Regulatória (Art. 7º, II)</td>
+                        </tr>
+                        <tr>
+                            <td>Dados Sensíveis(Saúde)</td>
+                            <td>Histórico clínico, sintomas, prescrições e laudos.</td>
+                            <td>Gestão terapêutica e cumprimento de requisitos da ANVISA.
+                            <td>Tutela da Saúde (Art. 11, II, "f") e Obrigação Regulatória (Art. 11, II, "a").</td>
+                        </tr>
+                        <tr>
+                            <td>Dados de Navegação</td>
+                            <td>Endereço IP, navegador e comportamento no site.</td>
+                            <td>Melhoria da experiência e segurança da plataforma.</td>
+                            <td>Legítimo Interesse (Art. 7º, IX) ou Consentimento (Art. 7º, I).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+            <h2>3. USO E COMPARTILHAMENTO DE DADOS PESSOAIS</h2>
+            <p>Coletamos e usamos Dados Pessoais para gerenciar seu relacionamento conosco e melhor atendê-lo quando você estiver adquirindo produtos e/ou serviços na Plataforma, personalizando e melhorando sua experiência. Exemplos de como usamos os dados incluem:</p>
+            <p><strong>I . </strong> Viabilizar que você adquiria produtos e/ou serviços;<br></p>
+               <strong>II . </strong>Para confirmar ou corrigir as informações que temos sobre você;<br></p>
+               <strong>III . </strong>Para enviar informações que acreditamos ser do seu interesse;<br></p>
+               <strong>IV . </strong>Para personalizar sua experiência de uso;</p>
+               <strong>V . </strong>Para personalizar o envio de publicidades para você, baseada em seu interesse;</p>
+               <strong>VI . </strong>Para entrarmos em contato por um número de telefone e/ou endereço de e-mail fornecido. Podemos entrar em contato com você pessoalmente, por mensagem de voz, através de equipamentos de discagem automática, por mensagens de texto (SMS), por e-mail, ou por qualquer outro meio de comunicação que seu dispositivo seja capaz de receber, nos termos da lei e para fins comerciais razoáveis.</p>
+
+               <p>Além disso, os Dados Pessoais fornecidos também podem ser utilizados na forma que julgarmos necessária ou adequada: (a) nos termos das Leis de Proteção de Dados; (b) para atender exigências de processo judicial; (c) para cumprir decisão judicial, decisão regulatória ou decisão de autoridades competentes, incluindo autoridades fora do país de residência; (d) para proteger nossas operações; (e) para proteger direitos, privacidade, segurança nossos, seus ou de terceiros; (f) para detectar e prevenir fraude; (g) permitir-nos usar as ações disponíveis ou limitar danos que venhamos a sofrer; (h) de outros modos permitidos por lei;
+A ZELENO não comercializa dados pessoais. O compartilhamento ocorre estritamente para a operação com:
+</p>
+
+               <strong>Profissionais de Saúde e Laboratórios: </strong>Para viabilizar o atendimento e manipulação.</p>
+               <strong>Órgãos Reguladores:  </strong>Notadamente a ANVISA, para autorizações de importação.</p>
+               <strong>Provedores de Tecnologia:  </strong>Armazenamento em nuvem com criptografia.</p>
+
+               <p>O compartilhamento de dados poderá se dar também para identificação do paciente, viabilização de consultas e logística de entrega de produtos.
+Para viabilizar a importação de produtos, os dados poderão ser transferidos para parceiros no exterior. A ZELENO garante que tais transferências ocorrem apenas para países que proporcionem grau de proteção de dados pessoais adequado ao previsto na LGPD, ou mediante a utilização de cláusulas contratuais padrão e salvaguardas específicas estabelecidas pela Autoridade Nacional de Proteção de Dados (ANPD). 
+</p>
+
+            <h2>4. SEGURANÇA E RETENÇÃO DE DADOS</h2>
+            <p >O público em geral poderá navegar na Plataforma sem necessidade de qualquer cadastro e envio de Dados Pessoais. No entanto, algumas das funcionalidades da Plataforma poderão depender de cadastro e envio de Dados Pessoais como concluir a compra/contratação do serviço e/ou a viabilizar a entrega do produto/prestação do serviço por nós.</p>
+            <P>No contato nós podemos coletar:</P>
+
+            <strong>I . </strong>Dados de contato. Nome, sobrenome, número de telefone, cidade, Estado e endereço de e-mail; </p>
+            <strong>II . </strong>Informações que você envia. Informações que você envia via formulário (dúvidas, reclamações, sugestões, críticas, elogios etc.).</p>
+
+            <p>Na navegação geral na Plataforma, nós poderemos coletar:</p>
+            <strong>I . </strong>Dados de localização. Dados de geolocalização quando você acessa a Plataforma; </p>
+            <strong>II . </strong>Preferências. Informações sobre suas preferências e interesses em relação aos produtos/serviços (quando você nos diz o que eles são ou quando os deduzimos do que sabemos sobre você);</p>
+            <strong>III . </strong>Dados de navegação na Plataforma. Informações sobre suas visitas e atividades na Plataforma, incluindo o conteúdo (e quaisquer anúncios) com os quais você visualiza e interage, informações sobre o navegador e o dispositivo que você está usando, seu endereço IP, sua localização, o endereço do site a partir do qual você chegou. Algumas dessas informações são coletadas usando nossas Ferramentas de Coleta Automática de Dados, que incluem cookies, web beacons e links da web incorporados. Para saber mais, leia como nós usamos Ferramentas de Coleta Automática de Dados no item 7 abaixo;</p>
+            <strong>IV . </strong>Dados anônimos ou agregados. Respostas anônimas para pesquisas ou informações anônimas e agregadas sobre como a Plataforma é usufruída. Durante nossas operações, em certos casos, aplicamos um processo de desidentificação ou pseudonimização aos seus dados para que seja razoavelmente improvável que você identifique você através do uso desses dados com a tecnologia disponível; </p>
+            <strong>V . </strong>Outras informações que podemos coletar. Outras informações que não revelem especificamente a sua identidade ou que não são diretamente relacionadas a um indivíduo, tais como informações sobre navegador e dispositivo; dados de uso da Plataforma; e informações coletadas por meio de cookies, pixel tags e outras tecnologias. </p>
+
+            <p>Adotamos medidas técnicas e administrativas para proteger seus dados de acessos não autorizados ou destruição. Isso inclui protocolos HTTPS e criptografia.</p>
+            <strong>Dados de Saúde: </strong>Serão armazenados pelo prazo necessário para a execução do tratamento terapêutico ou, quando aplicável por força de lei ou parcerias reguladas, pelo prazo de 20 anos conforme normas do Conselho Federal de Medicina. Dados Cadastrais e Financeiros: Serão mantidos pelo período de 5 (cinco) anos após o término da relação contratual, para fins de cumprimento de obrigação legal, exercício regular de direitos em processos judiciais ou exigências fiscais.</p>
+
+
+
+            <h2>5. DIREITOS DO TITULAR</h2>
+            <p>Você possui direitos garantidos pela LGPD, incluindo:</p>
+            <strong>Confirmar a existência de tratamento e acessar seus dados. </strong></p>
+            <strong>Corrigir dados incompletos ou desatualizados. </strong></p>
+            <strong>Solicitar a anonimização ou eliminação de dados desnecessários. </strong></p>
+            <strong>Revogar o consentimento a qualquer momento. </strong></p>
+
+            <p>Para exercer qualquer um dos direitos mencionados acima, o Titular deverá enviar uma requisição formal ao Encarregado de Dados (DPO) através dos canais de contato listados na Seção 2 desta Política. A ZELENO analisará a solicitação e responderá no prazo legal, observando eventuais obrigações de retenção que impeçam a exclusão imediata dos dados.
+O pedido de exclusão de dados de saúde será avaliado considerando a obrigatoriedade de guarda por 20 (vinte) anos estabelecida pelo Conselho Federal de Medicina (CFM), visto que a ZELENO possui parcerias com empresas reguladas por esse órgão.Você não é obrigado a compartilhar os Dados Pessoais que solicitamos, no entanto, se você optar por não os compartilhar, em alguns casos, não poderemos fornecer a você acesso completo à Plataforma, alguns recursos especializados ou ser capaz de prestar a assistência necessária ou, ainda, viabilizar a entrega do produto ou prestar o serviço contratado por você.</p>
+
+
+            <h2>6. POLÍTICA DE COOKIES </h2>
+            <p>Quando você visita a Plataforma, ela pode armazenar ou recuperar informações em seu navegador, seja na forma de cookies e de outras tecnologias semelhantes. Essas informações podem ser sobre você, suas preferências ou seu dispositivo e são usadas principalmente para que a Plataforma funcione como você espera. As informações geralmente não o identificam diretamente, mas podem oferecer uma experiência na internet mais personalizada.
+De acordo com esta Política de Privacidade, nós e nossos prestadores de serviços terceirizados podemos coletar seus Dados Pessoais de diversas formas, incluindo, entre outros: Por meio do navegador ou do dispositivo: Algumas informações são coletadas pela maior parte dos navegadores ou automaticamente por meio de dispositivos de acesso à internet, como o tipo de computador, resolução da tela, nome e versão do sistema operacional, modelo e fabricante do dispositivo, idioma, tipo e versão do navegador de Internet que está utilizando. Podemos utilizar essas informações para assegurar que a Plataforma funcione adequadamente. Uso de cookies: Os cookies permitem a coleta de informações tais como o tipo de navegador, o tempo dispendido na Plataforma, as páginas visitadas, as preferências de idioma, e outros dados de tráfego anônimos. Nós e nossos prestadores de serviços podemos utilizar essas informações para, dentre outros, personalizar sua experiência ao utilizar a Plataforma, assim como para direcionar publicidade para você, de acordo com os seus interesses. Também coletamos informações estatísticas sobre o uso da Plataforma para aprimoramento contínuo do nosso design e funcionalidade.
+Caso não deseje que suas informações sejam coletadas por meio de cookies, você pode configurar os cookies no menu "opções" ou "preferências" do seu browser. Nos links abaixo você encontra mais detalhes sobre como ajustar as preferências de cookies dos navegadores de internet mais populares: * Google Chrome * Mozilla Firefox * Safari * Internet Explorer * Microsoft Edge * Opera.Uso de pixel tags e outras tecnologias similares: Pixel tags (também conhecidos como Web beacons e GIFs invisíveis) podem ser utilizados para rastrear ações de usuários da Plataforma (incluindo destinatários de e-mails), medir o sucesso das nossas campanhas de marketing e coletar dados estatísticos sobre o uso da Plataforma e taxas de resposta. Em caso de ter ativa a personalização de anúncios em ferramentas como Facebook, Google ou Bing, a informação pode ser usada para mostrar anúncios em seus serviços. No caso de você não desejar ser rastreado pode pedir para cada um dos serviços. Podemos contratar empresas de publicidade comportamental, para obter relatórios sobre os anúncios da Plataforma em toda a internet. Para isso, essas empresas utilizam cookies, pixel tags e outras tecnologias para coletar informações sobre a sua utilização, ou sobre a utilização de outros usuários, da nossa Plataforma e de site de terceiros. Nós não somos responsáveis por pixel tags, cookies e outras tecnologias similares utilizadas por terceiros. Você pode configurar suas preferências no menu do seu browser. Esteja ciente de que se você mudar de computador ou navegador, ou usar vários computadores ou navegadores, você precisará repetir este processo para cada computador e cada navegador. Links de hipertexto para outros sites e redes sociais: A Plataforma poderá, de tempos a tempos, conter links de hipertexto que redirecionará você para sites das redes dos nossos parceiros, anunciantes, fornecedores etc. Se você clicar em um desses links para qualquer um desses sites, lembramos que cada sites possui as suas próprias práticas de privacidade e que não somos responsáveis por essas políticas. Consulte as referidas políticas antes de enviar quaisquer Dados Pessoais para esses sites. Não nos responsabilizamos pelas políticas e práticas de coleta, uso e divulgação (incluindo práticas de proteção de dados) de outras organizações, tais como Facebook, Apple, Google, Microsoft, ou de qualquer outro desenvolvedor de software ou provedor de aplicativo, Plataforma de mídia social, sistema operacional, prestador de serviços de internet sem fio ou fabricante de dispositivos, incluindo todos os Dados Pessoais que divulgar para outras organizações por meio dos aplicativos, relacionadas a tais aplicativos, ou publicadas em nossas páginas em mídias sociais. Nós recomendamos que você se informe sobre a política de privacidade de cada site visitado ou de cada prestador de serviço utilizado.
+</p>
+
+            <h2>7. ALTERAÇÕES </h2>
+            <p>Esta política pode ser atualizada periodicamente para refletir mudanças legislativas, regulatórias ou operacionais. Recomendamos a leitura regular.
+e modificarmos nossa Política de Privacidade, publicaremos o novo texto na Plataforma, com a data de revisão atualizada. Podemos alterar esta Política de Privacidade a qualquer momento. Caso haja alteração significativa nos termos dessa Política de Privacidade, podemos informá-lo por meio das informações de contato que tivermos em nosso banco de dados ou por meio de notificação em nossa Plataforma.
+Recordamos que nós temos como compromisso não tratar os seus Dados Pessoais de forma incompatível com os objetivos descritos acima, exceto se de outra forma requerido por lei ou ordem judicial.
+Sua utilização da Plataforma após as alterações significa que aceitou as Políticas de Privacidade revisadas. Caso, após a leitura da versão revisada, você não esteja de acordo com seus termos, favor encerrar o acesso à Plataforma.
+</p>
+
+
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/"><img src="/logo.png" alt="Zeleno Logo" class="footer-logo"></a>                    
+                <p>Impulsionando a evolução da cannabis medicinal com rigor científico, segurança e alto padrão de qualidade.</p>
+            </div>
+            <div class="footer-col footer-col-nav">
+                <h4 class="footer-title">Navegação</h4>
+                <ul class="footer-links">
+                    <li><a href="/sobre-nos">Sobre Nós</a></li>
+                    <li><a href="/produtos">Produtos</a></li>
+                    <li><a href="/contato">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">Suporte</h4>
+                <ul class="footer-links">
+                    <li><a href="/perguntas-frequentes">Dúvidas Frequentes</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/politica-de-privacidade">Privacidade</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ZELENO PREMIUM CANNABIS. Todos os direitos reservados.</p>
+            <div class="legal-links"><a href="/politica-de-privacidade">Termos</a><a href="/politica-de-privacidade">Privacidade</a></div>
+            <div class="footer-seal" style="display: flex; justify-content: flex-end; align-items: center;">
+                <div id="ra-verified-seal"><script type="text/javascript" id="ra-embed-verified-seal" src="https://s3.amazonaws.com/raichu-beta/ra-verified/bundle.js" data-id="VXlMMVBFOG5BYkUyTk5NMjp6ZWxlbm8tbWVkcw==" data-target="ra-verified-seal" data-model="horizontal_1"></script></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mainNav = document.getElementById('mainNav');
+        const navLeft = document.getElementById('navGroupLeft');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            const icon = mobileMenuToggle.querySelector('i');
+            if (!mainNav.classList.contains('active')) {
+                if (window.innerWidth <= 1023) {
+                    const linksLeft = Array.from(navLeft.querySelectorAll('.nav-link')).reverse();
+                    linksLeft.forEach((link, index) => {
+                        const originalIndex = linksLeft.length - 1 - index;
+                        if (!mainNav.querySelector(`.cloned-${originalIndex}`)) {
+                            const clone = link.cloneNode(true);
+                            clone.classList.add('cloned-link', `cloned-${originalIndex}`);
+                            mainNav.prepend(clone);
+                        }
+                    });
+                }
+                mainNav.classList.add('active');
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                mainNav.classList.remove('active');
+                icon.classList.replace('fa-times', 'fa-bars');
+                mainNav.querySelectorAll('.cloned-link').forEach(el => el.remove());
+            }
+        });
+    </script>
+
+<!-- ============ ZELENO HEATMAP • coletor embutido ============ -->
+<!-- Para desativar, remova deste comentario ate o </script> abaixo. -->
+<script>
+(function () {
+  'use strict';
+
+  /* ----------------------- CONFIGURAÇÃO ----------------------------- */
+  var CFG = {
+    APP_URL: 'https://script.google.com/macros/s/AKfycbzAqAqZbnHQVVTzHuWEpUrQDVUVpSJOZLE886lWA2aBOyCh6HyyVdZIM3rUJAZVfm7z/exec',
+
+    AMOSTRAGEM:        1.0,    // 1.0 = 100% dos visitantes. Use 0.3 p/ 30%.
+    CAPTURAR_MOVIMENTO:false,  // true = mapa de movimento do mouse (mais pesado)
+    CAPTURAR_SCROLL:   true,   // profundidade de rolagem por página
+    BATCH_TAMANHO:     12,     // envia quando acumula N eventos
+    BATCH_INTERVALO:   6000,   // ...ou a cada N ms
+    MOV_INTERVALO:     220,    // amostra de movimento a cada N ms
+    RESPEITAR_DNT:     false,  // true = não rastreia quem tem Do-Not-Track
+    DEBUG:             true    // true = mostra logs no Console (deixe false em produção)
+  };
+  /* ------------------------------------------------------------------ */
+
+  if (CFG.RESPEITAR_DNT && (navigator.doNotTrack === '1' || window.doNotTrack === '1')) return;
+  if (Math.random() > CFG.AMOSTRAGEM) return;
+  if (!CFG.APP_URL || CFG.APP_URL.indexOf('SEU_ID') > -1) {
+    console.warn('[Zeleno Heatmap] Configure APP_URL no zeleno-heatmap.js');
+    return;
+  }
+
+  console.log('%c[Zeleno Heatmap] ✅ ativo nesta página', 'color:#499375;font-weight:bold');
+
+  var fila = [];
+  var timer = null;
+
+  /* --------------------------- Sessão ------------------------------- */
+  function uid() {
+    return 'z' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+  }
+  var SID = (function () {
+    try {
+      var s = sessionStorage.getItem('zh_sid');
+      if (!s) { s = uid(); sessionStorage.setItem('zh_sid', s); }
+      return s;
+    } catch (e) { return uid(); }
+  })();
+
+  // visitante_id: PERSISTENTE (localStorage) — sobrevive entre visitas.
+  // Serve p/ distinguir visitante novo (1 sessão) de recorrente (2+ sessões).
+  var VID = (function () {
+    try {
+      var v = localStorage.getItem('zh_vid');
+      if (!v) { v = uid(); localStorage.setItem('zh_vid', v); }
+      return v;
+    } catch (e) { return SID; }
+  })();
+
+  /* ------------------------ Dimensões/Device ------------------------ */
+  function docW() {
+    return Math.max(document.documentElement.scrollWidth, document.body ? document.body.scrollWidth : 0, window.innerWidth);
+  }
+  function docH() {
+    return Math.max(document.documentElement.scrollHeight, document.body ? document.body.scrollHeight : 0, window.innerHeight);
+  }
+  function dispositivo() {
+    var w = window.innerWidth;
+    if (w < 768)  return 'mobile';
+    if (w < 1024) return 'tablet';
+    return 'desktop';
+  }
+
+  /* ----------------- Caminho CSS do elemento clicado ---------------- */
+  function seletor(el) {
+    if (!el || el.nodeType !== 1) return '';
+    var partes = [], prof = 0;
+    while (el && el.nodeType === 1 && prof < 6) {
+      var nome = el.nodeName.toLowerCase();
+      if (el.id) { partes.unshift('#' + el.id); break; }
+      var cls = (el.className && typeof el.className === 'string')
+        ? '.' + el.className.trim().split(/\s+/).slice(0, 2).join('.')
+        : '';
+      var i = 1, irmao = el;
+      while ((irmao = irmao.previousElementSibling)) {
+        if (irmao.nodeName.toLowerCase() === nome) i++;
+      }
+      partes.unshift(nome + cls + ':nth-of-type(' + i + ')');
+      el = el.parentElement; prof++;
+    }
+    return partes.join(' > ');
+  }
+
+  function textoDe(el) {
+    var t = (el.innerText || el.textContent || '').replace(/\s+/g, ' ').trim();
+    if (!t && el.getAttribute) t = el.getAttribute('aria-label') || el.getAttribute('alt') || el.getAttribute('title') || '';
+    return t.slice(0, 80);
+  }
+
+  /* --------------------------- Envio -------------------------------- */
+  function enviar() {
+    if (!fila.length) return;
+    var lote = fila.splice(0, fila.length);
+    var corpo = JSON.stringify(lote);
+    if (CFG.DEBUG) console.log('[Zeleno Heatmap] enviando', lote.length, 'evento(s) →', CFG.APP_URL);
+    // fetch no-cors + keepalive: entrega de forma confiável (segue o redirect
+    // do Apps Script) e sobrevive ao fechamento da aba. Sem sendBeacon p/
+    // evitar duplicidade e problemas de redirect.
+    try {
+      fetch(CFG.APP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        keepalive: true,
+        headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+        body: corpo
+      }).catch(function () {});
+    } catch (e) {
+      // último recurso, caso keepalive não seja suportado
+      try {
+        var blob = new Blob([corpo], { type: 'text/plain;charset=UTF-8' });
+        if (navigator.sendBeacon) navigator.sendBeacon(CFG.APP_URL, blob);
+      } catch (e2) {}
+    }
+  }
+
+  function agendar() {
+    if (fila.length >= CFG.BATCH_TAMANHO) { clearTimeout(timer); timer = null; enviar(); return; }
+    if (!timer) timer = setTimeout(function () { timer = null; enviar(); }, CFG.BATCH_INTERVALO);
+  }
+
+  function registrar(ev) {
+    ev.criado_em    = new Date().toISOString();
+    ev.sessao_id    = SID;
+    ev.visitante_id = VID;
+    ev.pagina       = location.pathname || '/';
+    ev.url_completa = location.href;
+    ev.vp_w         = window.innerWidth;
+    ev.vp_h         = window.innerHeight;
+    ev.dispositivo  = dispositivo();
+    fila.push(ev);
+    if (CFG.DEBUG) console.log('[Zeleno Heatmap] capturado:', ev.tipo, ev.texto || ev.seletor || '', '| fila:', fila.length);
+    agendar();
+  }
+
+  /* --------------------------- Cliques ------------------------------ */
+  var historico = [];
+  function ehRage(x, y, t) {
+    historico = historico.filter(function (h) { return t - h.t < 1500; });
+    historico.push({ x: x, y: y, t: t });
+    var n = 0;
+    for (var i = 0; i < historico.length; i++) {
+      var dx = historico[i].x - x, dy = historico[i].y - y;
+      if (dx * dx + dy * dy < 50 * 50) n++;
+    }
+    return n >= 3;
+  }
+
+  document.addEventListener('click', function (e) {
+    var dw = docW(), dh = docH();
+    var alvo = e.target;
+    var link = alvo && alvo.closest ? alvo.closest('a') : null;
+    var rage = ehRage(e.pageX, e.pageY, Date.now());
+
+    registrar({
+      tipo:   'clique',                 // rage também é clique; flag separada abaixo
+      page_x: Math.round(e.pageX),
+      page_y: Math.round(e.pageY),
+      x_frac: dw ? +(e.pageX / dw).toFixed(5) : null,
+      y_frac: dh ? +(e.pageY / dh).toFixed(5) : null,
+      doc_w:  dw,
+      doc_h:  dh,
+      seletor: seletor(alvo),
+      tag:    alvo ? alvo.nodeName.toLowerCase() : null,
+      texto:  alvo ? textoDe(alvo) : null,
+      href:   link ? link.getAttribute('href') : null,
+      rage:   rage
+    });
+  }, true);
+
+  /* ------------------------ Movimento (opcional) -------------------- */
+  if (CFG.CAPTURAR_MOVIMENTO) {
+    var ultMov = 0;
+    document.addEventListener('mousemove', function (e) {
+      var agora = Date.now();
+      if (agora - ultMov < CFG.MOV_INTERVALO) return;
+      ultMov = agora;
+      var dw = docW(), dh = docH();
+      registrar({
+        tipo:   'movimento',
+        page_x: Math.round(e.pageX),
+        page_y: Math.round(e.pageY),
+        x_frac: dw ? +(e.pageX / dw).toFixed(5) : null,
+        y_frac: dh ? +(e.pageY / dh).toFixed(5) : null,
+        doc_w:  dw,
+        doc_h:  dh,
+        rage:   false
+      });
+    }, { passive: true });
+  }
+
+  /* ----------------------- Profundidade de scroll ------------------- */
+  var maxScroll = 0, scrollEnviado = false;
+  if (CFG.CAPTURAR_SCROLL) {
+    window.addEventListener('scroll', function () {
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+      var alcance = docH() - window.innerHeight;
+      var pct = alcance > 0 ? Math.round((st / alcance) * 100) : 100;
+      if (pct > maxScroll) maxScroll = Math.min(100, pct);
+    }, { passive: true });
+  }
+  function enviarScroll() {
+    if (!CFG.CAPTURAR_SCROLL || scrollEnviado) return;
+    scrollEnviado = true;
+    registrar({ tipo: 'scroll', scroll_pct: maxScroll, doc_h: docH(), rage: false });
+  }
+
+  /* ------------------ Flush ao sair / trocar de aba ----------------- */
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'hidden') { enviarScroll(); enviar(); }
+  });
+  window.addEventListener('pagehide', function () { enviarScroll(); enviar(); });
+  window.addEventListener('beforeunload', function () { enviarScroll(); enviar(); });
+})();
+</script>
+<!-- ============ fim ZELENO HEATMAP ============ -->
+    <script src="agendamento-modal.js" defer></script>
+</body>
+</html>
