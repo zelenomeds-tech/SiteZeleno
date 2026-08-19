@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-53QCQY7DLP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-53QCQY7DLP');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <link rel="icon" type="image/png" href="/fav.png">
+    <title>Como a Zeleno transforma burocracia em cuidado | ZELENO Journal</title>
+    <meta name="description" content="Carlos Jeronymo, CGO da Zeleno Meds, detalha a jornada de quem busca tratamento com cannabis medicinal no Brasil e explica por que o acompanhamento é a etapa mais importante de todas.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="ZELENO Journal">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Como a Zeleno transforma burocracia em cuidado | ZELENO Journal">
+    <meta property="og:description" content="Carlos Jeronymo, CGO da Zeleno Meds, detalha a jornada de quem busca tratamento com cannabis medicinal no Brasil e explica por que o acompanhamento é a etapa mais importante de todas.">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #499375;
+            --accent: #499375;
+            --bg-dark: #f4f7f6;
+            --zeleno-dark: #00543d;
+            --glass: rgba(0, 84, 61, 0.05);
+            --transition: cubic-bezier(0.85, 0, 0.15, 1);
+            --text-main: #00543d;
+            --text-light: #4a5d58;
+        }
+
+        /* --- CUSTOM SCROLLBAR --- */
+        * { scrollbar-width: thin; scrollbar-color: var(--zeleno-dark) #e0e6e4; }
+        ::-webkit-scrollbar { width: 10px; height: 10px; }
+        ::-webkit-scrollbar-track { background: #e0e6e4; }
+        ::-webkit-scrollbar-thumb { background: var(--zeleno-dark); border-radius: 10px; border: 2px solid #e0e6e4; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        body {
+            background: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.4;
+        }
+
+        /* --- HEADER --- */
+        .main-header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            display: flex; align-items: center; justify-content: center;
+            padding: 20px 4%; z-index: 10000;
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 84, 61, 0.1);
+            height: 100px;
+        }
+
+        .header-logo {
+            position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 10002;
+        }
+        .header-logo img {
+            height: 50px; width: auto; display: block;
+            filter: brightness(0) saturate(100%) invert(14%) sepia(85%) saturate(543%) hue-rotate(120deg) brightness(91%) contrast(101%);
+        }
+
+        .nav-group {
+            display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1600px;
+        }
+
+        .nav-side { display: flex; align-items: center; gap: 30px; flex: 1; }
+        .nav-side.left { justify-content: flex-end; padding-right: 120px; }
+        .nav-side.right { justify-content: flex-start; padding-left: 120px; }
+
+        .nav-link {
+            color: var(--zeleno-dark); text-decoration: none; text-transform: uppercase;
+            font-size: 12px; font-weight: 700; letter-spacing: 1.5px; transition: 0.3s; white-space: nowrap;
+        }
+        .nav-link:hover { color: var(--primary); }
+        .nav-link.active-box { background: var(--zeleno-dark); color: #ffffff; padding: 10px 20px; border-radius: 4px; font-weight: 900; }
+        .btn-store-header { background: var(--zeleno-dark); color: #ffffff; text-decoration: none; text-transform: uppercase; font-size: 12px; font-weight: 900; padding: 10px 20px; border-radius: 4px; white-space: nowrap; }
+
+        .mobile-menu-toggle { display: none; background: none; border: none; color: var(--zeleno-dark); font-size: 26px; cursor: pointer; z-index: 10001; }
+
+        /* --- MAIN CONTENT --- */
+        .main-wrapper { position: relative; width: 100%; overflow: hidden; padding-bottom: 60px; }
+
+        .super-hero { padding: 180px 5% 40px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .floating-tag { border: 1px solid var(--zeleno-dark); color: var(--zeleno-dark); padding: 5px 15px; border-radius: 30px; font-size: 10px; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px; }
+
+        .giant-title {
+            font-size: clamp(2.2rem, 8vw, 6rem);
+            font-weight: 200;
+            line-height: 0.9;
+            text-transform: uppercase;
+            color: var(--zeleno-dark);
+            position: relative;
+            letter-spacing: -1px;
+        }
+        .giant-title b {
+            color: var(--primary);
+            font-weight: 900;
+            display: block;
+        }
+
+        .article-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto 40px; padding: 0 5%; align-items: center; }
+        .img-reveal { position: relative; width: 100%; height: 500px; border-radius: 20px; overflow: hidden; box-shadow: 0 30px 60px rgba(0, 84, 61, 0.1); }
+        .img-reveal img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; filter: grayscale(80%) contrast(1.1); transition: 1s var(--transition); }
+        .img-reveal:hover img { filter: grayscale(0%) contrast(1); transform: scale(1.05); }
+
+        /* Legenda da foto do entrevistado. */
+        .photo-credit { margin-top: 14px; font-size: 0.8rem; font-style: italic; font-weight: 300; color: var(--text-light); text-align: center; }
+
+        .text-reveal { max-width: 500px; }
+        .text-reveal h3 { font-size: 2.2rem; font-weight: 200; margin-bottom: 20px; line-height: 1.1; color: var(--zeleno-dark); }
+        .text-reveal h3 b { font-weight: 700; color: var(--primary); }
+        .text-reveal p { font-size: 1.05rem; font-weight: 300; color: var(--text-light); margin-bottom: 15px; }
+
+        /* Cabecalho centralizado que abre cada bloco da entrevista. */
+        .section-head { max-width: 1200px; margin: 90px auto 0; padding: 0 5%; text-align: center; }
+        .section-head h2 { font-size: 2.4rem; font-weight: 900; color: var(--zeleno-dark); line-height: 1.1; margin-bottom: 15px; }
+        .section-head h2 span { color: var(--primary); }
+        .section-head p { color: var(--text-light); font-weight: 300; font-size: 1.05rem; max-width: 720px; margin: 0 auto; }
+
+        .molecular-grid { max-width: 1200px; margin: 40px auto 0; padding: 0 5%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .molecular-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+        .molecular-grid.cols-2 { grid-template-columns: repeat(2, 1fr); max-width: 900px; }
+        .science-box { background: #ffffff; padding: 35px; position: relative; overflow: hidden; transition: 0.5s; border: 1px solid rgba(0, 84, 61, 0.05); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+        .science-box:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0, 84, 61, 0.08); }
+        .science-box i { font-size: 2.2rem; color: var(--primary); margin-bottom: 20px; display: block; }
+        .science-box h4 { font-size: 1.2rem; color: var(--zeleno-dark); text-transform: uppercase; margin-bottom: 15px; font-weight: 900; }
+        .science-box p { font-size: 0.9rem; color: var(--text-light); font-weight: 300; }
+
+        .system-section { max-width: 1200px; margin: 40px auto 0; padding: 0 5%; display: flex; flex-direction: column; align-items: center; }
+        /* Este artigo tem uma foto so, entao os blocos de lista ficam em coluna unica. */
+        .system-content { display: grid; grid-template-columns: 1fr; max-width: 820px; }
+        .system-text p { color: var(--text-light); font-weight: 300; margin-bottom: 20px; font-size: 1.1rem; }
+
+        .detail-list { list-style: none; margin-top: 10px; }
+        .detail-list li { margin-bottom: 25px; display: flex; align-items: flex-start; gap: 15px; }
+        .detail-list i { color: var(--primary); margin-top: 6px; }
+        .detail-list span { color: var(--text-light); font-weight: 300; font-size: 1.05rem; }
+        .detail-list b { color: var(--zeleno-dark); display: block; margin-bottom: 5px; font-size: 1.1rem; }
+
+        .big-quote { padding: 40px 5%; text-align: center; max-width: 1000px; margin: 60px auto; }
+        .big-quote i { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; opacity: 0.5; display: block; }
+        .big-quote h2 { font-size: 2.2rem; font-weight: 200; line-height: 1.2; font-style: italic; color: var(--zeleno-dark); }
+
+        /* Nome de pessoa linkado dentro do texto: herda a cor do paragrafo para nao
+           criar contraste fraco, e o sublinhado sinaliza que e clicavel. */
+        .person-link { color: inherit; text-decoration: underline; text-underline-offset: 3px; transition: 0.3s; }
+        .person-link:hover { color: var(--primary); }
+
+        /* --- QUEBRA DE LINHA --- */
+        /* balance reparte as palavras entre as linhas em vez de deixar uma ou duas
+           sozinhas na ultima; pretty faz o mesmo no fim dos paragrafos. Navegador
+           que nao suporta simplesmente ignora e quebra do jeito tradicional. */
+        .giant-title,
+        .text-reveal h3,
+        .section-head h2,
+        .science-box h4,
+        .big-quote h2,
+        .cta-block h2,
+        .detail-list b {
+            text-wrap: balance;
+        }
+
+        .section-head p,
+        .text-reveal p,
+        .science-box p,
+        .detail-list span,
+        .cta-block p,
+        .photo-credit {
+            text-wrap: pretty;
+        }
+
+        /* Palavra longa em coluna estreita quebra em vez de ser cortada pelo overflow. */
+        .science-box h4 { overflow-wrap: break-word; }
+
+        /* --- CHAMADA FINAL --- */
+        .cta-block { max-width: 900px; margin: 40px auto 20px; padding: 60px 8%; text-align: center; background: #ffffff; border: 1px solid rgba(0, 84, 61, 0.06); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+        .cta-block h2 { font-size: 2rem; font-weight: 900; color: var(--zeleno-dark); margin-bottom: 15px; line-height: 1.15; }
+        .cta-block p { color: var(--text-light); font-weight: 300; font-size: 1.05rem; margin-bottom: 30px; }
+        .btn-main { background: var(--zeleno-dark); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 50px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; font-size: 12px; transition: 0.3s; display: inline-block; }
+        .btn-main:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0, 84, 61, 0.18); }
+        .cta-block .signature { margin: 25px 0 0; font-style: italic; color: var(--primary); font-weight: 400; }
+
+        /* --- FOOTER --- */
+        .main-footer { background: #ffffff; padding: 60px 10% 20px; border-top: 1px solid rgba(0, 84, 61, 0.1); position: relative; z-index: 70; }
+        .footer-grid { display: flex; justify-content: flex-start; gap: 50px; max-width: 1200px; margin: 0 auto 60px auto; flex-wrap: wrap; }
+        .footer-brand { flex: 2; min-width: 280px; }
+        .footer-brand .footer-logo { height: 60px; margin-bottom: 20px; filter: brightness(0) saturate(100%) invert(14%) sepia(85%) saturate(543%) hue-rotate(120deg) brightness(91%) contrast(101%); }
+        .footer-brand p { color: var(--text-light); font-size: 11px; line-height: 1.6; max-width: 300px; }
+        .footer-title { color: var(--zeleno-dark); font-size: 1.1rem; font-weight: 700; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 8px; }
+        .footer-links a { color: var(--text-light); text-decoration: none; font-size: 11px; transition: 0.3s; }
+        .footer-links a:hover { color: var(--primary); padding-left: 5px; }
+        .social-links { display: flex; gap: 20px; margin-top: 25px; }
+        .social-links a { color: var(--zeleno-dark); font-size: 22px; transition: 0.3s; text-decoration: none; }
+
+        @media (max-width: 1023px) {
+            .main-header { justify-content: space-between; padding: 10px 6%; height: 80px; }
+            .mobile-menu-toggle { display: block; position: relative; }
+            .header-logo { position: relative; left: auto; top: auto; transform: none; margin: 0; }
+            .header-logo img { height: 35px; }
+            .nav-group { position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background: #f4f7f6; flex-direction: column; justify-content: center; align-items: center; gap: 30px; transition: 0.5s; z-index: 10000; }
+            .nav-side { flex-direction: column; gap: 30px; padding: 0 !important; flex: none; }
+            .nav-group.active { right: 0; }
+        }
+
+        @media (max-width: 900px) {
+            .article-intro { grid-template-columns: 1fr; gap: 20px; }
+            .img-reveal { height: 380px; }
+            .molecular-grid, .molecular-grid.cols-4, .molecular-grid.cols-2 { grid-template-columns: 1fr; margin: 30px auto 0; }
+            .giant-title { font-size: 2.2rem; }
+            .section-head { margin-top: 70px; }
+            .section-head h2 { font-size: 1.8rem; }
+            .cta-block h2 { font-size: 1.5rem; }
+            .big-quote h2 { font-size: 1.5rem; }
+            .main-footer { padding: 60px 5% 30px !important; text-align: center !important; }
+            .footer-grid { flex-direction: column !important; align-items: center !important; gap: 40px !important; }
+            .footer-brand { display: flex; flex-direction: column; align-items: center; text-align: center; min-width: auto !important; flex: none !important; }
+            .footer-brand p { margin: 0 auto !important; }
+            .footer-col { margin-left: 0 !important; width: 100%; }
+            .footer-links { padding: 0 !important; text-align: center !important; list-style: none !important; }
+            .footer-links li { text-align: center !important; }
+            .footer-links a { display: inline-block !important; margin: 0 auto 8px !important; padding-left: 0 !important; }
+            .footer-bottom { flex-direction: column-reverse !important; text-align: center !important; justify-content: center !important; }
+        }
+
+        .header-controls-floating {
+            position: fixed;
+            left: 30px;
+            bottom: 30px;
+            z-index: 10003;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-language-toggle {
+            background: transparent;
+            border: 1px solid var(--zeleno-dark);
+            color: var(--zeleno-dark);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 10px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-language-toggle:hover { background: var(--zeleno-dark); color: #ffffff; }
+
+        .btn-theme-toggle {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: 1px solid var(--zeleno-dark);
+            color: var(--zeleno-dark);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .btn-theme-toggle:hover { background: var(--zeleno-dark); color: #ffffff; }
+
+        body.dark-mode { background: #081711; color: #e8f5ef; }
+
+        body.dark-mode .main-header {
+            background: rgba(8, 23, 17, 0.92);
+            border-bottom-color: rgba(255, 255, 255, 0.08);
+        }
+
+        body.dark-mode .header-logo img,
+        body.dark-mode .footer-brand .footer-logo {
+            filter: brightness(0) invert(1);
+        }
+
+        body.dark-mode .nav-link,
+        body.dark-mode .footer-title,
+        body.dark-mode .giant-title,
+        body.dark-mode .text-reveal h3,
+        body.dark-mode .section-head h2,
+        body.dark-mode .science-box h4,
+        body.dark-mode .detail-list b,
+        body.dark-mode .cta-block h2 {
+            color: #ffffff;
+        }
+
+        body.dark-mode .nav-link.active-box,
+        body.dark-mode .btn-store-header,
+        body.dark-mode .btn-main {
+            color: #ffffff;
+        }
+
+        body.dark-mode .floating-tag,
+        body.dark-mode .btn-language-toggle,
+        body.dark-mode .btn-theme-toggle {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        body.dark-mode .btn-language-toggle:hover,
+        body.dark-mode .btn-theme-toggle:hover {
+            background: #ffffff;
+            color: var(--zeleno-dark);
+        }
+
+        body.dark-mode .main-wrapper,
+        body.dark-mode .main-footer { background: #081711; }
+
+        body.dark-mode .science-box,
+        body.dark-mode .cta-block,
+        body.dark-mode .main-footer { border-color: rgba(255, 255, 255, 0.08); }
+
+        body.dark-mode .science-box,
+        body.dark-mode .cta-block {
+            background: #0e241b;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+        }
+
+        body.dark-mode .science-box:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.28); }
+
+        body.dark-mode .text-reveal p,
+        body.dark-mode .science-box p,
+        body.dark-mode .section-head p,
+        body.dark-mode .system-text p,
+        body.dark-mode .detail-list span,
+        body.dark-mode .photo-credit,
+        body.dark-mode .cta-block p,
+        body.dark-mode .footer-brand p,
+        body.dark-mode .footer-links a,
+        body.dark-mode .main-footer p,
+        body.dark-mode .big-quote h2 {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        body.dark-mode .person-link:hover { color: #ffffff; }
+        body.dark-mode .cta-block .signature { color: var(--primary); }
+        body.dark-mode .img-reveal { box-shadow: 0 30px 60px rgba(0, 0, 0, 0.28); }
+
+        @media (max-width: 768px) {
+            .header-controls-floating { left: 20px; bottom: 20px; }
+        }
+    
+        /* --- MENU FLUTUANTE ---
+           Mesma barra destacada do resto do site. Sem transform e sem
+           backdrop-filter: os dois criam containing block e prenderiam o
+           painel do menu mobile (position: fixed) na area da barra. */
+        .main-header {
+            padding: 9px 20px;
+            top: 14px;
+            left: 3%;
+            right: 3%;
+            width: auto;
+            height: auto;
+            border-radius: 18px;
+            border: 1px solid rgba(0, 84, 61, 0.10);
+            border-bottom: 1px solid rgba(0, 84, 61, 0.10);
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 12px 34px rgba(0, 38, 27, 0.13);
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+
+        @media (max-width: 1023px) {
+            .main-header {
+                top: 10px;
+                left: 3%;
+                right: 3%;
+                border-radius: 14px;
+                padding: 7px 14px;
+            }
+            body.dark-mode .nav-group { background: #081711; }
+        }
+        /* --- SEM PALAVRA SOZINHA NA LINHA ---
+           Nenhum texto do site pode quebrar deixando uma palavra orfa na
+           ultima linha. balance reparte as linhas em comprimentos parecidos
+           (bom para titulo curto); pretty evita a viuva no fim do paragrafo.
+           Navegador sem suporte ignora e quebra do jeito tradicional. */
+        h1, h2, h3, h4, h5, h6,
+        .giant-title, .title-chic, .section-title, .product-title,
+        .footer-title, .editorial-tag, .floating-tag, .step-card h3,
+        .diff-item h4, .science-box h4, .value-card h3, .card-content h3,
+        .property-card h3, .review-text, .big-quote h2, .cta-block h2,
+        .booking-copy h1, .booking-intro h1, .contact-info h1,
+        .policy-section h1, .policy-section h2, .faq-question,
+        .btn-more, .btn-read, .btn-main, .detail-list b, .stat-label {
+            text-wrap: balance;
+        }
+
+        p, li, figcaption, blockquote, .info-text, .product-description,
+        .section-lead, .section-head p, .text-reveal p, .photo-credit,
+        .article-meta, .author-box p, .consult-note, .review-author,
+        .booking-cta-note, .mini-review p, .footer-brand p, .footer-bottom p {
+            text-wrap: pretty;
+        }
+        /* --- DESTAQUES DOS TITULOS ---
+           As palavras-chave dos titulos ficam no verde escuro oficial (#00543d).
+           Onde o titulo inteiro ja era 900, o peso base cai para 300: senao o
+           destaque sumiria, por ficar identico ao restante da linha. */
+        .giant-title b, .giant-title span,
+        .text-reveal h3 b,
+        .section-head h2 span,
+        .system-text h2 span,
+        .stat-box strong {
+            color: #00543d;
+        }
+
+        .section-head h2,
+        .system-text h2 { font-weight: 300; }
+        .section-head h2 span,
+        .system-text h2 span { font-weight: 900; }
+
+        /* No modo escuro o verde escuro nao tem leitura sobre o fundo quase
+           preto: o destaque volta para o verde institucional claro. */
+        body.dark-mode .giant-title b, body.dark-mode .giant-title span,
+        body.dark-mode .text-reveal h3 b,
+        body.dark-mode .section-head h2 span,
+        body.dark-mode .system-text h2 span,
+        body.dark-mode .stat-box strong {
+            color: #499375;
+        }
+        /* --- DATA E AUTORIA (E-E-A-T) ---
+           Herda a cor do bloco e so reduz a opacidade, para funcionar tanto
+           nos artigos de fundo claro quanto nos de fundo escuro. */
+        .article-meta {
+            margin-top: 22px;
+            font-size: 0.82rem;
+            font-weight: 300;
+            opacity: 0.75;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            text-align: center;
+            text-wrap: pretty;
+        }
+        /* --- BOTOES FLUTUANTES DE TEMA E IDIOMA ---
+           Eles ficam sobre o conteudo da pagina, nao sobre a barra do menu,
+           entao nao podem depender do estado dela: ganham fundo proprio e
+           passam a ter contraste sobre qualquer coisa que esteja atras. */
+        .btn-theme-toggle,
+        .btn-language-toggle {
+            background: rgba(255, 255, 255, 0.94) !important;
+            border: 1px solid rgba(0, 84, 61, 0.20) !important;
+            color: #00543d !important;
+            box-shadow: 0 6px 18px rgba(0, 38, 27, 0.12);
+            text-shadow: none !important;
+        }
+
+        .btn-theme-toggle:hover,
+        .btn-language-toggle:hover {
+            background: #00543d !important;
+            border-color: #00543d !important;
+            color: #ffffff !important;
+        }
+
+        body.dark-mode .btn-theme-toggle,
+        body.dark-mode .btn-language-toggle {
+            background: rgba(14, 36, 27, 0.94) !important;
+            border-color: rgba(255, 255, 255, 0.22) !important;
+            color: #ffffff !important;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+        }
+
+        body.dark-mode .btn-theme-toggle:hover,
+        body.dark-mode .btn-language-toggle:hover {
+            background: #ffffff !important;
+            border-color: #ffffff !important;
+            color: #00543d !important;
+        }
+        /* --- LARGURA DA BARRA DO MENU ---
+           No desktop a barra passa a ter a largura do proprio conteudo:
+           comeca na borda do botao "Agendar Consulta" e termina na do
+           "Loja Exclusiva". Centralizada com margin auto, nunca com
+           translateX, que criaria containing block e prenderia o painel
+           do menu mobile. No celular ela continua ocupando a largura toda. */
+        @media (min-width: 1024px) {
+            .main-header {
+                left: 0;
+                right: 0;
+                width: fit-content;
+                max-width: 94%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .main-header .nav-group {
+                flex: 0 0 auto;
+                width: auto;
+                max-width: none;
+            }
+        }</style>
+</head>
+<body>
+
+    <div class="header-controls-floating">
+        <button id="themeToggle" class="btn-theme-toggle" aria-label="Alternar modo escuro">
+            <svg class="icon-theme" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.7 14.6A8.6 8.6 0 0 1 9.4 3.3a.6.6 0 0 0-.8-.7 9.9 9.9 0 1 0 12.8 12.8.6.6 0 0 0-.7-.8z"/></svg>
+        </button>
+        <button id="languageToggle" class="btn-language-toggle">EN</button>
+    </div>
+
+    <header class="main-header">
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="header-logo">
+            <a href="/">
+                <img src="/logo.png" alt="Zeleno">
+            </a>
+        </div>
+
+        <nav class="nav-group" id="mainNav">
+            <div class="nav-side left">
+                <a href="/agendamento" class="nav-link active-box" data-i18n="navSchedule">Agendar Consulta</a>
+                <a href="/sobre-nos" class="nav-link" data-i18n="navAbout">A Zeleno</a>
+                <a href="/produtos" class="nav-link" data-i18n="navProducts">Produtos</a>
+                <a href="/blog" class="nav-link" data-i18n="navBlog">Blog</a>
+            </div>
+
+            <div class="nav-side right">
+                <a href="/contato" class="nav-link" data-i18n="navContact">Contato</a>
+                <a href="/perguntas-frequentes" class="nav-link" data-i18n="navQuestions">Perguntas</a>
+                <a href="/para-medicos" class="nav-link" data-i18n="navDoctors">Para Médicos</a>
+                <a href="https://zelenostore.com/" target="_blank" rel="noopener" class="btn-store-header" data-i18n="navStore">Ir para Loja</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-wrapper">
+
+        <section class="super-hero">
+            <span class="floating-tag" data-i18n="heroTag">Edição 11 | Entrevista</span>
+            <h1 class="giant-title" data-i18n-html="heroTitle">COMO A ZELENO TRANSFORMA<br><b>BUROCRACIA EM CUIDADO</b></h1>
+            <div class="article-meta">
+                <time datetime="2026-08-05" data-pt="Publicado em 5 de agosto de 2026" data-en="Published on August 5, 2026">Publicado em 5 de agosto de 2026</time>
+                <span aria-hidden="true">&middot;</span>
+                <span data-pt="Por Redação Zeleno" data-en="By Zeleno Editorial">Por Redação Zeleno</span>
+            </div>
+        </section>
+
+        <section class="article-intro">
+            <div>
+                <div class="img-reveal">
+                    <img src="/blog/carlos-jeronymo-zeleno.jpg" alt="Carlos Jeronymo, CGO da Zeleno Meds">
+                </div>
+                <p class="photo-credit" data-i18n-html="photoCredit"><a class="person-link" href="https://www.linkedin.com/in/carlos-jeronymo-48329314b/" target="_blank" rel="noopener" aria-label="Carlos Jeronymo no LinkedIn">Carlos Jeronymo</a>, CGO da Zeleno Meds</p>
+            </div>
+            <div class="text-reveal">
+                <h3 data-i18n-html="introTitle">Burocracia ou incerteza: o dilema de <b>quem começa</b>.</h3>
+                <p data-i18n="introP1">O Brasil já soma cerca de 873 mil pacientes em tratamento com cannabis medicinal, presente em 85% dos municípios do país. Mas quem decide iniciar essa jornada ainda esbarra em dois obstáculos: a burocracia e a incerteza.</p>
+                <p data-i18n-html="introP2">Conversamos com <a class="person-link" href="https://www.linkedin.com/in/carlos-jeronymo-48329314b/" target="_blank" rel="noopener" aria-label="Carlos Jeronymo no LinkedIn">Carlos Jeronymo</a>, CGO da Zeleno Meds, sobre a missão do hub, os medos mais comuns de quem chega e o que acontece depois da prescrição. As falas foram editadas para clareza.</p>
+            </div>
+        </section>
+
+        <section class="big-quote">
+            <i class="fas fa-quote-right"></i>
+            <h2 data-i18n="quote1">"A Zeleno existe para tirar a cannabis medicinal desse lugar de coisa difícil e escondida."</h2>
+        </section>
+
+        <div class="section-head">
+            <h2 data-i18n-html="journeyTitle">A jornada em <span>quatro passos</span></h2>
+            <p data-i18n="journeyLead">Questionado sobre o caminho que o paciente percorre dentro do hub, Carlos é direto: a jornada é "propositalmente curta e esclarecedora".</p>
+        </div>
+
+        <section class="molecular-grid cols-4">
+            <div class="science-box">
+                <i class="fas fa-user-md"></i>
+                <h4 data-i18n="step1Title">Consulta</h4>
+                <p data-i18n="step1Text">Tudo começa com a consulta médica e a conferência da documentação necessária. O Brasil já conta com médicos que vêm evoluindo bastante no apoio, com base científica, à prescrição.</p>
+            </div>
+            <div class="science-box">
+                <i class="fas fa-comments"></i>
+                <h4 data-i18n="step2Title">Orientação</h4>
+                <p data-i18n="step2Text">Um mercado novo, sustentado por uma ciência que avança rápido. É a equipe da Zeleno que esclarece o uso medicinal, sempre vinculado à receita médica.</p>
+            </div>
+            <div class="science-box">
+                <i class="fas fa-box-open"></i>
+                <h4 data-i18n="step3Title">Acesso</h4>
+                <p data-i18n="step3Text">Com a consulta realizada e as dúvidas respondidas, o paciente está apto a adquirir e iniciar o tratamento.</p>
+            </div>
+            <div class="science-box">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h4 data-i18n="step4Title">Apoio</h4>
+                <p data-i18n="step4Text">A etapa que Carlos considera a mais importante: uma equipe de consultores e uma empresa inteira que se move ao redor de um acompanhamento próximo e assistido.</p>
+            </div>
+        </section>
+
+        <div class="section-head">
+            <h2 data-i18n-html="fearsTitle">Procedência e <span>desconfiança</span></h2>
+            <p data-i18n="fearsLead">Quando o assunto são os receios de quem chega à Zeleno, Carlos divide a resposta em dois.</p>
+        </div>
+
+        <section class="system-section">
+            <div class="system-content">
+                <div class="system-text">
+                    <ul class="detail-list">
+                        <li>
+                            <i class="fas fa-seedling"></i>
+                            <span data-i18n-html="fear1"><b>Procedência</b> A pergunta "de onde vem o meu tratamento?" aparece com frequência. A resposta está na rastreabilidade completa, do plantio até a entrega na porta da casa do paciente. "A nossa assistência não é feita só de atendimento, mas de garantia de qualidade."</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-shield-alt"></i>
+                            <span data-i18n-html="fear2"><b>Desconfiança</b> Por ser um universo ainda muito inovador, boa parte das pessoas não tem o conhecimento necessário para embasar uma decisão. Além de o acesso ser legal, a Zeleno garante toda a jornada, da receita médica ao acompanhamento, até a chegada em casa, "de maneira segura, ágil e legal".</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-head">
+            <h2 data-i18n-html="diffTitle">Velocidade e <span>assistência de ponta a ponta</span></h2>
+            <p data-i18n="diffLead">Sobre o que diferencia a Zeleno de outros caminhos, Carlos aponta dois fatores.</p>
+        </div>
+
+        <section class="molecular-grid cols-2">
+            <div class="science-box">
+                <i class="fas fa-bolt"></i>
+                <h4 data-i18n="diff1Title">Velocidade</h4>
+                <p data-i18n="diff1Text">Grande parte dos pacientes chega ao hub já desacreditada dos caminhos que tentou antes. Por isso o processo precisa ser simples, desburocratizado e ágil, sempre com acesso 100% legal.</p>
+            </div>
+            <div class="science-box">
+                <i class="fas fa-route"></i>
+                <h4 data-i18n="diff2Title">Assistência ponta a ponta</h4>
+                <p data-i18n="diff2Text">Em uma única plataforma: do encaminhamento a médicos que acreditam na cannabis medicinal até a garantia de que o produto prescrito chegue em casa, seja por uma associação ou por um fornecedor internacional.</p>
+            </div>
+        </section>
+
+        <div class="section-head">
+            <h2 data-i18n-html="careTitle">O cuidado que continua <span>depois da prescrição</span></h2>
+            <p data-i18n="careLead">Se o acompanhamento é a etapa que Carlos considera mais importante, é também sobre ela que ele fala com mais detalhe. O trabalho acontece em duas frentes.</p>
+        </div>
+
+        <section class="system-section">
+            <div class="system-content">
+                <div class="system-text">
+                    <ul class="detail-list">
+                        <li>
+                            <i class="fas fa-stethoscope"></i>
+                            <span data-i18n-html="care1"><b>Cuidado médico</b> Os profissionais indicados pela Zeleno mantêm atenção contínua ao pós-prescrição, um trabalho conhecido como farmacovigilância: o monitoramento do tratamento e de todo o seu rastreio.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-headset"></i>
+                            <span data-i18n-html="care2"><b>Consultores Zeleno</b> Acompanham a experiência do paciente de perto: como foi o atendimento, como o produto chegou em casa, como está sendo a jornada. O hub funciona como uma ponte, atuando dos dois lados.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="big-quote">
+            <i class="fas fa-quote-right"></i>
+            <h2 data-i18n="quote2">"O nosso trabalho é levar informação, e levar qualidade de vida, para os nossos pacientes."</h2>
+        </section>
+
+        <section class="cta-block">
+            <h2 data-i18n="ctaTitle">Quer entender se a cannabis medicinal faz sentido para você?</h2>
+            <p data-i18n="ctaText">Todo tratamento com cannabis medicinal começa com uma avaliação médica individualizada. Na Zeleno, você é acompanhado do primeiro contato ao pós-prescrição: consulta, orientação, acesso e acompanhamento, tudo em um só lugar, com segurança e amparo legal.</p>
+            <a href="/agendamento" class="btn-main" data-i18n="ctaBtn">Agendar Consulta</a>
+            <p class="signature" data-i18n="ctaSignature">Deixe seu mundo mais Zeleno. 🌿</p>
+        </section>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img loading="lazy" decoding="async" src="/logo.png" alt="Zeleno Logo" class="footer-logo">
+                <p data-i18n="footerText">Liderando a revolução da cannabis medicinal através do rigor científico e da pureza absoluta.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/zeleno.meds/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@zelenomeds" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.linkedin.com/company/zeleno-meds/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col" style="margin-left: auto;">
+                <h4 class="footer-title" data-i18n="footerNav">Navegação</h4>
+                <ul class="footer-links">
+                    <li><a href="/sobre-nos" data-i18n="footerAbout">Sobre Nós</a></li>
+                    <li><a href="/produtos" data-i18n="footerProducts">Produtos</a></li>
+                    <li><a href="/politica-de-privacidade" data-i18n="footerPrivacy">Política de Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title" data-i18n="footerSupport">Suporte</h4>
+                <ul class="footer-links">
+                    <li><a href="/perguntas-frequentes" data-i18n="footerFaq">Dúvidas Frequentes</a></li>
+                    <li><a href="/blog" data-i18n="footerBlog">Blog</a></li>
+                    <li><a href="/contato" data-i18n="footerContact">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom" style="text-align: center; border-top: 1px solid rgba(0, 84, 61, 0.05); padding-top: 30px;">
+            <p style="font-size: 11px;" data-i18n="footerRights">&copy; 2026 ZELENO PREMIUM CANNABIS. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mainNav = document.getElementById('mainNav');
+        mobileMenuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            const icon = mobileMenuToggle.querySelector('i');
+            if (mainNav.classList.contains('active')) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
+        });
+    </script>
+
+    <script>
+        // Traducao por chave em data-i18n (texto puro) e data-i18n-html (trechos com <b>/<span>).
+        // Diferente das edicoes antigas, nao depende da posicao do elemento na pagina,
+        // entao reordenar ou inserir blocos nao embaralha os textos.
+        (function () {
+            const translations = {
+                pt: {
+                    pageTitle: 'Como a Zeleno transforma burocracia em cuidado | ZELENO Journal',
+                    navSchedule: 'Agendar Consulta',
+                    navAbout: 'A Zeleno',
+                    navProducts: 'Produtos',
+                    navBlog: 'Blog',
+                    navContact: 'Contato',
+                    navQuestions: 'Perguntas',
+                    navDoctors: 'Para Médicos',
+                    navStore: 'Ir para Loja',
+                    heroTag: 'Edição 11 | Entrevista',
+                    heroTitle: 'COMO A ZELENO TRANSFORMA<br><b>BUROCRACIA EM CUIDADO</b>',
+                    photoCredit: '<a class="person-link" href="https://www.linkedin.com/in/carlos-jeronymo-48329314b/" target="_blank" rel="noopener" aria-label="Carlos Jeronymo no LinkedIn">Carlos Jeronymo</a>, CGO da Zeleno Meds',
+                    introTitle: 'Burocracia ou incerteza: o dilema de <b>quem começa</b>.',
+                    introP1: 'O Brasil já soma cerca de 873 mil pacientes em tratamento com cannabis medicinal, presente em 85% dos municípios do país. Mas quem decide iniciar essa jornada ainda esbarra em dois obstáculos: a burocracia e a incerteza.',
+                    introP2: 'Conversamos com <a class="person-link" href="https://www.linkedin.com/in/carlos-jeronymo-48329314b/" target="_blank" rel="noopener" aria-label="Carlos Jeronymo no LinkedIn">Carlos Jeronymo</a>, CGO da Zeleno Meds, sobre a missão do hub, os medos mais comuns de quem chega e o que acontece depois da prescrição. As falas foram editadas para clareza.',
+                    quote1: '"A Zeleno existe para tirar a cannabis medicinal desse lugar de coisa difícil e escondida."',
+                    journeyTitle: 'A jornada em <span>quatro passos</span>',
+                    journeyLead: 'Questionado sobre o caminho que o paciente percorre dentro do hub, Carlos é direto: a jornada é "propositalmente curta e esclarecedora".',
+                    step1Title: 'Consulta',
+                    step1Text: 'Tudo começa com a consulta médica e a conferência da documentação necessária. O Brasil já conta com médicos que vêm evoluindo bastante no apoio, com base científica, à prescrição.',
+                    step2Title: 'Orientação',
+                    step2Text: 'Um mercado novo, sustentado por uma ciência que avança rápido. É a equipe da Zeleno que esclarece o uso medicinal, sempre vinculado à receita médica.',
+                    step3Title: 'Acesso',
+                    step3Text: 'Com a consulta realizada e as dúvidas respondidas, o paciente está apto a adquirir e iniciar o tratamento.',
+                    step4Title: 'Apoio',
+                    step4Text: 'A etapa que Carlos considera a mais importante: uma equipe de consultores e uma empresa inteira que se move ao redor de um acompanhamento próximo e assistido.',
+                    fearsTitle: 'Procedência e <span>desconfiança</span>',
+                    fearsLead: 'Quando o assunto são os receios de quem chega à Zeleno, Carlos divide a resposta em dois.',
+                    fear1: '<b>Procedência</b> A pergunta "de onde vem o meu tratamento?" aparece com frequência. A resposta está na rastreabilidade completa, do plantio até a entrega na porta da casa do paciente. "A nossa assistência não é feita só de atendimento, mas de garantia de qualidade."',
+                    fear2: '<b>Desconfiança</b> Por ser um universo ainda muito inovador, boa parte das pessoas não tem o conhecimento necessário para embasar uma decisão. Além de o acesso ser legal, a Zeleno garante toda a jornada, da receita médica ao acompanhamento, até a chegada em casa, "de maneira segura, ágil e legal".',
+                    diffTitle: 'Velocidade e <span>assistência de ponta a ponta</span>',
+                    diffLead: 'Sobre o que diferencia a Zeleno de outros caminhos, Carlos aponta dois fatores.',
+                    diff1Title: 'Velocidade',
+                    diff1Text: 'Grande parte dos pacientes chega ao hub já desacreditada dos caminhos que tentou antes. Por isso o processo precisa ser simples, desburocratizado e ágil, sempre com acesso 100% legal.',
+                    diff2Title: 'Assistência ponta a ponta',
+                    diff2Text: 'Em uma única plataforma: do encaminhamento a médicos que acreditam na cannabis medicinal até a garantia de que o produto prescrito chegue em casa, seja por uma associação ou por um fornecedor internacional.',
+                    careTitle: 'O cuidado que continua <span>depois da prescrição</span>',
+                    careLead: 'Se o acompanhamento é a etapa que Carlos considera mais importante, é também sobre ela que ele fala com mais detalhe. O trabalho acontece em duas frentes.',
+                    care1: '<b>Cuidado médico</b> Os profissionais indicados pela Zeleno mantêm atenção contínua ao pós-prescrição, um trabalho conhecido como farmacovigilância: o monitoramento do tratamento e de todo o seu rastreio.',
+                    care2: '<b>Consultores Zeleno</b> Acompanham a experiência do paciente de perto: como foi o atendimento, como o produto chegou em casa, como está sendo a jornada. O hub funciona como uma ponte, atuando dos dois lados.',
+                    quote2: '"O nosso trabalho é levar informação, e levar qualidade de vida, para os nossos pacientes."',
+                    ctaTitle: 'Quer entender se a cannabis medicinal faz sentido para você?',
+                    ctaText: 'Todo tratamento com cannabis medicinal começa com uma avaliação médica individualizada. Na Zeleno, você é acompanhado do primeiro contato ao pós-prescrição: consulta, orientação, acesso e acompanhamento, tudo em um só lugar, com segurança e amparo legal.',
+                    ctaBtn: 'Agendar Consulta',
+                    ctaSignature: 'Deixe seu mundo mais Zeleno. 🌿',
+                    footerText: 'Liderando a revolução da cannabis medicinal através do rigor científico e da pureza absoluta.',
+                    footerNav: 'Navegação',
+                    footerSupport: 'Suporte',
+                    footerAbout: 'Sobre Nós',
+                    footerProducts: 'Produtos',
+                    footerPrivacy: 'Política de Privacidade',
+                    footerFaq: 'Dúvidas Frequentes',
+                    footerBlog: 'Blog',
+                    footerContact: 'Contato',
+                    footerRights: '© 2026 ZELENO PREMIUM CANNABIS. Todos os direitos reservados.'
+                },
+                en: {
+                    pageTitle: 'How Zeleno turns bureaucracy into care | ZELENO Journal',
+                    navSchedule: 'Book Consultation',
+                    navAbout: 'Zeleno',
+                    navProducts: 'Products',
+                    navBlog: 'Blog',
+                    navContact: 'Contact',
+                    navQuestions: 'Questions',
+                    navDoctors: 'For Doctors',
+                    navStore: 'Go to Store',
+                    heroTag: 'Edition 11 | Interview',
+                    heroTitle: 'HOW ZELENO TURNS<br><b>BUREAUCRACY INTO CARE</b>',
+                    photoCredit: '<a class="person-link" href="https://www.linkedin.com/in/carlos-jeronymo-48329314b/" target="_blank" rel="noopener" aria-label="Carlos Jeronymo on LinkedIn">Carlos Jeronymo</a>, CGO at Zeleno Meds',
+                    introTitle: 'Bureaucracy or uncertainty: the dilemma of <b>those who start</b>.',
+                    introP1: 'Brazil already has around 873,000 patients under medicinal cannabis treatment, present in 85% of the municipalities in the country. But those who decide to begin this journey still run into two obstacles: bureaucracy and uncertainty.',
+                    introP2: 'We spoke with <a class="person-link" href="https://www.linkedin.com/in/carlos-jeronymo-48329314b/" target="_blank" rel="noopener" aria-label="Carlos Jeronymo on LinkedIn">Carlos Jeronymo</a>, CGO of Zeleno Meds, about the mission of the hub, the most common fears of those who arrive and what happens after the prescription. Quotes were edited for clarity.',
+                    quote1: '"Zeleno exists to take medicinal cannabis out of that place of something difficult and hidden."',
+                    journeyTitle: 'The journey in <span>four steps</span>',
+                    journeyLead: 'Asked about the path a patient takes inside the hub, Carlos is direct: the journey is "deliberately short and clarifying".',
+                    step1Title: 'Consultation',
+                    step1Text: 'It all starts with the medical consultation and the check of the documentation required. Brazil already has doctors who keep advancing, on scientific grounds, in supporting the prescription.',
+                    step2Title: 'Guidance',
+                    step2Text: 'A new market, sustained by a science that moves fast. The Zeleno team is the one that clarifies medicinal use, always tied to a medical prescription.',
+                    step3Title: 'Access',
+                    step3Text: 'With the consultation done and the questions answered, the patient is ready to obtain and start the treatment.',
+                    step4Title: 'Support',
+                    step4Text: 'The stage Carlos considers the most important: a team of consultants and an entire company moving around close, assisted follow-up.',
+                    fearsTitle: 'Origin and <span>distrust</span>',
+                    fearsLead: 'When it comes to the fears of those who arrive at Zeleno, Carlos splits the answer in two.',
+                    fear1: '<b>Origin</b> The question "where does my treatment come from?" comes up often. The answer lies in full traceability, from planting all the way to home delivery. "Our assistance is not made only of service, but of quality assurance."',
+                    fear2: '<b>Distrust</b> In a universe that is still very innovative, many people lack the knowledge to ground a decision. Beyond access being legal, Zeleno guarantees the whole journey, from the prescription to the follow-up, until it arrives home, "in a safe, agile and legal way".',
+                    diffTitle: 'Speed and <span>end-to-end assistance</span>',
+                    diffLead: 'On what sets Zeleno apart from other paths, Carlos points to two factors.',
+                    diff1Title: 'Speed',
+                    diff1Text: 'Many patients arrive at the hub already disillusioned with the paths they tried before. That is why the process needs to be simple, free of red tape and fast, always with 100% legal access.',
+                    diff2Title: 'End-to-end assistance',
+                    diff2Text: 'On a single platform: from referral to doctors who believe in medicinal cannabis to the guarantee that the prescribed product arrives home, whether through an association or an international supplier.',
+                    careTitle: 'The care that continues <span>after the prescription</span>',
+                    careLead: 'If follow-up is the stage Carlos considers the most important, it is also the one he describes in most detail. The work happens on two fronts.',
+                    care1: '<b>Medical care</b> The professionals indicated by Zeleno keep continuous attention after the prescription, a job known as pharmacovigilance: monitoring the treatment and all of its tracking.',
+                    care2: '<b>Zeleno consultants</b> They follow the patient experience closely: how the service went, how the product arrived home, how the journey is going. The hub works as a bridge, acting on both sides.',
+                    quote2: '"Our work is to bring information, and to bring quality of life, to our patients."',
+                    ctaTitle: 'Want to understand whether medicinal cannabis makes sense for you?',
+                    ctaText: 'Every medicinal cannabis treatment starts with an individual medical evaluation. At Zeleno, you are supported from the first contact to the post-prescription: consultation, guidance, access and follow-up, all in one place, with safety and legal backing.',
+                    ctaBtn: 'Book Consultation',
+                    ctaSignature: 'Make your world more Zeleno. 🌿',
+                    footerText: 'Leading the medicinal cannabis revolution through scientific rigor and absolute purity.',
+                    footerNav: 'Navigation',
+                    footerSupport: 'Support',
+                    footerAbout: 'About Us',
+                    footerProducts: 'Products',
+                    footerPrivacy: 'Privacy Policy',
+                    footerFaq: 'Frequently Asked Questions',
+                    footerBlog: 'Blog',
+                    footerContact: 'Contact',
+                    footerRights: '© 2026 ZELENO PREMIUM CANNABIS. All rights reserved.'
+                }
+            };
+
+            const languageToggle = document.getElementById('languageToggle');
+            const themeToggle = document.getElementById('themeToggle');
+
+            function applyLanguage(lang) {
+                const t = translations[lang];
+                document.documentElement.lang = lang === 'en' ? 'en' : 'pt-br';
+                document.title = t.pageTitle;
+
+                document.querySelectorAll('[data-i18n]').forEach(function (el) {
+                    const v = t[el.dataset.i18n];
+                    if (v !== undefined) el.textContent = v;
+                });
+                document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+                    const v = t[el.dataset.i18nHtml];
+                    if (v !== undefined) el.innerHTML = v;
+                });
+
+                if (languageToggle) languageToggle.textContent = lang === 'pt' ? 'EN' : 'PT';
+                localStorage.setItem('zelenoLang', lang);
+            }
+
+            function applyTheme(theme) {
+                const isDark = theme === 'dark';
+                document.body.classList.toggle('dark-mode', isDark);
+                if (themeToggle) {
+                    themeToggle.innerHTML = isDark ? '<svg class="icon-theme" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>' : '<svg class="icon-theme" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.7 14.6A8.6 8.6 0 0 1 9.4 3.3a.6.6 0 0 0-.8-.7 9.9 9.9 0 1 0 12.8 12.8.6.6 0 0 0-.7-.8z"/></svg>';
+                    themeToggle.setAttribute('aria-label', isDark ? 'Alternar para modo claro' : 'Alternar para modo escuro');
+                }
+                localStorage.setItem('zelenoTheme', theme);
+            }
+
+            applyLanguage(localStorage.getItem('zelenoLang') || 'pt');
+            applyTheme(localStorage.getItem('zelenoTheme') || 'light');
+
+            if (languageToggle) {
+                languageToggle.addEventListener('click', function () {
+                    const atual = localStorage.getItem('zelenoLang') || 'pt';
+                    applyLanguage(atual === 'pt' ? 'en' : 'pt');
+                });
+            }
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function () {
+                    const atual = localStorage.getItem('zelenoTheme') || 'light';
+                    applyTheme(atual === 'dark' ? 'light' : 'dark');
+                });
+            }
+        })();
+    </script>
+    <script src="../agendamento-modal.js" defer></script>
+
+    <script>
+        /* A linha de publicacao se traduz sozinha: os artigos antigos traduzem
+           por posicao e os novos por data-i18n, entao este bloco nao depende
+           de nenhum dos dois. */
+        (function () {
+            function aplicar() {
+                var lang = localStorage.getItem('zelenoLang') === 'en' ? 'en' : 'pt';
+                document.querySelectorAll('.article-meta [data-pt]').forEach(function (el) {
+                    var v = el.getAttribute('data-' + lang);
+                    if (v) { el.textContent = v; }
+                });
+            }
+            aplicar();
+            var b = document.getElementById('languageToggle');
+            if (b) { b.addEventListener('click', function () { setTimeout(aplicar, 0); }); }
+        })();
+    </script></body>
+</html>

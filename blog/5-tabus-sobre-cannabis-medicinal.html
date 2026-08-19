@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-53QCQY7DLP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-53QCQY7DLP');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <link rel="icon" type="image/png" href="/fav.png">
+    <title>5 Tabus sobre Cannabis Medicinal | ZELENO Journal</title>
+    <meta name="description" content="Dependência, medo de ficar chapado, falta de comprovação científica: respondemos os 5 tabus mais comuns sobre a cannabis medicinal.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="ZELENO Journal">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="5 Tabus sobre Cannabis Medicinal | ZELENO Journal">
+    <meta property="og:description" content="Dependência, medo de ficar chapado, falta de comprovação científica: respondemos os 5 tabus mais comuns sobre a cannabis medicinal.">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #499375;
+            --accent: #499375;
+            --bg-dark: #f4f7f6;      
+            --zeleno-dark: #00543d; 
+            --glass: rgba(0, 84, 61, 0.05);
+            --transition: cubic-bezier(0.85, 0, 0.15, 1);
+            --text-main: #00543d;
+            --text-light: #4a5d58;
+        }
+
+        /* --- CUSTOM SCROLLBAR --- */
+        * { scrollbar-width: thin; scrollbar-color: var(--zeleno-dark) #e0e6e4; }
+        ::-webkit-scrollbar { width: 10px; height: 10px; }
+        ::-webkit-scrollbar-track { background: #e0e6e4; }
+        ::-webkit-scrollbar-thumb { background: var(--zeleno-dark); border-radius: 10px; border: 2px solid #e0e6e4; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        body { 
+            background: var(--bg-dark); 
+            color: var(--text-main); 
+            font-family: 'Poppins', sans-serif; 
+            overflow-x: hidden; 
+            -webkit-font-smoothing: antialiased; 
+            line-height: 1.4; 
+        }
+
+        /* --- HEADER --- */
+        .main-header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            display: flex; align-items: center; justify-content: center; 
+            padding: 20px 4%; z-index: 10000;
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 84, 61, 0.1);
+            height: 100px;
+        }
+
+        .header-logo { 
+            position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 10002;
+        }
+        .header-logo img { 
+            height: 50px; width: auto; display: block; 
+            filter: brightness(0) saturate(100%) invert(14%) sepia(85%) saturate(543%) hue-rotate(120deg) brightness(91%) contrast(101%);
+        }
+
+        .nav-group { 
+            display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1600px;
+        }
+
+        .nav-side { display: flex; align-items: center; gap: 30px; flex: 1; }
+        .nav-side.left { justify-content: flex-end; padding-right: 120px; } 
+        .nav-side.right { justify-content: flex-start; padding-left: 120px; } 
+
+        .nav-link { 
+            color: var(--zeleno-dark); text-decoration: none; text-transform: uppercase; 
+            font-size: 12px; font-weight: 700; letter-spacing: 1.5px; transition: 0.3s; white-space: nowrap; 
+        }
+        .nav-link:hover { color: var(--primary); }
+        .nav-link.active-box { background: var(--zeleno-dark); color: #ffffff; padding: 10px 20px; border-radius: 4px; font-weight: 900; }
+        .btn-store-header { background: var(--zeleno-dark); color: #ffffff; text-decoration: none; text-transform: uppercase; font-size: 12px; font-weight: 900; padding: 10px 20px; border-radius: 4px; white-space: nowrap; }
+
+        .mobile-menu-toggle { display: none; background: none; border: none; color: var(--zeleno-dark); font-size: 26px; cursor: pointer; z-index: 10001; }
+
+        /* --- MAIN CONTENT --- */
+        .main-wrapper { position: relative; width: 100%; overflow: hidden; padding-bottom: 60px; }
+        
+        .super-hero { padding: 180px 5% 40px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .floating-tag { border: 1px solid var(--zeleno-dark); color: var(--zeleno-dark); padding: 5px 15px; border-radius: 30px; font-size: 10px; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px; }
+        
+        .giant-title { 
+            font-size: clamp(2.2rem, 8vw, 6rem); 
+            font-weight: 200; 
+            line-height: 0.9; 
+            text-transform: uppercase; 
+            color: var(--zeleno-dark); 
+            position: relative; 
+            letter-spacing: -1px;
+        }
+        .giant-title b { 
+            color: var(--primary); 
+            font-weight: 900; 
+            display: block; 
+        }
+
+        .article-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto 40px; padding: 0 5%; align-items: center; }
+        .img-reveal { position: relative; width: 100%; height: 500px; border-radius: 20px; overflow: hidden; box-shadow: 0 30px 60px rgba(0, 84, 61, 0.1); }
+        .img-reveal img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(80%) contrast(1.1); transition: 1s var(--transition); }
+        .img-reveal:hover img { filter: grayscale(0%) contrast(1); transform: scale(1.05); }
+        
+        .text-reveal { max-width: 500px; }
+        .text-reveal h3 { font-size: 2.2rem; font-weight: 200; margin-bottom: 20px; line-height: 1.1; color: var(--zeleno-dark); }
+        .text-reveal h3 b { font-weight: 700; color: var(--primary); }
+        .text-reveal p { font-size: 1.05rem; font-weight: 300; color: var(--text-light); margin-bottom: 15px; }
+
+        .tabu-list { max-width: 1200px; margin: 60px auto; padding: 0 5%; display: flex; flex-direction: column; gap: 20px; }
+        .tabu-item { background: #ffffff; padding: 40px; border-radius: 20px; border: 1px solid rgba(0, 84, 61, 0.05); transition: 0.5s; display: flex; gap: 30px; align-items: flex-start; }
+        .tabu-item:hover { transform: translateX(10px); border-color: var(--primary); box-shadow: 0 20px 40px rgba(0, 84, 61, 0.08); }
+        .tabu-num { font-size: 3rem; font-weight: 900; color: var(--primary); opacity: 0.4; line-height: 1; }
+        .tabu-content h4 { font-size: 1.3rem; color: var(--zeleno-dark); text-transform: uppercase; margin-bottom: 15px; font-weight: 900; }
+        .tabu-content p { font-size: 0.95rem; color: var(--text-light); font-weight: 300; }
+
+        .big-quote { padding: 40px 5%; text-align: center; max-width: 1000px; margin: 60px auto; }
+        .big-quote i { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; opacity: 0.5; display: block; }
+        .big-quote h2 { font-size: 2.2rem; font-weight: 200; line-height: 1.2; font-style: italic; color: var(--zeleno-dark); }
+
+        /* --- FOOTER --- */
+        .main-footer { background: #ffffff; padding: 60px 10% 20px; border-top: 1px solid rgba(0, 84, 61, 0.1); position: relative; z-index: 70; }
+        .footer-grid { display: flex; justify-content: flex-start; gap: 50px; max-width: 1200px; margin: 0 auto 60px auto; flex-wrap: wrap; }
+        .footer-brand { flex: 2; min-width: 280px; }
+        .footer-brand .footer-logo { height: 60px; margin-bottom: 20px; filter: brightness(0) saturate(100%) invert(14%) sepia(85%) saturate(543%) hue-rotate(120deg) brightness(91%) contrast(101%); }
+        .footer-brand p { color: var(--text-light); font-size: 11px; line-height: 1.6; max-width: 300px; }
+        .footer-title { color: var(--zeleno-dark); font-size: 1.1rem; font-weight: 700; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 8px; }
+        .footer-links a { color: var(--text-light); text-decoration: none; font-size: 11px; transition: 0.3s; }
+        .footer-links a:hover { color: var(--primary); padding-left: 5px; }
+        .social-links { display: flex; gap: 20px; margin-top: 25px; }
+        .social-links a { color: var(--zeleno-dark); font-size: 22px; transition: 0.3s; text-decoration: none; }
+
+        @media (max-width: 1023px) {
+            .main-header { justify-content: space-between; padding: 10px 6%; height: 80px; }
+            .mobile-menu-toggle { display: block; position: relative; }
+            .header-logo { position: relative; left: auto; top: auto; transform: none; margin: 0; }
+            .header-logo img { height: 35px; } 
+            .nav-group { position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background: #f4f7f6; flex-direction: column; justify-content: center; align-items: center; gap: 30px; transition: 0.5s; z-index: 10000; }
+            .nav-side { flex-direction: column; gap: 30px; padding: 0 !important; flex: none; }
+            .nav-group.active { right: 0; }
+        }
+
+        @media (max-width: 900px) {
+            .article-intro { grid-template-columns: 1fr; gap: 20px; }
+            .img-reveal { height: 350px; }
+            .tabu-item { flex-direction: column; gap: 15px; }
+            .giant-title { font-size: 2.2rem; }
+            .main-footer { padding: 60px 5% 30px !important; text-align: center !important; }
+            .footer-grid { flex-direction: column !important; align-items: center !important; gap: 40px !important; }
+            .footer-brand { display: flex; flex-direction: column; align-items: center; text-align: center; min-width: auto !important; flex: none !important; }
+            .footer-brand p { margin: 0 auto !important; }
+            .footer-col { margin-left: 0 !important; width: 100%; }
+            .footer-links { padding: 0 !important; text-align: center !important; list-style: none !important; }
+            .footer-links li { text-align: center !important; }
+            .footer-links a { display: inline-block !important; margin: 0 auto 8px !important; padding-left: 0 !important; }
+            .footer-bottom { flex-direction: column-reverse !important; text-align: center !important; justify-content: center !important; }
+        }
+    
+
+        .floating-controls {
+            position: fixed;
+            left: 30px;
+            bottom: 30px;
+            z-index: 10003;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-language-toggle {
+            background: transparent;
+            border: 1px solid var(--zeleno-dark);
+            color: var(--zeleno-dark);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 10px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-language-toggle:hover {
+            background: var(--zeleno-dark);
+            color: #ffffff;
+        }
+
+        .btn-theme-toggle {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: 1px solid var(--zeleno-dark);
+            color: var(--zeleno-dark);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .btn-theme-toggle:hover {
+            background: var(--zeleno-dark);
+            color: #ffffff;
+        }
+
+        body.dark-mode {
+            background: #081711;
+            color: #e8f5ef;
+        }
+
+        body.dark-mode .main-header {
+            background: rgba(8, 23, 17, 0.92);
+            border-bottom-color: rgba(255, 255, 255, 0.08);
+        }
+
+        body.dark-mode .header-logo img,
+        body.dark-mode .footer-brand .footer-logo {
+            filter: brightness(0) invert(1);
+        }
+
+        body.dark-mode .nav-link,
+        body.dark-mode .floating-tag,
+        body.dark-mode .text-reveal h3,
+        body.dark-mode .footer-title,
+        body.dark-mode .social-links a,
+        body.dark-mode .tabu-content h4 {
+            color: #ffffff;
+        }
+
+        body.dark-mode .text-reveal h3 b,
+        body.dark-mode .giant-title b,
+        body.dark-mode .big-quote i,
+        body.dark-mode .footer-links a:hover,
+        body.dark-mode .social-links a:hover,
+        body.dark-mode .tabu-num {
+            color: var(--primary);
+        }
+
+        /* A opacidade de 0.4 do modo claro apaga o numero sobre o fundo escuro. */
+        body.dark-mode .tabu-num {
+            opacity: 1;
+        }
+
+        body.dark-mode .nav-link.active-box,
+        body.dark-mode .btn-store-header {
+            background: var(--zeleno-dark);
+            color: #ffffff;
+        }
+
+        body.dark-mode .btn-language-toggle,
+        body.dark-mode .btn-theme-toggle {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        body.dark-mode .btn-language-toggle:hover,
+        body.dark-mode .btn-theme-toggle:hover {
+            background: #ffffff;
+            color: #00261b;
+        }
+
+        body.dark-mode .giant-title,
+        body.dark-mode .mobile-menu-toggle {
+            color: #ffffff;
+        }
+
+        body.dark-mode .floating-tag {
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        body.dark-mode .main-wrapper,
+        body.dark-mode .main-footer {
+            background: #081711;
+        }
+
+        body.dark-mode .tabu-item,
+        body.dark-mode .main-footer,
+        body.dark-mode .img-reveal,
+        body.dark-mode .footer-bottom {
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        body.dark-mode .tabu-item {
+            background: #0e241b;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        body.dark-mode .tabu-item:hover {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.28);
+        }
+
+        body.dark-mode .text-reveal p,
+        body.dark-mode .tabu-content p,
+        body.dark-mode .footer-brand p,
+        body.dark-mode .footer-links a,
+        body.dark-mode .footer-bottom p,
+        body.dark-mode .big-quote h2 {
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        @media (max-width: 1023px) {
+            .floating-controls {
+                left: 20px;
+                bottom: 20px;
+            }
+        }
+
+    
+        /* --- MENU FLUTUANTE ---
+           Mesma barra destacada do resto do site. Sem transform e sem
+           backdrop-filter: os dois criam containing block e prenderiam o
+           painel do menu mobile (position: fixed) na area da barra. */
+        .main-header {
+            padding: 9px 20px;
+            top: 14px;
+            left: 3%;
+            right: 3%;
+            width: auto;
+            height: auto;
+            border-radius: 18px;
+            border: 1px solid rgba(0, 84, 61, 0.10);
+            border-bottom: 1px solid rgba(0, 84, 61, 0.10);
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 12px 34px rgba(0, 38, 27, 0.13);
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+
+        @media (max-width: 1023px) {
+            .main-header {
+                top: 10px;
+                left: 3%;
+                right: 3%;
+                border-radius: 14px;
+                padding: 7px 14px;
+            }
+            body.dark-mode .nav-group { background: #081711; }
+        }
+        /* --- SEM PALAVRA SOZINHA NA LINHA ---
+           Nenhum texto do site pode quebrar deixando uma palavra orfa na
+           ultima linha. balance reparte as linhas em comprimentos parecidos
+           (bom para titulo curto); pretty evita a viuva no fim do paragrafo.
+           Navegador sem suporte ignora e quebra do jeito tradicional. */
+        h1, h2, h3, h4, h5, h6,
+        .giant-title, .title-chic, .section-title, .product-title,
+        .footer-title, .editorial-tag, .floating-tag, .step-card h3,
+        .diff-item h4, .science-box h4, .value-card h3, .card-content h3,
+        .property-card h3, .review-text, .big-quote h2, .cta-block h2,
+        .booking-copy h1, .booking-intro h1, .contact-info h1,
+        .policy-section h1, .policy-section h2, .faq-question,
+        .btn-more, .btn-read, .btn-main, .detail-list b, .stat-label {
+            text-wrap: balance;
+        }
+
+        p, li, figcaption, blockquote, .info-text, .product-description,
+        .section-lead, .section-head p, .text-reveal p, .photo-credit,
+        .article-meta, .author-box p, .consult-note, .review-author,
+        .booking-cta-note, .mini-review p, .footer-brand p, .footer-bottom p {
+            text-wrap: pretty;
+        }
+        /* --- DESTAQUES DOS TITULOS ---
+           As palavras-chave dos titulos ficam no verde escuro oficial (#00543d).
+           Onde o titulo inteiro ja era 900, o peso base cai para 300: senao o
+           destaque sumiria, por ficar identico ao restante da linha. */
+        .giant-title b, .giant-title span,
+        .text-reveal h3 b,
+        .section-head h2 span,
+        .system-text h2 span,
+        .stat-box strong {
+            color: #00543d;
+        }
+
+        .section-head h2,
+        .system-text h2 { font-weight: 300; }
+        .section-head h2 span,
+        .system-text h2 span { font-weight: 900; }
+
+        /* No modo escuro o verde escuro nao tem leitura sobre o fundo quase
+           preto: o destaque volta para o verde institucional claro. */
+        body.dark-mode .giant-title b, body.dark-mode .giant-title span,
+        body.dark-mode .text-reveal h3 b,
+        body.dark-mode .section-head h2 span,
+        body.dark-mode .system-text h2 span,
+        body.dark-mode .stat-box strong {
+            color: #499375;
+        }
+        /* --- DATA E AUTORIA (E-E-A-T) ---
+           Herda a cor do bloco e so reduz a opacidade, para funcionar tanto
+           nos artigos de fundo claro quanto nos de fundo escuro. */
+        .article-meta {
+            margin-top: 22px;
+            font-size: 0.82rem;
+            font-weight: 300;
+            opacity: 0.75;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            text-align: center;
+            text-wrap: pretty;
+        }
+        /* --- BOTOES FLUTUANTES DE TEMA E IDIOMA ---
+           Eles ficam sobre o conteudo da pagina, nao sobre a barra do menu,
+           entao nao podem depender do estado dela: ganham fundo proprio e
+           passam a ter contraste sobre qualquer coisa que esteja atras. */
+        .btn-theme-toggle,
+        .btn-language-toggle {
+            background: rgba(255, 255, 255, 0.94) !important;
+            border: 1px solid rgba(0, 84, 61, 0.20) !important;
+            color: #00543d !important;
+            box-shadow: 0 6px 18px rgba(0, 38, 27, 0.12);
+            text-shadow: none !important;
+        }
+
+        .btn-theme-toggle:hover,
+        .btn-language-toggle:hover {
+            background: #00543d !important;
+            border-color: #00543d !important;
+            color: #ffffff !important;
+        }
+
+        body.dark-mode .btn-theme-toggle,
+        body.dark-mode .btn-language-toggle {
+            background: rgba(14, 36, 27, 0.94) !important;
+            border-color: rgba(255, 255, 255, 0.22) !important;
+            color: #ffffff !important;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+        }
+
+        body.dark-mode .btn-theme-toggle:hover,
+        body.dark-mode .btn-language-toggle:hover {
+            background: #ffffff !important;
+            border-color: #ffffff !important;
+            color: #00543d !important;
+        }
+        /* --- LARGURA DA BARRA DO MENU ---
+           No desktop a barra passa a ter a largura do proprio conteudo:
+           comeca na borda do botao "Agendar Consulta" e termina na do
+           "Loja Exclusiva". Centralizada com margin auto, nunca com
+           translateX, que criaria containing block e prenderia o painel
+           do menu mobile. No celular ela continua ocupando a largura toda. */
+        @media (min-width: 1024px) {
+            .main-header {
+                left: 0;
+                right: 0;
+                width: fit-content;
+                max-width: 94%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .main-header .nav-group {
+                flex: 0 0 auto;
+                width: auto;
+                max-width: none;
+            }
+        }</style>
+</head>
+<body>
+
+    <div class="floating-controls">
+        <button id="themeToggle" class="btn-theme-toggle" aria-label="Alternar modo escuro">
+            <svg class="icon-theme" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.7 14.6A8.6 8.6 0 0 1 9.4 3.3a.6.6 0 0 0-.8-.7 9.9 9.9 0 1 0 12.8 12.8.6.6 0 0 0-.7-.8z"/></svg>
+        </button>
+        <button id="languageToggle" class="btn-language-toggle">EN</button>
+    </div>
+
+
+    <header class="main-header">
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="header-logo">
+            <a href="/">
+                <img src="/logo.png" alt="Zeleno">
+            </a>
+        </div>
+
+        <nav class="nav-group" id="mainNav">
+            <div class="nav-side left">
+                <a href="/agendamento" class="nav-link active-box">Agendar Consulta</a>
+                <a href="/sobre-nos" class="nav-link">A zeleno</a>
+                <a href="/produtos" class="nav-link">Produtos</a>
+                <a href="/blog" class="nav-link">Blog</a>
+            </div>
+
+            <div class="nav-side right">
+                <a href="/contato" class="nav-link">Contato</a>
+                <a href="/perguntas-frequentes" class="nav-link">Perguntas</a>
+                <a href="/para-medicos" class="nav-link">Para Médicos</a>
+                <a href="https://zelenostore.com/" target="_blank" rel="noopener" class="btn-store-header">Ir para Loja</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-wrapper">
+        <section class="super-hero">
+            <span class="floating-tag">Edição 07 </span>
+            <h1 class="giant-title">5 TABUS SOBRE<br><b>CANNABIS MEDICINAL</b></h1>
+            <div class="article-meta">
+                <time datetime="2026-07-08" data-pt="Publicado em 8 de julho de 2026" data-en="Published on July 8, 2026">Publicado em 8 de julho de 2026</time>
+                <span aria-hidden="true">&middot;</span>
+                <span data-pt="Por Redação Zeleno" data-en="By Zeleno Editorial">Por Redação Zeleno</span>
+            </div>
+        </section>
+
+        <section class="article-intro">
+            <div class="img-reveal">
+                <img src="/blog/infografico-cerebro-cannabis.jpg" alt="Informação e Verdade">
+            </div>
+            <div class="text-reveal">
+                <h3>Desmistificando a <b>ciência</b>.</h3>
+                <p>Apesar do avanço científico, muitas dúvidas e preconceitos ainda cercam o uso medicinal da planta. Informação de qualidade é o melhor remédio contra o estigma.</p>
+                <p>Nesta edição, abordamos os pontos mais comuns que geram hesitação em novos pacientes.</p>
+            </div>
+        </section>
+
+        <section class="tabu-list">
+            <div class="tabu-item">
+                <div class="tabu-num">01</div>
+                <div class="tabu-content">
+                    <h4>"Causa Dependência"</h4>
+                    <p>O uso medicinal, sob supervisão e com produtos de alta pureza, tem um perfil de segurança altíssimo e não apresenta as propriedades viciantes de muitos fármacos sintéticos.</p>
+                </div>
+            </div>
+            <div class="tabu-item">
+                <div class="tabu-num">02</div>
+                <div class="tabu-content">
+                    <h4>"É apenas para casos graves"</h4>
+                    <p>Embora seja eficaz em doenças complexas, a cannabis é amplamente utilizada para melhorar o bem-estar diário, tratando ansiedade leve, insônia e dores musculares.</p>
+                </div>
+            </div>
+            <div class="tabu-item">
+                <div class="tabu-num">03</div>
+                <div class="tabu-content">
+                    <h4>"Vou ficar 'chapado'"</h4>
+                    <p>O tratamento foca no equilíbrio. Muitos produtos contêm apenas CBD (não psicoativo) ou doses mínimas de THC que não alteram a consciência, mantendo sua produtividade.</p>
+                </div>
+            </div>
+            <div class="tabu-item">
+                <div class="tabu-num">04</div>
+                <div class="tabu-content">
+                    <h4>"Não tem comprovação científica"</h4>
+                    <p>Existem milhares de estudos revisados por pares e ensaios clínicos que comprovam a eficácia dos canabinoides em dezenas de condições médicas.</p>
+                </div>
+            </div>
+            <div class="tabu-item">
+                <div class="tabu-num">05</div>
+                <div class="tabu-content">
+                    <h4>"É difícil de comprar legalmente"</h4>
+                    <p>Com o suporte correto da Zeleno, o processo é transparente, legalizado pela ANVISA e entregue diretamente na sua casa com toda a segurança jurídica.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="big-quote">
+            <i class="fas fa-quote-right"></i>
+            <h2>"Onde entra a luz do conhecimento, o preconceito deixa de existir."</h2>
+        </section>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img loading="lazy" decoding="async" src="/logo.png" alt="Zeleno Logo" class="footer-logo">
+                <p>Liderando a revolução da cannabis medicinal através do rigor científico e da pureza absoluta.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/zeleno.meds/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@zelenomeds" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.linkedin.com/company/zeleno-meds/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col" style="margin-left: auto;">
+                <h4 class="footer-title">Navegação</h4>
+                <ul class="footer-links">
+                    <li><a href="/sobre-nos">Sobre Nós</a></li>
+                    <li><a href="/produtos">Produtos</a></li>
+                    <li><a href="/politica-de-privacidade">Política de Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">Suporte</h4>
+                <ul class="footer-links">
+                    <li><a href="/perguntas-frequentes">Dúvidas Frequentes</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom" style="text-align: center; border-top: 1px solid rgba(0, 84, 61, 0.05); padding-top: 30px;">
+            <p style="font-size: 11px; color: var(--text-light);">&copy; 2026 ZELENO PREMIUM CANNABIS. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mainNav = document.getElementById('mainNav');
+        mobileMenuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            const icon = mobileMenuToggle.querySelector('i');
+            if (mainNav.classList.contains('active')) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
+        });
+    </script>
+
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const languageToggle = document.getElementById('languageToggle');
+        const savedTheme = localStorage.getItem('zelenoTheme') || 'light';
+        const savedLanguage = localStorage.getItem('zelenoLang') || 'pt';
+
+        const translations = {
+            pt: {
+                pageTitle: '5 Tabus sobre Cannabis Medicinal | ZELENO Journal',
+                schedule: 'Agendar Consulta',
+                about: 'A zeleno',
+                products: 'Produtos',
+                blog: 'Blog',
+                contact: 'Contato',
+                questions: 'Perguntas',
+                doctors: 'Para Médicos',
+                store: 'Ir para Loja',
+                tag: 'Edição 07 ',
+                hero: '5 TABUS SOBRE<br><b>CANNABIS MEDICINAL</b>',
+                introTitle: 'Desmistificando a <b>ciência</b>.',
+                introP1: 'Apesar do avanço científico, muitas dúvidas e preconceitos ainda cercam o uso medicinal da planta. Informação de qualidade é o melhor remédio contra o estigma.',
+                introP2: 'Nesta edição, abordamos os pontos mais comuns que geram hesitação em novos pacientes.',
+                taboo1Title: '"Causa Dependência"',
+                taboo1Text: 'O uso medicinal, sob supervisão e com produtos de alta pureza, tem um perfil de segurança altíssimo e não apresenta as propriedades viciantes de muitos fármacos sintéticos.',
+                taboo2Title: '"É apenas para casos graves"',
+                taboo2Text: 'Embora seja eficaz em doenças complexas, a cannabis é amplamente utilizada para melhorar o bem-estar diário, tratando ansiedade leve, insônia e dores musculares.',
+                taboo3Title: '"Vou ficar chapado"',
+                taboo3Text: 'O tratamento foca no equilíbrio. Muitos produtos contêm apenas CBD, não psicoativo, ou doses mínimas de THC que não alteram a consciência, mantendo sua produtividade.',
+                taboo4Title: '"Não tem comprovação científica"',
+                taboo4Text: 'Existem milhares de estudos revisados por pares e ensaios clínicos que comprovam a eficácia dos canabinoides em dezenas de condições médicas.',
+                taboo5Title: '"É difícil de comprar legalmente"',
+                taboo5Text: 'Com o suporte correto da Zeleno, o processo é transparente, legalizado pela ANVISA e entregue diretamente na sua casa com toda a segurança jurídica.',
+                quote: '"Onde entra a luz do conhecimento, o preconceito deixa de existir."',
+                footerText: 'Liderando a revolução da cannabis medicinal através do rigor científico e da pureza absoluta.',
+                footerNav: 'Navegação',
+                footerSupport: 'Suporte',
+                footerAbout: 'Sobre Nós',
+                footerProducts: 'Produtos',
+                footerBuy: 'Política de Privacidade',
+                footerFaq: 'Dúvidas Frequentes',
+                footerBlog: 'Blog',
+                footerContact: 'Contato',
+                footerRights: '© 2026 ZELENO PREMIUM CANNABIS. Todos os direitos reservados.'
+            },
+            en: {
+                pageTitle: '5 Taboos about Medicinal Cannabis | ZELENO Journal',
+                schedule: 'Book Consultation',
+                about: 'Zeleno',
+                products: 'Products',
+                blog: 'Blog',
+                contact: 'Contact',
+                questions: 'Questions',
+                doctors: 'For Doctors',
+                store: 'Go to Store',
+                tag: 'Edition 07 ',
+                hero: '5 TABOOS ABOUT<br><b>MEDICINAL CANNABIS</b>',
+                introTitle: 'Demystifying <b>science</b>.',
+                introP1: 'Despite scientific advances, many doubts and prejudices still surround the medicinal use of the plant. Quality information is the best remedy against stigma.',
+                introP2: 'In this edition, we address the most common points that create hesitation in new patients.',
+                taboo1Title: '"It causes addiction"',
+                taboo1Text: 'Medicinal use, under supervision and with high-purity products, has a very high safety profile and does not present the addictive properties of many synthetic drugs.',
+                taboo2Title: '"It is only for severe cases"',
+                taboo2Text: 'Although effective in complex diseases, cannabis is widely used to improve daily well-being, treating mild anxiety, insomnia, and muscle pain.',
+                taboo3Title: '"I will get high"',
+                taboo3Text: 'Treatment focuses on balance. Many products contain only CBD, which is non-psychoactive, or minimal doses of THC that do not alter consciousness, keeping your productivity intact.',
+                taboo4Title: '"There is no scientific proof"',
+                taboo4Text: 'There are thousands of peer-reviewed studies and clinical trials proving the effectiveness of cannabinoids in dozens of medical conditions.',
+                taboo5Title: '"It is hard to buy legally"',
+                taboo5Text: 'With the right support from Zeleno, the process is transparent, legalized by ANVISA, and delivered straight to your home with full legal security.',
+                quote: '"Where the light of knowledge enters, prejudice ceases to exist."',
+                footerText: 'Leading the medicinal cannabis revolution through scientific rigor and absolute purity.',
+                footerNav: 'Navigation',
+                footerSupport: 'Support',
+                footerAbout: 'About Us',
+                footerProducts: 'Products',
+                footerBuy: 'Privacy Policy',
+                footerFaq: 'Frequently Asked Questions',
+                footerBlog: 'Blog',
+                footerContact: 'Contact',
+                footerRights: '© 2026 ZELENO PREMIUM CANNABIS. All rights reserved.'
+            }
+        };
+
+        function applyTheme(theme) {
+            const isDark = theme === 'dark';
+            document.body.classList.toggle('dark-mode', isDark);
+            themeToggle.innerHTML = isDark ? '<svg class="icon-theme" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>' : '<svg class="icon-theme" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.7 14.6A8.6 8.6 0 0 1 9.4 3.3a.6.6 0 0 0-.8-.7 9.9 9.9 0 1 0 12.8 12.8.6.6 0 0 0-.7-.8z"/></svg>';
+            themeToggle.setAttribute('aria-label', isDark ? 'Alternar para modo claro' : 'Alternar para modo escuro');
+            localStorage.setItem('zelenoTheme', theme);
+        }
+
+        function applyLanguage(lang) {
+            const t = translations[lang];
+            document.documentElement.lang = lang === 'en' ? 'en' : 'pt-br';
+            document.title = t.pageTitle;
+            const left = document.querySelectorAll('.nav-side.left .nav-link');
+            const right = document.querySelectorAll('.nav-side.right .nav-link');
+            if (left[0]) left[0].textContent = t.schedule;
+            if (left[1]) left[1].textContent = t.about;
+            if (left[2]) left[2].textContent = t.products;
+            if (left[3]) left[3].textContent = t.blog;
+            if (right[0]) right[0].textContent = t.contact;
+            if (right[1]) right[1].textContent = t.questions;
+            if (right[2]) right[2].textContent = t.doctors;
+            const store = document.querySelector('.btn-store-header');
+            if (store) store.textContent = t.store;
+            const tag = document.querySelector('.floating-tag');
+            if (tag) tag.textContent = t.tag;
+            const hero = document.querySelector('.giant-title');
+            if (hero) hero.innerHTML = t.hero;
+            const introTitle = document.querySelector('.text-reveal h3');
+            const introPs = document.querySelectorAll('.text-reveal p');
+            if (introTitle) introTitle.innerHTML = t.introTitle;
+            if (introPs[0]) introPs[0].textContent = t.introP1;
+            if (introPs[1]) introPs[1].textContent = t.introP2;
+            const items = document.querySelectorAll('.tabu-item');
+            const map = [
+                [t.taboo1Title, t.taboo1Text],
+                [t.taboo2Title, t.taboo2Text],
+                [t.taboo3Title, t.taboo3Text],
+                [t.taboo4Title, t.taboo4Text],
+                [t.taboo5Title, t.taboo5Text]
+            ];
+            items.forEach((item, idx) => {
+                if (!map[idx]) return;
+                const h = item.querySelector('h4');
+                const p = item.querySelector('p');
+                if (h) h.textContent = map[idx][0];
+                if (p) p.textContent = map[idx][1];
+            });
+            const quote = document.querySelector('.big-quote h2');
+            if (quote) quote.textContent = t.quote;
+            const footerBrand = document.querySelector('.footer-brand p');
+            if (footerBrand) footerBrand.textContent = t.footerText;
+            const footerTitles = document.querySelectorAll('.footer-title');
+            if (footerTitles[0]) footerTitles[0].textContent = t.footerNav;
+            if (footerTitles[1]) footerTitles[1].textContent = t.footerSupport;
+            const footerCols = document.querySelectorAll('.footer-links');
+            if (footerCols[0]) {
+                const a = footerCols[0].querySelectorAll('a');
+                if (a[0]) a[0].textContent = t.footerAbout;
+                if (a[1]) a[1].textContent = t.footerProducts;
+                if (a[2]) a[2].textContent = t.footerBuy;
+            }
+            if (footerCols[1]) {
+                const a = footerCols[1].querySelectorAll('a');
+                if (a[0]) a[0].textContent = t.footerFaq;
+                if (a[1]) a[1].textContent = t.footerBlog;
+                if (a[2]) a[2].textContent = t.footerContact;
+            }
+            const rights = document.querySelector('.footer-bottom p');
+            if (rights) rights.textContent = t.footerRights;
+            languageToggle.textContent = lang === 'pt' ? 'EN' : 'PT';
+            localStorage.setItem('zelenoLang', lang);
+        }
+
+        applyTheme(savedTheme);
+        applyLanguage(savedLanguage);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = localStorage.getItem('zelenoTheme') || 'light';
+            applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+
+        languageToggle.addEventListener('click', () => {
+            const currentLanguage = localStorage.getItem('zelenoLang') || 'pt';
+            applyLanguage(currentLanguage === 'pt' ? 'en' : 'pt');
+        });
+    </script>
+
+    <script src="../agendamento-modal.js" defer></script>
+
+    <script>
+        /* A linha de publicacao se traduz sozinha: os artigos antigos traduzem
+           por posicao e os novos por data-i18n, entao este bloco nao depende
+           de nenhum dos dois. */
+        (function () {
+            function aplicar() {
+                var lang = localStorage.getItem('zelenoLang') === 'en' ? 'en' : 'pt';
+                document.querySelectorAll('.article-meta [data-pt]').forEach(function (el) {
+                    var v = el.getAttribute('data-' + lang);
+                    if (v) { el.textContent = v; }
+                });
+            }
+            aplicar();
+            var b = document.getElementById('languageToggle');
+            if (b) { b.addEventListener('click', function () { setTimeout(aplicar, 0); }); }
+        })();
+    </script></body>
+</html>
