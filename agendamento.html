@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-53QCQY7DLP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-53QCQY7DLP');
+    </script>
+    <link rel="icon" type="image/png" href="/fav.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>Agendamento | ZELENO Premium Cannabis</title>
+    <meta name="description" content="Agende sua consulta com especialistas em cannabis medicinal. Atendimento com rigor científico e suporte completo do início ao fim do tratamento.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #499375;
+            --brand-green: #00543d;
+            --bg-dark: #00261b;
+            --transition: cubic-bezier(0.85, 0, 0.15, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+
+        /* Página em tela cheia: barra fina em cima, card flutuante no centro,
+           rodapé de uma linha embaixo. */
+        body {
+            background: var(--bg-dark);
+            color: #f0f0f0;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            /* espaço para a barra flutuante, que sai do fluxo */
+            padding-top: 92px;
+        }
+
+        /* Brilho suave de fundo, para o card "flutuar" sobre algo. */
+        body::before {
+            content: '';
+            position: fixed; inset: 0;
+            background:
+                radial-gradient(900px 480px at 18% 12%, rgba(73, 147, 117, 0.20), transparent 62%),
+                radial-gradient(760px 420px at 84% 88%, rgba(0, 84, 61, 0.32), transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* --- MENU FLUTUANTE ---
+           Barra destacada das bordas que acompanha o usuário em toda a
+           navegação. Sem transform e sem backdrop-filter: os dois criariam
+           containing block e prenderiam o painel do menu mobile. */
+        .main-header {
+            padding: 9px 20px;
+            position: fixed;
+            height: auto;
+            top: 14px; left: 3%; right: 3%;
+            z-index: 10000;
+            display: flex; align-items: center; justify-content: space-between;
+            background: rgba(0, 30, 22, 0.94);
+            border: 1px solid rgba(73, 147, 117, 0.20);
+            border-radius: 18px;
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
+        }
+        .header-logo img { height: 40px; width: auto; display: block; }
+        .nav-group { display: flex; align-items: center; gap: 26px; }
+        .nav-link {
+            color: rgba(255,255,255,0.82); text-decoration: none; text-transform: uppercase;
+            font-size: 11px; font-weight: 700; letter-spacing: 1px; transition: 0.3s; white-space: nowrap;
+        }
+        .nav-link:hover { color: var(--primary); }
+
+        .btn-green-box {
+            background: var(--primary);
+            color: #ffffff !important;
+            padding: 8px 18px;
+            border-radius: 4px;
+            font-weight: 900 !important;
+        }
+
+        .mobile-menu-toggle {
+            display: none; background: none; border: none;
+            color: #ffffff; font-size: 24px; cursor: pointer;
+            position: relative; z-index: 10002;
+        }
+        .mobile-nav-full { display: none; }
+
+        /* --- CARD FLUTUANTE --- */
+        .booking-stage {
+            position: relative; z-index: 1;
+            flex: 1;
+            display: flex; align-items: center; justify-content: center;
+            padding: 40px 5%;
+        }
+
+        .booking-card {
+            width: 100%; max-width: 960px;
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: 28px;
+            padding: 40px 44px;
+            box-shadow: 0 40px 90px rgba(0, 0, 0, 0.5);
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .booking-copy h1 {
+            font-size: clamp(1.8rem, 3.2vw, 2.6rem); font-weight: 900;
+            line-height: 1; text-transform: uppercase; color: #ffffff;
+            margin-bottom: 16px;
+        }
+        .h1-accent { color: var(--primary); }
+
+        .booking-copy > p {
+            font-size: 0.98rem; line-height: 1.6; color: rgba(255,255,255,0.7);
+            max-width: 460px; margin-bottom: 24px;
+        }
+
+        .booking-cta {
+            display: inline-flex; align-items: center; gap: 11px;
+            background: var(--primary); color: #ffffff;
+            padding: 16px 34px; border-radius: 6px;
+            font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px;
+            text-decoration: none; transition: 0.3s var(--transition);
+            box-shadow: 0 14px 30px rgba(73, 147, 117, 0.28);
+        }
+        .booking-cta:hover { background: #ffffff; color: var(--brand-green); transform: translateY(-3px); }
+        .booking-cta-note { margin-top: 12px; font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 0.4px; }
+
+        /* Depoimentos compactos, em linha */
+        .mini-reviews { display: flex; gap: 14px; margin-top: 26px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); }
+        .mini-review { flex: 1; }
+        .mini-review .stars { color: var(--primary); font-size: 9px; margin-bottom: 6px; }
+        .mini-review p { font-size: 11.5px; line-height: 1.5; color: rgba(255,255,255,0.68); font-style: italic; }
+        .mini-review b { display: block; margin-top: 6px; font-size: 10.5px; color: var(--primary); font-style: normal; }
+
+        /* --- PRÉVIA DA AGENDA NO CELULAR ---
+           A plataforma de agendamento responde com "frame-ancestors 'self'":
+           ela bloqueia ser carregada em iframe de outro domínio. Por isso o
+           celular mostra uma prévia da interface e abre a plataforma real. */
+        .phone-container {
+            position: relative; width: 260px; height: 520px;
+            background: #000; border: 8px solid #1a1a1a; border-radius: 38px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6); overflow: hidden;
+            justify-self: center;
+        }
+        .phone-screen {
+            width: 100%; height: 100%;
+            background: #ffffff; border-radius: 30px; overflow: hidden;
+            display: flex; flex-direction: column;
+            text-decoration: none; color: #00261b;
+        }
+        .phone-topbar { background: var(--brand-green); padding: 20px 16px 14px; text-align: center; }
+        .phone-topbar img { height: 22px; width: auto; filter: brightness(0) invert(1); }
+        .phone-topbar p { color: rgba(255,255,255,0.75); font-size: 8px; margin-top: 8px; letter-spacing: 1.2px; text-transform: uppercase; }
+        .phone-body { padding: 14px; display: flex; flex-direction: column; gap: 11px; flex: 1; }
+        .phone-body h3 { font-size: 10px; color: var(--brand-green); font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
+        .phone-dates { display: flex; gap: 6px; }
+        .date-chip { flex: 1; border: 1px solid rgba(0,84,61,0.15); border-radius: 8px; padding: 7px 0; text-align: center; }
+        .date-chip span { display: block; font-size: 8px; text-transform: uppercase; color: #6d8479; letter-spacing: 0.8px; }
+        .date-chip b { font-size: 14px; color: var(--brand-green); }
+        .date-chip.is-active { background: var(--brand-green); border-color: var(--brand-green); }
+        .date-chip.is-active span { color: rgba(255,255,255,0.7); }
+        .date-chip.is-active b { color: #ffffff; }
+        .phone-slots { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+        .slot { border: 1px solid rgba(0,84,61,0.15); border-radius: 7px; padding: 8px 0; text-align: center; font-size: 11px; font-weight: 700; color: var(--brand-green); }
+        .slot.is-taken { color: #b9c4be; border-color: #eef1ef; background: #f6f8f7; text-decoration: line-through; }
+        .slot.is-active { background: var(--primary); border-color: var(--primary); color: #ffffff; }
+        .phone-doctor { display: flex; align-items: center; gap: 8px; border-top: 1px solid #eef1ef; padding-top: 11px; }
+        .phone-doctor img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+        .phone-doctor b { display: block; font-size: 11px; color: var(--brand-green); }
+        .phone-doctor span { font-size: 9px; color: #6d8479; }
+        .phone-cta {
+            margin-top: auto; background: var(--brand-green); color: #ffffff;
+            text-align: center; padding: 12px; border-radius: 9px;
+            font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.2px;
+        }
+
+        /* --- RODAPÉ DE UMA LINHA --- */
+        .mini-footer {
+            position: relative; z-index: 1;
+            flex-shrink: 0;
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 20px; flex-wrap: wrap;
+            padding: 16px 5%;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            font-size: 11px; color: rgba(255,255,255,0.4);
+        }
+        .mini-footer a { color: rgba(255,255,255,0.55); text-decoration: none; margin-left: 18px; transition: 0.3s; }
+        .mini-footer a:hover { color: var(--primary); }
+        .mini-footer .social-links a { font-size: 15px; margin-left: 14px; }
+
+        .whatsapp-float {
+            position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+            background: #25d366; color: #ffffff;
+            width: 54px; height: 54px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 27px; box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+            text-decoration: none; transition: 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); background: #20ba5a; }
+
+        /* --- RESPONSIVO --- */
+        @media (max-width: 900px) {
+            .booking-card {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 32px 24px;
+                text-align: center;
+            }
+            .booking-copy > p { margin-left: auto; margin-right: auto; }
+            .mini-reviews { flex-direction: column; gap: 16px; text-align: left; }
+            .phone-container { order: -1; }
+        }
+
+        @media (max-width: 1023px) {
+            .main-header { top: 10px; left: 3%; right: 3%; border-radius: 14px; padding: 7px 14px; }
+            .nav-group { display: none; }
+            .mobile-menu-toggle { display: block; }
+
+            .mobile-nav-full {
+                display: flex;
+                position: fixed; top: 0; right: -100%;
+                width: 100%; height: 100dvh;
+                background: #00261b;
+                flex-direction: column; justify-content: center; align-items: center;
+                gap: 22px; transition: 0.45s var(--transition);
+                z-index: 10001;
+                padding: 90px 24px 40px;
+                overflow-y: auto;
+            }
+            .mobile-nav-full.active { right: 0; }
+            .mobile-nav-full .nav-link { font-size: 13px; letter-spacing: 1.4px; }
+            .mobile-nav-full .btn-green-box { padding: 12px 25px; min-width: 190px; text-align: center; }
+
+            /* Botão de fechar dedicado dentro do painel */
+            .mobile-nav-close {
+                position: absolute; top: 18px; right: 22px;
+                background: none; border: none; color: #ffffff;
+                font-size: 26px; cursor: pointer; line-height: 1;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .mobile-nav-close { display: none; }
+        }
+    
+        /* --- PADRAO DE CORES DO MENU ---
+           Barra escura -> textos e logo sempre brancos. */
+        .main-header .nav-link:not(.active-box):not(.btn-store-header):not(.btn-green-box),
+        .main-header .mobile-menu-toggle { color: #ffffff; }
+        .main-header .header-logo img { filter: brightness(0) invert(1); }
+
+        /* Botoes do menu: verde escuro com texto branco em todos os modos.
+           Contorno leve para nao se confundir com a barra escura. */
+        .main-header .nav-link.active-box,
+        .main-header .btn-store-header,
+        .main-header .btn-green-box {
+            background: #00543d !important;
+            color: #ffffff !important;
+        }
+        .main-header .nav-link.active-box,
+        .main-header .btn-store-header,
+        .main-header .btn-green-box { border: 1px solid rgba(255,255,255,0.18); }
+        /* --- SEM PALAVRA SOZINHA NA LINHA ---
+           Nenhum texto do site pode quebrar deixando uma palavra orfa na
+           ultima linha. balance reparte as linhas em comprimentos parecidos
+           (bom para titulo curto); pretty evita a viuva no fim do paragrafo.
+           Navegador sem suporte ignora e quebra do jeito tradicional. */
+        h1, h2, h3, h4, h5, h6,
+        .giant-title, .title-chic, .section-title, .product-title,
+        .footer-title, .editorial-tag, .floating-tag, .step-card h3,
+        .diff-item h4, .science-box h4, .value-card h3, .card-content h3,
+        .property-card h3, .review-text, .big-quote h2, .cta-block h2,
+        .booking-copy h1, .booking-intro h1, .contact-info h1,
+        .policy-section h1, .policy-section h2, .faq-question,
+        .btn-more, .btn-read, .btn-main, .detail-list b, .stat-label {
+            text-wrap: balance;
+        }
+
+        p, li, figcaption, blockquote, .info-text, .product-description,
+        .section-lead, .section-head p, .text-reveal p, .photo-credit,
+        .article-meta, .author-box p, .consult-note, .review-author,
+        .booking-cta-note, .mini-review p, .footer-brand p, .footer-bottom p {
+            text-wrap: pretty;
+        }
+        /* --- LARGURA DA BARRA DO MENU ---
+           No desktop a barra passa a ter a largura do proprio conteudo:
+           comeca na borda do botao "Agendar Consulta" e termina na do
+           "Loja Exclusiva". Centralizada com margin auto, nunca com
+           translateX, que criaria containing block e prenderia o painel
+           do menu mobile. No celular ela continua ocupando a largura toda. */
+        @media (min-width: 1024px) {
+            .main-header {
+                left: 0;
+                right: 0;
+                width: fit-content;
+                max-width: 94%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .main-header .nav-group {
+                flex: 0 0 auto;
+                width: auto;
+                max-width: none;
+            }
+        }</style>
+</head>
+<body>
+
+    <a href="https://hubs.ly/Q04sNmtw0" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header class="main-header">
+        <div class="header-logo">
+            <a href="/"><img src="/logo.png" alt="Zeleno"></a>
+        </div>
+
+        <div class="nav-group">
+            <a href="/sobre-nos" class="nav-link">Sobre Nós</a>
+            <a href="/produtos" class="nav-link">Produtos</a>
+            <a href="/blog" class="nav-link">Blog</a>
+            <a href="/contato" class="nav-link">Contato</a>
+            <a href="/perguntas-frequentes" class="nav-link">Perguntas</a>
+            <a href="/para-medicos" class="nav-link">Para Médicos</a>
+            <a href="https://zelenostore.com/" class="nav-link btn-green-box">Loja Exclusiva</a>
+        </div>
+
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menu" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="mobile-nav-full" id="mobileNav">
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Fechar menu">
+                <i class="fas fa-times"></i>
+            </button>
+            <a href="/sobre-nos" class="nav-link">Sobre Nós</a>
+            <a href="/produtos" class="nav-link">Produtos</a>
+            <a href="/blog" class="nav-link">Blog</a>
+            <a href="/contato" class="nav-link">Contato</a>
+            <a href="/perguntas-frequentes" class="nav-link">Perguntas</a>
+            <a href="/para-medicos" class="nav-link">Para Médicos</a>
+            <a href="https://zelenostore.com/" class="nav-link btn-green-box">Loja Exclusiva</a>
+        </nav>
+    </header>
+
+    <main class="booking-stage">
+        <section class="booking-card">
+            <div class="phone-container">
+                <a class="phone-screen" href="https://loja-zeleno-front.vercel.app/agendar.html" target="_blank" rel="noopener" aria-label="Abrir a plataforma de agendamento Zeleno">
+                    <div class="phone-topbar">
+                        <img src="/logo.png" alt="Zeleno">
+                        <p>Agendamento de consulta</p>
+                    </div>
+
+                    <div class="phone-body">
+                        <h3>Escolha o dia</h3>
+                        <div class="phone-dates">
+                            <div class="date-chip"><span>Seg</span><b>12</b></div>
+                            <div class="date-chip is-active"><span>Ter</span><b>13</b></div>
+                            <div class="date-chip"><span>Qua</span><b>14</b></div>
+                            <div class="date-chip"><span>Qui</span><b>15</b></div>
+                        </div>
+
+                        <h3>Horários disponíveis</h3>
+                        <div class="phone-slots">
+                            <div class="slot">09:00</div>
+                            <div class="slot is-taken">10:00</div>
+                            <div class="slot is-active">11:30</div>
+                            <div class="slot">14:00</div>
+                            <div class="slot">15:30</div>
+                            <div class="slot is-taken">17:00</div>
+                        </div>
+
+                        <div class="phone-doctor">
+                            <img src="/doctor.png" alt="Médico prescritor">
+                            <div>
+                                <b>Consulta com prescritor</b>
+                                <span>Teleconsulta &middot; 30 minutos</span>
+                            </div>
+                        </div>
+
+                        <div class="phone-cta">Confirmar agendamento</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="booking-copy">
+                <h1>Sua saúde merece o <span class="h1-accent">nível Premium</span></h1>
+                <p>Agende sua consulta com especialistas em cannabis medicinal na plataforma mais segura do Brasil.</p>
+
+                <a href="https://loja-zeleno-front.vercel.app/agendar.html" class="booking-cta" target="_blank" rel="noopener">
+                    <i class="fas fa-calendar-check"></i> Agendar minha consulta
+                </a>
+                <p class="booking-cta-note">Escolha o dia e o horário em menos de 2 minutos.</p>
+
+                <div class="mini-reviews">
+                    <div class="mini-review">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p>"O agendamento foi super simples e o suporte da Zeleno é impecável."</p>
+                        <b>Mariana S.</b>
+                    </div>
+                    <div class="mini-review">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p>"Médicos muito preparados. Me senti segura durante todo o processo."</p>
+                        <b>Dr. João P.</b>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mini-footer">
+        <p>&copy; 2026 ZELENO PREMIUM CANNABIS</p>
+        <div>
+            <a href="/politica-de-privacidade">Política de Privacidade</a>
+            <a href="/contato">Contato</a>
+            <span class="social-links">
+                <a href="https://www.instagram.com/zeleno.meds/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/zeleno-meds/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </span>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileNavClose = document.getElementById('mobileNavClose');
+
+        function abrirMenu() {
+            mobileNav.classList.add('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function fecharMenu() {
+            mobileNav.classList.remove('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuToggle.addEventListener('click', () => {
+            if (mobileNav.classList.contains('active')) { fecharMenu(); } else { abrirMenu(); }
+        });
+
+        mobileNavClose.addEventListener('click', fecharMenu);
+
+        // Fecha ao clicar em um link do menu
+        mobileNav.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', fecharMenu));
+
+        // Fecha com a tecla Esc
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && mobileNav.classList.contains('active')) { fecharMenu(); }
+        });
+    </script>
+</body>
+</html>
