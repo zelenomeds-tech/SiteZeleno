@@ -1,0 +1,1885 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-53QCQY7DLP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-53QCQY7DLP');
+    </script>
+    <link rel="icon" type="image/png" href="/fav.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZELENO | Exclusive Collection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #499375;
+            --brand-green: #00543d;
+            --bg: #ffffff;
+            --transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            --bg-dark: #ffffff;      
+            --accent: #499375;
+            --zeleno-dark: #00543d;
+            --white: #103126;
+        }
+
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--brand-green) #f0f0f0;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f0f0f0;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--brand-green);
+            border-radius: 10px;
+            border: 2px solid #f0f0f0;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--white);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+    .main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 15px 4%; 
+    z-index: 10000;
+    background: transparent;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+        .main-header.header-hidden {
+            transform: translateY(-120%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .nav-group { 
+            display: flex; 
+            align-items: center; 
+            gap: 32px; 
+            flex: 1; 
+        }
+
+        #navGroupLeft {
+            justify-content: flex-end; 
+        }
+
+        #mainNav {
+            justify-content: flex-start; 
+        }
+
+        .header-logo {
+            flex: 0 0 auto; 
+            padding: 0 40px; 
+        }
+
+        .nav-link {
+            color: var(--zeleno-dark);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px; 
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover { color: var(--primary); }
+
+        .nav-link.active-box {
+            background: #00543d;
+            color: #ffffff;
+            padding: 10px 22px; 
+            border-radius: 4px;
+            font-weight: 900 !important;
+            font-size: 12px;
+            display: inline-block;
+        }
+
+        .header-logo img { 
+            height: 48px; 
+            width: auto; 
+            display: block;
+            filter: brightness(0) saturate(100%) invert(18%) sepia(38%) saturate(1496%) hue-rotate(128deg) brightness(97%) contrast(102%);
+        }
+
+        .btn-store-header {
+            background: #00543d;
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px; 
+            font-weight: 900;
+            padding: 10px 22px; 
+            border-radius: 4px;
+            white-space: nowrap;
+            margin-left: 10px; 
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--zeleno-dark);
+            font-size: 26px;
+            cursor: pointer;
+            z-index: 10001;
+        }
+
+        @media (max-width: 1023px) {
+            .main-header { 
+                justify-content: space-between; 
+                padding: 12px 6%;
+                gap: 0;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+            }
+            
+            .mobile-menu-toggle { display: block; }
+            .header-logo img { height: 42px; }
+
+            .nav-group {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%; 
+                height: 100vh;
+                background: #ffffff; 
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 22px;
+                transition: 0.5s cubic-bezier(0.85, 0, 0.15, 1);
+                z-index: 10000;
+                overflow-y: auto;
+                padding: 40px 24px;
+                flex: none; 
+                text-align: center;
+            }
+
+            .nav-group.active { right: 0; }
+
+            .nav-link {
+                font-size: 11px;
+                display: block;
+                text-align: center;
+                font-weight: 900;
+                background: transparent !important;
+                color: var(--zeleno-dark);
+                padding: 0;
+                width: 100%;
+            }
+
+            .nav-group.active .cloned-0 {
+                background: #00543d !important;
+                color: #ffffff !important;
+                padding: 10px 25px !important;
+                border-radius: 4px;
+                width: auto !important;
+                min-width: 180px;
+                max-width: 240px;
+                margin-bottom: 5px;
+            }
+
+            .btn-store-header {
+                margin-left: 0;
+                font-size: 10px !important;
+                padding: 10px 25px !important;
+                margin-top: 5px;
+                width: auto !important;
+                min-width: 180px;
+                max-width: 240px;
+                text-align: center;
+                border-radius: 4px;
+                background: #00543d;
+            }
+
+            .main-header .nav-group:first-of-type { display: none; }
+        }
+
+        .products-carousel-section {
+            position: relative;
+            width: 100%;
+        }
+
+        .cards-viewport {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .cards-container {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card {
+            position: relative;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: var(--zeleno-dark);
+            overflow: hidden;
+            transition: var(--transition);
+            border-right: 1px solid rgba(0,84,61,0.08);
+            background: #ffffff;
+            cursor: pointer;
+        }
+
+        .card-bg-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            opacity: 1;
+            filter: none;
+            transform: scale(1.15) translateY(40px);
+            transition: var(--transition);
+        }
+
+        .card-oil .card-bg-hover { background-image: url('/BG-Óleos.png'); }
+        .card-gummie .card-bg-hover { background-image: url('/Gummies.png'); }
+        .card-flor .card-bg-hover { background-image: url('/BG-Flores.png'); }
+        .card-extrato .card-bg-hover { background-image: url('/BG-extratos.png'); }
+
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 84, 61, 0.25) 0%,
+                rgba(0, 38, 27, 0.55) 100%
+            );
+            z-index: 2;
+            transition: 0.6s;
+        }
+
+        .product-card:hover .card-overlay {
+            background: transparent;
+        }
+
+        .card-content { 
+            position: relative;
+            z-index: 4;
+            text-align: center; 
+            width: 100%;
+            padding: 0 40px;
+            transition: var(--transition);
+        }
+
+        .product-tag {
+            font-size: clamp(9px, 1vw, 11px);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: block;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: 0.6s 0.2s;
+        }
+
+        .product-title {
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 0.8;
+            letter-spacing: -3px;
+            margin-bottom: 5px;
+            color: #ffffff;
+            text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+            transition: var(--transition);
+        }
+
+        .ad-content {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .ad-line {
+            display: none;
+        }
+
+        .product-description {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #00261b;
+            max-width: 600px;
+            font-weight: 400;
+            letter-spacing: 0.4px;
+            margin-bottom: 40px;
+            transform: translateY(30px);
+            transition: 0.9s 0.3s;
+            text-align: left;
+            padding: 30px;
+            border-left: 3px solid var(--brand-green);
+            border-radius: 0 12px 12px 0;
+            /* painel opaco: garante contraste do texto sobre qualquer foto de fundo */
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 12px 30px rgba(0, 38, 27, 0.12);
+            text-shadow: none;
+        }
+
+        .product-description strong {
+            font-weight: 900;
+            color: var(--brand-green);
+            display: block;
+            font-size: 24px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            filter: none;
+        }
+
+        .btn-more {
+            display: inline-block;
+            /* Espaçamento elástico: em card estreito o botão encolhe em vez de
+               vazar para fora do retângulo. */
+            padding: 14px clamp(16px, 2.2vw, 45px);
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: clamp(1.5px, 0.3vw, 4px);
+            text-transform: uppercase;
+            transition: 0.5s;
+            background: rgba(0, 38, 27, 0.25);
+            color: #ffffff;
+            cursor: pointer;
+            backdrop-filter: blur(6px);
+            max-width: 100%;
+        }
+
+        /* No card aberto há espaço de sobra: aí sim o texto fica em uma linha só. */
+        .product-card.active .btn-more { white-space: nowrap; }
+
+        /* Cards recolhidos ganham mais área útil para o botão caber. */
+        .product-card:not(.active) .card-content { padding: 0 14px; }
+
+        .product-card:hover .card-bg-hover {
+            opacity: 1;
+            filter: none;
+            transform: scale(1.1) translateY(0);
+        }
+
+        .product-card.active { flex: 5; }
+        .product-card.active .ad-content { max-height: 600px; opacity: 1; }
+        .product-card.active .product-title { letter-spacing: 2px; }
+        .product-card.active .product-tag { opacity: 1; transform: translateY(0); }
+
+        .carousel-arrow {
+            display: none;
+        }
+
+        .brands-section {
+            padding: 100px 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f7fbf8;
+        }
+
+        .editorial-tag {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            color: var(--accent);
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .title-chic { 
+            font-size: clamp(2rem, 5vw, 3rem); 
+            font-weight: 200; 
+            line-height: 0.85; 
+            text-transform: uppercase; 
+            margin-bottom: 50px; 
+            text-align: center;
+            color: var(--zeleno-dark);
+        }
+
+        .title-chic b {
+            font-weight: 900;
+            display: block;
+            color: var(--accent);
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 85%;
+            max-width: 1000px;
+        }
+
+        .brand-item {
+            height: 120px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0,84,61,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            transition: 0.5s;
+            padding: 20px;
+        }
+
+        .brand-item img {
+            max-width: 80%;
+            max-height: 60%;
+            filter: brightness(0) saturate(100%) invert(18%) sepia(38%) saturate(1496%) hue-rotate(128deg) brightness(97%) contrast(102%);
+            opacity: 1;
+            transition: 0.5s;
+        }
+
+        .brand-item img[src="/greenbudz logo (3).png"] {
+            max-width: 95%; 
+            max-height: 90%;
+        }
+
+        .brand-item:hover {
+            background: rgba(73, 147, 117, 0.08);
+            border-color: var(--primary);
+        }
+
+        .brand-item:hover img {
+            /* so o zoom: a logo mantem o verde escuro do estado normal */
+            transform: scale(1.1);
+        }
+
+        .values-footer {
+            max-width: 800px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .values-footer p {
+            font-size: 0.9rem;
+            color: rgba(16,49,38,0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .values-footer b { color: var(--primary); }
+
+        .main-footer {
+            background: #f7fbf8;
+            padding: 25px 10% 15px;
+            border-top: 1px solid rgba(0,84,61,0.1);
+            position: relative;
+            z-index: 70;
+            margin-top: -1px;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: flex-start;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto 60px auto;
+            flex-wrap: wrap;
+        }
+
+        .footer-brand {
+            flex: 2;
+            min-width: 280px;
+        }
+
+        .footer-brand .footer-logo {
+            height: 60px;
+            margin-bottom: 20px;
+            filter: brightness(0) saturate(100%) invert(18%) sepia(38%) saturate(1496%) hue-rotate(128deg) brightness(97%) contrast(102%);
+        }
+
+        .footer-brand p {
+            color: rgba(16,49,38,0.6);
+            font-size: 11px;
+            line-height: 1.6;
+            max-width: 300px;
+        }
+
+        .footer-title {
+            color: var(--zeleno-dark);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(16,49,38,0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            width: 35px;
+            height: 35px;
+            background: rgba(0,84,61,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: var(--zeleno-dark);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            padding-top: 25px;
+            border-top: 1px solid rgba(0,84,61,0.08);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(16,49,38,0.3);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            z-index: 9999;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #128c7e;
+        }
+
+        @media (max-width: 768px) {
+            .products-carousel-section {
+                position: relative;
+                margin-top: 0;
+            }
+
+            .cards-viewport {
+                overflow: hidden;
+                width: 100%;
+            }
+
+            .cards-container {
+                flex-direction: row;
+                width: 100%;
+                height: auto;
+                min-height: 100vh;
+                will-change: transform;
+            }
+
+            .product-card {
+                flex: 0 0 100%;
+                min-width: 100%;
+                width: 100%;
+                min-height: 100vh;
+                border-right: none;
+                border-bottom: none;
+                justify-content: center;
+                padding: 120px 0 50px;
+            }
+
+            .product-card.active {
+                flex: 0 0 100%;
+            }
+
+            .card-content {
+                padding: 0 24px;
+            }
+
+            .product-tag {
+                opacity: 1;
+                transform: translateY(0);
+                margin-bottom: 14px;
+            }
+
+            .product-title {
+                font-size: clamp(2rem, 8vw, 2.6rem);
+                letter-spacing: 1px;
+                margin-bottom: 18px;
+            }
+
+            .ad-content {
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+            }
+
+            .product-card.active .ad-content {
+                max-height: 700px;
+                opacity: 1;
+                margin-top: 12px;
+            }
+
+            .product-description {
+                font-size: 14px;
+                padding: 20px;
+                margin-bottom: 24px;
+                text-align: left;
+            }
+
+            .product-description strong {
+                font-size: 18px;
+            }
+
+            .btn-more {
+                font-size: 9px;
+                padding: 12px 24px;
+                letter-spacing: 2px;
+            }
+
+            .carousel-arrow {
+                display: flex;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 42px;
+                height: 42px;
+                border-radius: 50%;
+                border: 1px solid rgba(0,84,61,0.15);
+                background: rgba(255,255,255,0.75);
+                color: var(--zeleno-dark);
+                align-items: center;
+                justify-content: center;
+                z-index: 20;
+                cursor: pointer;
+                backdrop-filter: blur(8px);
+            }
+
+            .carousel-arrow.prev { left: 12px; }
+            .carousel-arrow.next { right: 12px; }
+
+            .brands-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                gap: 30px;
+            }
+        }
+    
+        .btn-language-toggle {
+            background: transparent;
+            border: 1px solid var(--zeleno-dark);
+            color: var(--zeleno-dark);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 10px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-left: 12px;
+            text-transform: uppercase;
+        }
+
+        .btn-language-toggle:hover {
+            background: var(--zeleno-dark);
+            color: #ffffff;
+        }
+
+        .logo-color-fix {
+            filter: brightness(0) saturate(100%) invert(18%) sepia(38%) saturate(1496%) hue-rotate(128deg) brightness(97%) contrast(102%);
+            transition: filter 0.3s ease;
+        }
+
+        .header-controls {
+            position: fixed;
+            left: 30px;
+            bottom: 30px;
+            z-index: 10002;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-theme-toggle {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: 1px solid var(--zeleno-dark);
+            color: var(--zeleno-dark);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .btn-theme-toggle:hover {
+            background: var(--zeleno-dark);
+            color: #ffffff;
+        }
+
+        body.dark-mode {
+            background-color: #081711;
+            color: #e8f5ef;
+        }
+
+        body.dark-mode .main-header {
+            background: transparent;
+        }
+
+        body.dark-mode .nav-link {
+            color: #ffffff;
+        }
+
+        body.dark-mode .nav-link:hover {
+            color: var(--accent);
+        }
+
+        body.dark-mode .mobile-menu-toggle {
+            color: #ffffff;
+        }
+
+        body.dark-mode .logo-color-fix,
+        body.dark-mode .header-logo img,
+        body.dark-mode .footer-brand .footer-logo {
+            filter: brightness(0) invert(1);
+        }
+
+        body.dark-mode .btn-language-toggle,
+        body.dark-mode .btn-theme-toggle {
+            border-color: #ffffff;
+            color: #ffffff;
+            background: transparent;
+        }
+
+        body.dark-mode .btn-language-toggle:hover,
+        body.dark-mode .btn-theme-toggle:hover {
+            background: #ffffff;
+            color: var(--zeleno-dark);
+        }
+
+        body.dark-mode .product-card {
+            background: #0e241b;
+            color: #ffffff;
+            border-right-color: rgba(255,255,255,0.08);
+        }
+
+        body.dark-mode .card-overlay {
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 84, 61, 0.25) 0%,
+                rgba(0, 38, 27, 0.55) 100%
+            );
+        }
+
+        body.dark-mode .product-card:hover .card-overlay {
+            background: transparent;
+        }
+
+        body.dark-mode .product-title,
+        body.dark-mode .product-description,
+        body.dark-mode .title-chic,
+        body.dark-mode .footer-title,
+        body.dark-mode .social-links a,
+        body.dark-mode .footer-brand .footer-logo {
+            color: #ffffff;
+        }
+
+        body.dark-mode .product-description {
+            background: rgba(14, 36, 27, 0.95);
+            border-left-color: var(--accent);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        body.dark-mode .product-description strong,
+        body.dark-mode .editorial-tag,
+        body.dark-mode .title-chic b,
+        body.dark-mode .values-footer b {
+            color: var(--accent);
+        }
+
+        body.dark-mode .btn-more {
+            border-color: rgba(255,255,255,0.2);
+            color: #ffffff;
+        }
+
+        body.dark-mode .brands-section,
+        body.dark-mode .main-footer {
+            background: #081711;
+        }
+
+        body.dark-mode .brand-item {
+            background: #0e241b;
+            border-color: rgba(255,255,255,0.08);
+        }
+
+        body.dark-mode .brand-item:hover {
+            border-color: var(--accent);
+            background: #143126;
+        }
+
+        body.dark-mode .brand-item img {
+            filter: brightness(0) invert(1);
+        }
+
+        body.dark-mode .footer-brand p,
+        body.dark-mode .footer-links a,
+        body.dark-mode .footer-bottom p,
+        body.dark-mode .values-footer p {
+            color: rgba(255,255,255,0.75);
+        }
+
+        body.dark-mode .social-links a {
+            background: rgba(255,255,255,0.08);
+        }
+
+        body.dark-mode .social-links a:hover {
+            background: var(--accent);
+            color: #ffffff;
+        }
+
+        body.dark-mode .footer-bottom {
+            border-top-color: rgba(255,255,255,0.08);
+        }
+
+        @media (max-width: 1023px) {
+            .header-controls {
+                left: 20px;
+                bottom: 20px;
+            }
+
+            .btn-language-toggle {
+                position: static;
+                margin-left: 0;
+                background: transparent;
+            }
+
+            body.dark-mode .main-header {
+                background: rgba(8, 23, 17, 0.95);
+                backdrop-filter: blur(10px);
+            }
+
+            body.dark-mode .nav-group {
+                background: #081711;
+            }
+
+            body.dark-mode .nav-link {
+                color: #ffffff;
+            }
+
+            body.dark-mode .btn-store-header {
+                color: #ffffff;
+            }
+        }
+        /* --- MENU FLUTUANTE ---
+           Barra destacada das rgba(0, 84, 61, 0.10)s, com cantos arredondados, que acompanha
+           o usuario em toda a navegacao e nao se esconde mais ao rolar.
+           IMPORTANTE: sem transform e sem backdrop-filter aqui. Os dois criam
+           containing block e prendem o painel do menu mobile (position: fixed)
+           dentro da area da barra. */
+        .main-header {
+            position: fixed;
+            height: auto;
+            padding: 9px 20px;
+            top: 14px;
+            left: 3%;
+            right: 3%;
+            width: auto;
+            border-radius: 18px;
+            border: 1px solid rgba(0, 84, 61, 0.10);
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 12px 34px rgba(0, 38, 27, 0.13);
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+
+        /* O menu acompanha o usuario: a regra de esconder no scroll fica sem efeito. */
+        .main-header.header-hidden {
+            transform: none;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        @media (max-width: 1023px) {
+            .main-header {
+                top: 10px;
+                left: 3%;
+                right: 3%;
+                border-radius: 14px;
+                padding: 7px 14px;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
+        }
+        body.dark-mode .main-header {
+            background: rgba(14, 36, 27, 0.96) !important;
+            border-color: rgba(255, 255, 255, 0.10);
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.40);
+        }
+        /* --- PADRAO DE CORES DO MENU ---
+           Barra clara -> textos e logo em verde escuro.
+           Barra escura (modo escuro) -> textos e logo brancos. */
+        .main-header .nav-link:not(.active-box):not(.btn-store-header):not(.btn-green-box),
+        .main-header .mobile-menu-toggle { color: #00543d; }
+        .main-header .header-logo img { filter: brightness(0) saturate(100%) invert(21%) sepia(26%) saturate(3660%) hue-rotate(133deg) brightness(91%) contrast(101%); }
+
+        body.dark-mode .main-header .nav-link:not(.active-box):not(.btn-store-header):not(.btn-green-box),
+        body.dark-mode .main-header .mobile-menu-toggle { color: #ffffff; }
+        body.dark-mode .main-header .header-logo img { filter: brightness(0) invert(1); }
+
+        /* Botoes do menu: verde escuro com texto branco em todos os modos.
+           Contorno leve para nao se confundir com a barra escura. */
+        .main-header .nav-link.active-box,
+        .main-header .btn-store-header,
+        .main-header .btn-green-box {
+            background: #00543d !important;
+            color: #ffffff !important;
+        }
+        body.dark-mode .main-header .nav-link.active-box,
+        body.dark-mode .main-header .btn-store-header,
+        body.dark-mode .main-header .btn-green-box { border: 1px solid rgba(255,255,255,0.18); }
+        /* --- SEM PALAVRA SOZINHA NA LINHA ---
+           Nenhum texto do site pode quebrar deixando uma palavra orfa na
+           ultima linha. balance reparte as linhas em comprimentos parecidos
+           (bom para titulo curto); pretty evita a viuva no fim do paragrafo.
+           Navegador sem suporte ignora e quebra do jeito tradicional. */
+        h1, h2, h3, h4, h5, h6,
+        .giant-title, .title-chic, .section-title, .product-title,
+        .footer-title, .editorial-tag, .floating-tag, .step-card h3,
+        .diff-item h4, .science-box h4, .value-card h3, .card-content h3,
+        .property-card h3, .review-text, .big-quote h2, .cta-block h2,
+        .booking-copy h1, .booking-intro h1, .contact-info h1,
+        .policy-section h1, .policy-section h2, .faq-question,
+        .btn-more, .btn-read, .btn-main, .detail-list b, .stat-label {
+            text-wrap: balance;
+        }
+
+        p, li, figcaption, blockquote, .info-text, .product-description,
+        .section-lead, .section-head p, .text-reveal p, .photo-credit,
+        .article-meta, .author-box p, .consult-note, .review-author,
+        .booking-cta-note, .mini-review p, .footer-brand p, .footer-bottom p {
+            text-wrap: pretty;
+        }
+        /* --- BOTOES FLUTUANTES DE TEMA E IDIOMA ---
+           Eles ficam sobre o conteudo da pagina, nao sobre a barra do menu,
+           entao nao podem depender do estado dela: ganham fundo proprio e
+           passam a ter contraste sobre qualquer coisa que esteja atras. */
+        .btn-theme-toggle,
+        .btn-language-toggle {
+            background: rgba(255, 255, 255, 0.94) !important;
+            border: 1px solid rgba(0, 84, 61, 0.20) !important;
+            color: #00543d !important;
+            box-shadow: 0 6px 18px rgba(0, 38, 27, 0.12);
+            text-shadow: none !important;
+        }
+
+        .btn-theme-toggle:hover,
+        .btn-language-toggle:hover {
+            background: #00543d !important;
+            border-color: #00543d !important;
+            color: #ffffff !important;
+        }
+
+        body.dark-mode .btn-theme-toggle,
+        body.dark-mode .btn-language-toggle {
+            background: rgba(14, 36, 27, 0.94) !important;
+            border-color: rgba(255, 255, 255, 0.22) !important;
+            color: #ffffff !important;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+        }
+
+        body.dark-mode .btn-theme-toggle:hover,
+        body.dark-mode .btn-language-toggle:hover {
+            background: #ffffff !important;
+            border-color: #ffffff !important;
+            color: #00543d !important;
+        }
+        /* --- LARGURA DA BARRA DO MENU ---
+           No desktop a barra passa a ter a largura do proprio conteudo:
+           comeca na borda do botao "Agendar Consulta" e termina na do
+           "Loja Exclusiva". Centralizada com margin auto, nunca com
+           translateX, que criaria containing block e prenderia o painel
+           do menu mobile. No celular ela continua ocupando a largura toda. */
+        @media (min-width: 1024px) {
+            .main-header {
+                left: 0;
+                right: 0;
+                width: fit-content;
+                max-width: 94%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .main-header .nav-group {
+                flex: 0 0 auto;
+                width: auto;
+                max-width: none;
+            }
+        }</style>
+</head>
+<body>
+    <header class="main-header">
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="nav-group" id="navGroupLeft">
+            <a href="/agendamento" class="nav-link active-box">Agendar Consulta</a>
+            <a href="/sobre-nos" class="nav-link">Sobre Nós</a>
+            <a href="/produtos" class="nav-link">Produtos</a>
+            <a href="/blog" class="nav-link">Blog</a>
+        </div>
+
+        <div class="header-logo">
+            <a href="/">
+                <img src="/logo.png" alt="Zeleno" class="logo-color-fix">
+            </a>
+        </div>
+
+        <div class="nav-group" id="mainNav">
+            <a href="/contato" class="nav-link">Contato</a>
+            <a href="/perguntas-frequentes" class="nav-link">Perguntas </a>
+            <a href="/para-medicos" class="nav-link">Para Médicos</a>
+            <a href="https://zelenostore.com/" class="btn-store-header">Loja Exclusiva</a>
+        </div>
+    </header>
+
+    <div class="header-controls">
+            <button id="themeToggle" class="btn-theme-toggle" aria-label="Alternar modo escuro">
+                <svg class="icon-theme" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.7 14.6A8.6 8.6 0 0 1 9.4 3.3a.6.6 0 0 0-.8-.7 9.9 9.9 0 1 0 12.8 12.8.6.6 0 0 0-.7-.8z"/></svg>
+            </button>
+            <button id="languageToggle" class="btn-language-toggle">EN</button>
+        </div>
+
+    <a href="https://hubs.ly/Q04sNmtw0" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <main class="products-carousel-section">
+        <button class="carousel-arrow prev" id="carouselPrev" aria-label="Produto anterior">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="cards-viewport">
+            <div class="cards-container" id="cardsContainer">
+                <div class="product-card card-oil">
+                    <div class="card-bg-hover"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <h2 class="product-title">óleos</h2>
+                        <div class="ad-content">
+                            <div class="ad-line"></div>
+                            <p class="product-description">
+                                <strong>Precisão em cada gota.</strong>
+                                Formulações desenvolvidas com controle rigoroso de qualidade, concentration padronizada e alta biodisponibilidade. Ideais para protocolos individualizados que exigem estabilidade, ajuste de dose e acompanhamento clínico.
+                                Destaque: Padronização farmacêutica e controle preciso de dosagem.
+                            </p>
+                        </div>
+                        <div class="btn-more">Toque para detalhes</div>
+                    </div>
+                </div>
+
+                <div class="product-card card-gummie">
+                    <div class="card-bg-hover"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <h2 class="product-title">gummies</h2>
+                        <div class="ad-content">
+                            <div class="ad-line"></div>
+                            <p class="product-description">
+                                <strong>Equilíbrio com praticidade.</strong>
+                                Tecnologia aplicada à forma oral sólida, oferecendo praticidade, discrição e padronização de concentração. Uma alternativa moderna para quem busca conveniência sem abrir mão do rigor técnico.
+                                Destaque: Dose controlada com fácil adesão ao tratamento.
+                            </p>
+                        </div>
+                        <div class="btn-more">Toque para detalhes</div>
+                    </div>
+                </div>
+
+                <div class="product-card card-flor">
+                    <div class="card-bg-hover"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <h2 class="product-title">Flores</h2>
+                        <div class="ad-content">
+                            <div class="ad-line"></div>
+                            <p class="product-description">
+                                <strong>Origem em sua forma mais autêntica.</strong>
+                                Cultivares selecionadas com critérios genéticos, rastreabilidade e controle de qualidade. Indicadas para protocolos específicos, respeitando características naturais da planta e orientação profissional.
+                                Destaque: Curadoria genética e rastreabilidade.
+                            </p>
+                        </div>
+                        <div class="btn-more">Toque para detalhes</div>
+                    </div>
+                </div>
+
+                <div class="product-card card-extrato">
+                    <div class="card-bg-hover"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <h2 class="product-title">Extratos</h2>
+                        <div class="ad-content">
+                            <div class="ad-line"></div>
+                            <p class="product-description">
+                                <strong>Concentração e performance terapêutica.</strong>
+                                Processos avançados de extração garantem pureza, preservação de compostos e alta concentração de canabinoides, voltados para estratégias clínicas que demandam maior potência.
+                                Destaque: Alta concentração com controle técnico rigoroso.
+                            </p>
+                        </div>
+                        <div class="btn-more">Toque para detalhes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-arrow next" id="carouselNext" aria-label="Próximo produto">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </main>
+
+    <section class="brands-section">
+        <span class="editorial-tag">Portfólio Certificado</span>
+        <h1 class="title-chic">Marcas que atendem aos mais altos <b>critérios técnicos e regulatórios</b></h1>
+        
+        <div class="brands-grid">
+            <div class="brand-item"><img src="/m15.png" alt="Marca 1"></div>
+            <div class="brand-item"><img src="/m16.png" alt="Marca 2"></div>
+            <div class="brand-item"><img src="/m14.png" alt="Marca 3"></div>
+            <div class="brand-item"><img src="/cbdmd logo.png" alt="Marca 4"></div>
+            <div class="brand-item"><img src="/greenbudz logo (3).png" alt="Marca 5"></div>
+            <div class="brand-item"><img src="/logo nui branca.png" alt="Marca 6"></div>
+        </div>
+
+        <div class="values-footer">
+            <p>Selecionamos apenas laboratórios  <b>certificados, alinhados <br> às normas nacionais e internacionais.</b></p>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/">
+                    <img src="/logo.png" alt="Zeleno Logo" class="footer-logo logo-color-fix" style="position: relative;left: -10px;">
+                </a>
+                <p>Liderando a revolução da cannabis medicinal através do rigor científico e da pureza absoluta.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/zeleno.meds/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@zelenomeds"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.linkedin.com/company/zeleno-meds/"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col footer-col-nav">
+                <h4 class="footer-title">Navegação</h4>
+                <ul class="footer-links">
+                    <li><a href="/sobre-nos">Sobre Nós</a></li>
+                    <li><a href="/produtos">Produtos</a></li>
+                    <li><a href="/politica-de-privacidade">Política de Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-title">Suporte</h4>
+                <ul class="footer-links">
+                    <li><a href="/perguntas-frequentes">Dúvidas Frequentes</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contato">Contato</a></li>
+                    <li><a href="/trabalhe-conosco">Trabalhe Conosco</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Zeleno Meds. Todos os direitos reservados.</p>
+            <div class="footer-seal">
+                <div id="ra-verified-seal"><script type="text/javascript" id="ra-embed-verified-seal" src="https://s3.amazonaws.com/raichu-beta/ra-verified/bundle.js" data-id="VXlMMVBFOG5BYkUyTk5NMjp6ZWxlbm8tbWVkcw==" data-target="ra-verified-seal" data-model="horizontal_1"></script></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        const header = document.querySelector('.main-header');
+        const productsSection = document.querySelector('.products-carousel-section');
+        let lastScrollYMenu = window.scrollY;
+
+        function updateHeaderVisibilityByScrollDirection() {
+            if (!header) return;
+
+            const currentScrollY = window.scrollY;
+            const firstSectionLimit = productsSection
+                ? productsSection.offsetTop + productsSection.offsetHeight - 80
+                : window.innerHeight - 80;
+            const menuIsOpen = mainNav && mainNav.classList.contains('active');
+
+            if (menuIsOpen || currentScrollY <= firstSectionLimit) {
+                header.classList.remove('header-hidden');
+                lastScrollYMenu = currentScrollY;
+                return;
+            }
+
+            if (currentScrollY > lastScrollYMenu + 8) {
+                header.classList.add('header-hidden');
+            } else if (currentScrollY < lastScrollYMenu - 8) {
+                header.classList.remove('header-hidden');
+            }
+
+            lastScrollYMenu = currentScrollY;
+        }
+
+        window.addEventListener('scroll', updateHeaderVisibilityByScrollDirection, { passive: true });
+
+        function updateHeaderProductsTheme() {
+            if (!header || !productsSection) return;
+            const rect = productsSection.getBoundingClientRect();
+            const headerCheckPoint = 80;
+            const isOverProducts = rect.top <= headerCheckPoint && rect.bottom > headerCheckPoint;
+            header.classList.toggle('header-products', isOverProducts);
+        }
+
+        window.addEventListener('scroll', updateHeaderProductsTheme);
+        window.addEventListener('resize', updateHeaderProductsTheme);
+        updateHeaderProductsTheme();
+
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mainNav = document.getElementById('mainNav');
+        const navLeft = document.getElementById('navGroupLeft');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            const icon = mobileMenuToggle.querySelector('i');
+            if (!mainNav.classList.contains('active')) {
+                if (window.innerWidth <= 1023) {
+                    const linksLeft = Array.from(navLeft.querySelectorAll('.nav-link')).reverse();
+                    linksLeft.forEach((link, index) => {
+                        const originalIndex = linksLeft.length - 1 - index;
+                        if (!mainNav.querySelector(`.cloned-${originalIndex}`)) {
+                            const clone = link.cloneNode(true);
+                            clone.classList.add('cloned-link', `cloned-${originalIndex}`);
+                            mainNav.prepend(clone);
+                        }
+                    });
+                }
+                header.classList.remove('header-hidden');
+                mainNav.classList.add('active');
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                mainNav.classList.remove('active');
+                icon.classList.replace('fa-times', 'fa-bars');
+                mainNav.querySelectorAll('.cloned-link').forEach(el => el.remove());
+            }
+        });
+
+        const cards = document.querySelectorAll('.product-card');
+        const cardsContainer = document.getElementById('cardsContainer');
+        const cardsViewport = document.querySelector('.cards-viewport');
+        const prevButton = document.getElementById('carouselPrev');
+        const nextButton = document.getElementById('carouselNext');
+
+        let currentSlide = 0;
+
+        function isMobileCarousel() {
+            return window.innerWidth <= 768;
+        }
+
+        function closeAllCards() {
+            cards.forEach(card => card.classList.remove('active'));
+        }
+
+        function updateMobileCarousel() {
+            if (!isMobileCarousel()) {
+                cardsContainer.style.transform = 'translateX(0)';
+                return;
+            }
+
+            const viewportWidth = cardsViewport.offsetWidth;
+            cardsContainer.style.transform = `translateX(-${currentSlide * viewportWidth}px)`;
+            closeAllCards();
+        }
+
+        prevButton.addEventListener('click', (e) => {
+            if (!isMobileCarousel()) return;
+            e.stopPropagation();
+            currentSlide = (currentSlide - 1 + cards.length) % cards.length;
+            updateMobileCarousel();
+        });
+
+        nextButton.addEventListener('click', (e) => {
+            if (!isMobileCarousel()) return;
+            e.stopPropagation();
+            currentSlide = (currentSlide + 1) % cards.length;
+            updateMobileCarousel();
+        });
+
+        cards.forEach((card, index) => {
+            const button = card.querySelector('.btn-more');
+
+            button.addEventListener('click', (e) => {
+                e.stopPropagation();
+
+                if (isMobileCarousel()) {
+                    if (currentSlide !== index) {
+                        currentSlide = index;
+                        updateMobileCarousel();
+                    }
+
+                    const isActive = card.classList.contains('active');
+                    closeAllCards();
+
+                    if (!isActive) {
+                        card.classList.add('active');
+                    }
+                    return;
+                }
+
+                const isActive = card.classList.contains('active');
+                closeAllCards();
+
+                if (!isActive) {
+                    card.classList.add('active');
+                }
+            });
+
+            card.addEventListener('click', function() {
+                if (isMobileCarousel()) {
+                    if (currentSlide !== index) {
+                        currentSlide = index;
+                        updateMobileCarousel();
+                    }
+                    return;
+                }
+
+                const isActive = this.classList.contains('active');
+                closeAllCards();
+
+                if (!isActive) {
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            if (currentSlide >= cards.length) {
+                currentSlide = 0;
+            }
+            updateMobileCarousel();
+        });
+
+        updateMobileCarousel();
+
+
+        const themeToggle = document.getElementById('themeToggle');
+        const savedTheme = localStorage.getItem('zelenoTheme') || 'light';
+
+        function applyTheme(theme) {
+            const isDark = theme === 'dark';
+            document.body.classList.toggle('dark-mode', isDark);
+            if (themeToggle) {
+                themeToggle.innerHTML = isDark
+                    ? '<svg class="icon-theme" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><path d="M12 2.4v2.2M12 19.4v2.2M2.4 12h2.2M19.4 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>'
+                    : '<svg class="icon-theme" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.7 14.6A8.6 8.6 0 0 1 9.4 3.3a.6.6 0 0 0-.8-.7 9.9 9.9 0 1 0 12.8 12.8.6.6 0 0 0-.7-.8z"/></svg>';
+                themeToggle.setAttribute('aria-label', isDark ? 'Alternar para modo claro' : 'Alternar para modo escuro');
+            }
+            localStorage.setItem('zelenoTheme', theme);
+        }
+
+        applyTheme(savedTheme);
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function () {
+                const currentTheme = localStorage.getItem('zelenoTheme') || 'light';
+                const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                applyTheme(nextTheme);
+            });
+        }
+
+        (function () {
+            const zelenoTranslations = {
+                pt: {
+                    pageTitle: "ZELENO | Exclusive Collection",
+
+                    navSchedule: "Agendar Consulta",
+                    navAbout: "Sobre Nós",
+                    navProducts: "Produtos",
+                    navBlog: "Blog",
+                    navContact: "Contato",
+                    navQuestions: "Perguntas",
+                    navDoctors: "Para Médicos",
+                    navStore: "Loja Exclusiva",
+
+                    card1Tag: "The Golden Standard",
+                    card1Title: "óleos",
+                    card1Desc: '<strong>Precisão em cada gota.</strong>Formulações desenvolvidas com controle rigoroso de qualidade, concentration padronizada e alta biodisponibilidade. Ideais para protocolos individualizados que exigem estabilidade, ajuste de dose e acompanhamento clínico. Destaque: Padronização farmacêutica e controle preciso de dosagem.',
+
+                    card2Tag: "Modern Rituals",
+                    card2Title: "gummies",
+                    card2Desc: '<strong>Equilíbrio com praticidade.</strong>Tecnologia aplicada à forma oral sólida, oferecendo praticidade, discrição e padronização de concentração. Uma alternativa moderna para quem busca conveniência sem abrir mão do rigor técnico. Destaque: Dose controlada com fácil adesão ao tratamento.',
+
+                    card3Tag: "Raw Perfection",
+                    card3Title: "Flores",
+                    card3Desc: '<strong>Origem em sua forma mais autêntica.</strong>Cultivares selecionadas com critérios genéticos, rastreabilidade e controle de qualidade. Indicadas para protocolos específicos, respeitando características naturais da planta e orientação profissional. Destaque: Curadoria genética e rastreabilidade.',
+
+                    card4Tag: "Maximum Potency",
+                    card4Title: "Extratos",
+                    card4Desc: '<strong>Concentração e performance terapêutica.</strong>Processos avançados de extração garantem pureza, preservação de compostos e alta concentração de canabinoides, voltados para estratégias clínicas que demandam maior potência. Destaque: Alta concentração com controle técnico rigoroso.',
+
+                    btnDetails: "Toque para detalhes",
+                    prevAria: "Produto anterior",
+                    nextAria: "Próximo produto",
+
+                    brandsTag: "Portfólio Certificado",
+                    brandsTitle: 'Marcas que atendem aos mais altos <b>critérios técnicos e regulatórios</b>',
+                    brandsFooter: 'Selecionamos apenas laboratórios <b>certificados, alinhados <br> às normas nacionais e internacionais.</b>',
+
+                    footerText: 'Liderando a revolução da cannabis medicinal através do rigor científico e da pureza absoluta.',
+                    footerNav: 'Navegação',
+                    footerSupport: 'Suporte',
+                    footerAbout: 'Sobre Nós',
+                    footerProducts: 'Produtos',
+                    footerPrivacy: 'Política de Privacidade',
+                    footerFaq: 'Dúvidas Frequentes',
+                    footerBlog: 'Blog',
+                    footerContact: 'Contato',
+                    footerRights: '©2026 Zeleno Meds. Todos os direitos reservados.'
+                },
+                en: {
+                    pageTitle: "ZELENO | Exclusive Collection",
+
+                    navSchedule: "Book Consultation",
+                    navAbout: "About Us",
+                    navProducts: "Products",
+                    navBlog: "Blog",
+                    navContact: "Contact",
+                    navQuestions: "Questions",
+                    navDoctors: "For Doctors",
+                    navStore: "Exclusive Store",
+
+                    card1Tag: "The Golden Standard",
+                    card1Title: "Oils",
+                    card1Desc: '<strong>Precision in every drop.</strong>Formulations developed with strict quality control, standardized concentration, and high bioavailability. Ideal for individualized protocols that require stability, dose adjustment, and clinical follow-up. Highlight: Pharmaceutical standardization and precise dosage control.',
+
+                    card2Tag: "Modern Rituals",
+                    card2Title: "Gummies",
+                    card2Desc: '<strong>Balance with practicality.</strong>Technology applied to solid oral form, offering practicality, discretion, and concentration standardization. A modern alternative for those seeking convenience without giving up technical rigor. Highlight: Controlled dose with easy treatment adherence.',
+
+                    card3Tag: "Raw Perfection",
+                    card3Title: "Flowers",
+                    card3Desc: '<strong>Origin in its most authentic form.</strong>Selected cultivars with genetic criteria, traceability, and quality control. Indicated for specific protocols, respecting the plant’s natural characteristics and professional guidance. Highlight: Genetic curation and traceability.',
+
+                    card4Tag: "Maximum Potency",
+                    card4Title: "Extracts",
+                    card4Desc: '<strong>Therapeutic concentration and performance.</strong>Advanced extraction processes ensure purity, compound preservation, and high cannabinoid concentration, aimed at clinical strategies that require greater potency. Highlight: High concentration with rigorous technical control.',
+
+                    btnDetails: "Tap for details",
+                    prevAria: "Previous product",
+                    nextAria: "Next product",
+
+                    brandsTag: "Certified Portfolio",
+                    brandsTitle: 'Brands that meet the highest <b>technical and regulatory standards</b>',
+                    brandsFooter: 'We select only <b>certified laboratories aligned <br> with national and international standards.</b>',
+
+                    footerText: 'Leading the medicinal cannabis revolution through scientific rigor and absolute purity.',
+                    footerNav: 'Navigation',
+                    footerSupport: 'Support',
+                    footerAbout: 'About Us',
+                    footerProducts: 'Products',
+                    footerPrivacy: 'Privacy Policy',
+                    footerFaq: 'Frequently Asked Questions',
+                    footerBlog: 'Blog',
+                    footerContact: 'Contact',
+                    footerRights: '©2026 Zeleno Meds. All rights reserved.'
+                }
+            };
+
+            function applyZelenoLanguage(lang) {
+                document.documentElement.lang = lang === 'en' ? 'en' : 'pt-br';
+                document.title = zelenoTranslations[lang].pageTitle;
+
+                const leftLinks = document.querySelectorAll('#navGroupLeft .nav-link');
+                const rightLinks = document.querySelectorAll('#mainNav .nav-link');
+                const storeBtn = document.querySelector('.btn-store-header');
+
+                if (leftLinks[0]) leftLinks[0].textContent = zelenoTranslations[lang].navSchedule;
+                if (leftLinks[1]) leftLinks[1].textContent = zelenoTranslations[lang].navAbout;
+                if (leftLinks[2]) leftLinks[2].textContent = zelenoTranslations[lang].navProducts;
+                if (leftLinks[3]) leftLinks[3].textContent = zelenoTranslations[lang].navBlog;
+
+                if (rightLinks[0]) rightLinks[0].textContent = zelenoTranslations[lang].navContact;
+                if (rightLinks[1]) rightLinks[1].textContent = zelenoTranslations[lang].navQuestions;
+                if (rightLinks[2]) rightLinks[2].textContent = zelenoTranslations[lang].navDoctors;
+                if (storeBtn) storeBtn.textContent = zelenoTranslations[lang].navStore;
+
+                const cards = document.querySelectorAll('.product-card');
+                if (cards[0]) {
+                    cards[0].querySelector('.product-title').textContent = zelenoTranslations[lang].card1Title;
+                    cards[0].querySelector('.product-description').innerHTML = zelenoTranslations[lang].card1Desc;
+                    cards[0].querySelector('.btn-more').textContent = zelenoTranslations[lang].btnDetails;
+                }
+                if (cards[1]) {
+                    cards[1].querySelector('.product-title').textContent = zelenoTranslations[lang].card2Title;
+                    cards[1].querySelector('.product-description').innerHTML = zelenoTranslations[lang].card2Desc;
+                    cards[1].querySelector('.btn-more').textContent = zelenoTranslations[lang].btnDetails;
+                }
+                if (cards[2]) {
+                    cards[2].querySelector('.product-title').textContent = zelenoTranslations[lang].card3Title;
+                    cards[2].querySelector('.product-description').innerHTML = zelenoTranslations[lang].card3Desc;
+                    cards[2].querySelector('.btn-more').textContent = zelenoTranslations[lang].btnDetails;
+                }
+                if (cards[3]) {
+                    cards[3].querySelector('.product-title').textContent = zelenoTranslations[lang].card4Title;
+                    cards[3].querySelector('.product-description').innerHTML = zelenoTranslations[lang].card4Desc;
+                    cards[3].querySelector('.btn-more').textContent = zelenoTranslations[lang].btnDetails;
+                }
+
+                const prevArrow = document.getElementById('carouselPrev');
+                const nextArrow = document.getElementById('carouselNext');
+                if (prevArrow) prevArrow.setAttribute('aria-label', zelenoTranslations[lang].prevAria);
+                if (nextArrow) nextArrow.setAttribute('aria-label', zelenoTranslations[lang].nextAria);
+
+                const brandsTag = document.querySelector('.brands-section .editorial-tag');
+                const brandsTitle = document.querySelector('.brands-section .title-chic');
+                const brandsFooter = document.querySelector('.brands-section .values-footer p');
+                if (brandsTag) brandsTag.textContent = zelenoTranslations[lang].brandsTag;
+                if (brandsTitle) brandsTitle.innerHTML = zelenoTranslations[lang].brandsTitle;
+                if (brandsFooter) brandsFooter.innerHTML = zelenoTranslations[lang].brandsFooter;
+
+                const footerBrandText = document.querySelector('.footer-brand p');
+                const footerTitles = document.querySelectorAll('.footer-title');
+                const footerNavLinks = document.querySelectorAll('.footer-col-nav .footer-links a');
+                const footerSupportLinks = document.querySelectorAll('.footer-col:not(.footer-col-nav) .footer-links a');
+                const footerBottom = document.querySelector('.footer-bottom p');
+
+                if (footerBrandText) footerBrandText.textContent = zelenoTranslations[lang].footerText;
+                if (footerTitles[0]) footerTitles[0].textContent = zelenoTranslations[lang].footerNav;
+                if (footerTitles[1]) footerTitles[1].textContent = zelenoTranslations[lang].footerSupport;
+
+                if (footerNavLinks[0]) footerNavLinks[0].textContent = zelenoTranslations[lang].footerAbout;
+                if (footerNavLinks[1]) footerNavLinks[1].textContent = zelenoTranslations[lang].footerProducts;
+                if (footerNavLinks[2]) footerNavLinks[2].textContent = zelenoTranslations[lang].footerPrivacy;
+
+                if (footerSupportLinks[0]) footerSupportLinks[0].textContent = zelenoTranslations[lang].footerFaq;
+                if (footerSupportLinks[1]) footerSupportLinks[1].textContent = zelenoTranslations[lang].footerBlog;
+                if (footerSupportLinks[2]) footerSupportLinks[2].textContent = zelenoTranslations[lang].footerContact;
+
+                if (footerBottom) footerBottom.textContent = zelenoTranslations[lang].footerRights;
+
+                const toggleBtn = document.getElementById('languageToggle');
+                if (toggleBtn) toggleBtn.textContent = lang === 'pt' ? 'EN' : 'PT';
+
+                localStorage.setItem('zelenoLang', lang);
+            }
+
+            const toggleBtn = document.getElementById('languageToggle');
+            const savedLang = localStorage.getItem('zelenoLang') || 'pt';
+            applyZelenoLanguage(savedLang);
+
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function () {
+                    const currentLang = localStorage.getItem('zelenoLang') || 'pt';
+                    const nextLang = currentLang === 'pt' ? 'en' : 'pt';
+                    applyZelenoLanguage(nextLang);
+                });
+            }
+        })();
+
+    </script>
+
+<!-- ============ ZELENO HEATMAP • coletor embutido ============ -->
+<!-- Para desativar, remova deste comentario ate o </script> abaixo. -->
+<script>
+(function () {
+  'use strict';
+
+  /* ----------------------- CONFIGURAÇÃO ----------------------------- */
+  var CFG = {
+    APP_URL: 'https://script.google.com/macros/s/AKfycbzAqAqZbnHQVVTzHuWEpUrQDVUVpSJOZLE886lWA2aBOyCh6HyyVdZIM3rUJAZVfm7z/exec',
+
+    AMOSTRAGEM:        1.0,    // 1.0 = 100% dos visitantes. Use 0.3 p/ 30%.
+    CAPTURAR_MOVIMENTO:false,  // true = mapa de movimento do mouse (mais pesado)
+    CAPTURAR_SCROLL:   true,   // profundidade de rolagem por página
+    BATCH_TAMANHO:     12,     // envia quando acumula N eventos
+    BATCH_INTERVALO:   6000,   // ...ou a cada N ms
+    MOV_INTERVALO:     220,    // amostra de movimento a cada N ms
+    RESPEITAR_DNT:     false,  // true = não rastreia quem tem Do-Not-Track
+    DEBUG:             true    // true = mostra logs no Console (deixe false em produção)
+  };
+  /* ------------------------------------------------------------------ */
+
+  if (CFG.RESPEITAR_DNT && (navigator.doNotTrack === '1' || window.doNotTrack === '1')) return;
+  if (Math.random() > CFG.AMOSTRAGEM) return;
+  if (!CFG.APP_URL || CFG.APP_URL.indexOf('SEU_ID') > -1) {
+    console.warn('[Zeleno Heatmap] Configure APP_URL no zeleno-heatmap.js');
+    return;
+  }
+
+  console.log('%c[Zeleno Heatmap] ✅ ativo nesta página', 'color:#499375;font-weight:bold');
+
+  var fila = [];
+  var timer = null;
+
+  /* --------------------------- Sessão ------------------------------- */
+  function uid() {
+    return 'z' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+  }
+  var SID = (function () {
+    try {
+      var s = sessionStorage.getItem('zh_sid');
+      if (!s) { s = uid(); sessionStorage.setItem('zh_sid', s); }
+      return s;
+    } catch (e) { return uid(); }
+  })();
+
+  // visitante_id: PERSISTENTE (localStorage) — sobrevive entre visitas.
+  // Serve p/ distinguir visitante novo (1 sessão) de recorrente (2+ sessões).
+  var VID = (function () {
+    try {
+      var v = localStorage.getItem('zh_vid');
+      if (!v) { v = uid(); localStorage.setItem('zh_vid', v); }
+      return v;
+    } catch (e) { return SID; }
+  })();
+
+  /* ------------------------ Dimensões/Device ------------------------ */
+  function docW() {
+    return Math.max(document.documentElement.scrollWidth, document.body ? document.body.scrollWidth : 0, window.innerWidth);
+  }
+  function docH() {
+    return Math.max(document.documentElement.scrollHeight, document.body ? document.body.scrollHeight : 0, window.innerHeight);
+  }
+  function dispositivo() {
+    var w = window.innerWidth;
+    if (w < 768)  return 'mobile';
+    if (w < 1024) return 'tablet';
+    return 'desktop';
+  }
+
+  /* ----------------- Caminho CSS do elemento clicado ---------------- */
+  function seletor(el) {
+    if (!el || el.nodeType !== 1) return '';
+    var partes = [], prof = 0;
+    while (el && el.nodeType === 1 && prof < 6) {
+      var nome = el.nodeName.toLowerCase();
+      if (el.id) { partes.unshift('#' + el.id); break; }
+      var cls = (el.className && typeof el.className === 'string')
+        ? '.' + el.className.trim().split(/\s+/).slice(0, 2).join('.')
+        : '';
+      var i = 1, irmao = el;
+      while ((irmao = irmao.previousElementSibling)) {
+        if (irmao.nodeName.toLowerCase() === nome) i++;
+      }
+      partes.unshift(nome + cls + ':nth-of-type(' + i + ')');
+      el = el.parentElement; prof++;
+    }
+    return partes.join(' > ');
+  }
+
+  function textoDe(el) {
+    var t = (el.innerText || el.textContent || '').replace(/\s+/g, ' ').trim();
+    if (!t && el.getAttribute) t = el.getAttribute('aria-label') || el.getAttribute('alt') || el.getAttribute('title') || '';
+    return t.slice(0, 80);
+  }
+
+  /* --------------------------- Envio -------------------------------- */
+  function enviar() {
+    if (!fila.length) return;
+    var lote = fila.splice(0, fila.length);
+    var corpo = JSON.stringify(lote);
+    if (CFG.DEBUG) console.log('[Zeleno Heatmap] enviando', lote.length, 'evento(s) →', CFG.APP_URL);
+    // fetch no-cors + keepalive: entrega de forma confiável (segue o redirect
+    // do Apps Script) e sobrevive ao fechamento da aba. Sem sendBeacon p/
+    // evitar duplicidade e problemas de redirect.
+    try {
+      fetch(CFG.APP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        keepalive: true,
+        headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+        body: corpo
+      }).catch(function () {});
+    } catch (e) {
+      // último recurso, caso keepalive não seja suportado
+      try {
+        var blob = new Blob([corpo], { type: 'text/plain;charset=UTF-8' });
+        if (navigator.sendBeacon) navigator.sendBeacon(CFG.APP_URL, blob);
+      } catch (e2) {}
+    }
+  }
+
+  function agendar() {
+    if (fila.length >= CFG.BATCH_TAMANHO) { clearTimeout(timer); timer = null; enviar(); return; }
+    if (!timer) timer = setTimeout(function () { timer = null; enviar(); }, CFG.BATCH_INTERVALO);
+  }
+
+  function registrar(ev) {
+    ev.criado_em    = new Date().toISOString();
+    ev.sessao_id    = SID;
+    ev.visitante_id = VID;
+    ev.pagina       = location.pathname || '/';
+    ev.url_completa = location.href;
+    ev.vp_w         = window.innerWidth;
+    ev.vp_h         = window.innerHeight;
+    ev.dispositivo  = dispositivo();
+    fila.push(ev);
+    if (CFG.DEBUG) console.log('[Zeleno Heatmap] capturado:', ev.tipo, ev.texto || ev.seletor || '', '| fila:', fila.length);
+    agendar();
+  }
+
+  /* --------------------------- Cliques ------------------------------ */
+  var historico = [];
+  function ehRage(x, y, t) {
+    historico = historico.filter(function (h) { return t - h.t < 1500; });
+    historico.push({ x: x, y: y, t: t });
+    var n = 0;
+    for (var i = 0; i < historico.length; i++) {
+      var dx = historico[i].x - x, dy = historico[i].y - y;
+      if (dx * dx + dy * dy < 50 * 50) n++;
+    }
+    return n >= 3;
+  }
+
+  document.addEventListener('click', function (e) {
+    var dw = docW(), dh = docH();
+    var alvo = e.target;
+    var link = alvo && alvo.closest ? alvo.closest('a') : null;
+    var rage = ehRage(e.pageX, e.pageY, Date.now());
+
+    registrar({
+      tipo:   'clique',                 // rage também é clique; flag separada abaixo
+      page_x: Math.round(e.pageX),
+      page_y: Math.round(e.pageY),
+      x_frac: dw ? +(e.pageX / dw).toFixed(5) : null,
+      y_frac: dh ? +(e.pageY / dh).toFixed(5) : null,
+      doc_w:  dw,
+      doc_h:  dh,
+      seletor: seletor(alvo),
+      tag:    alvo ? alvo.nodeName.toLowerCase() : null,
+      texto:  alvo ? textoDe(alvo) : null,
+      href:   link ? link.getAttribute('href') : null,
+      rage:   rage
+    });
+  }, true);
+
+  /* ------------------------ Movimento (opcional) -------------------- */
+  if (CFG.CAPTURAR_MOVIMENTO) {
+    var ultMov = 0;
+    document.addEventListener('mousemove', function (e) {
+      var agora = Date.now();
+      if (agora - ultMov < CFG.MOV_INTERVALO) return;
+      ultMov = agora;
+      var dw = docW(), dh = docH();
+      registrar({
+        tipo:   'movimento',
+        page_x: Math.round(e.pageX),
+        page_y: Math.round(e.pageY),
+        x_frac: dw ? +(e.pageX / dw).toFixed(5) : null,
+        y_frac: dh ? +(e.pageY / dh).toFixed(5) : null,
+        doc_w:  dw,
+        doc_h:  dh,
+        rage:   false
+      });
+    }, { passive: true });
+  }
+
+  /* ----------------------- Profundidade de scroll ------------------- */
+  var maxScroll = 0, scrollEnviado = false;
+  if (CFG.CAPTURAR_SCROLL) {
+    window.addEventListener('scroll', function () {
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+      var alcance = docH() - window.innerHeight;
+      var pct = alcance > 0 ? Math.round((st / alcance) * 100) : 100;
+      if (pct > maxScroll) maxScroll = Math.min(100, pct);
+    }, { passive: true });
+  }
+  function enviarScroll() {
+    if (!CFG.CAPTURAR_SCROLL || scrollEnviado) return;
+    scrollEnviado = true;
+    registrar({ tipo: 'scroll', scroll_pct: maxScroll, doc_h: docH(), rage: false });
+  }
+
+  /* ------------------ Flush ao sair / trocar de aba ----------------- */
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'hidden') { enviarScroll(); enviar(); }
+  });
+  window.addEventListener('pagehide', function () { enviarScroll(); enviar(); });
+  window.addEventListener('beforeunload', function () { enviarScroll(); enviar(); });
+})();
+</script>
+<!-- ============ fim ZELENO HEATMAP ============ -->
+    <script src="agendamento-modal.js" defer></script>
+</body>
+</html>
