@@ -1,3 +1,23 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/agendamento", "destination": "/" },
+    { "source": "/blog", "destination": "/" },
+    { "source": "/central", "destination": "/" },
+    { "source": "/construcao", "destination": "/" },
+    { "source": "/contato", "destination": "/" },
+    { "source": "/faq", "destination": "/" },
+    { "source": "/form", "destination": "/" },
+    { "source": "/medicos", "destination": "/" },
+    { "source": "/para-medicos", "destination": "/" },
+    { "source": "/perguntas-frequentes", "destination": "/" },
+    { "source": "/politica", "destination": "/" },
+    { "source": "/politica-de-privacidade", "destination": "/" },
+    { "source": "/produtos", "destination": "/" },
+    { "source": "/quemsomos", "destination": "/" },
+    { "source": "/sobre-nos", "destination": "/" },
+    { "source": "/teste", "destination": "/" },
+    { "source": "/trabalhe", "destination": "/" },
+    { "source": "/trabalhe-conosco", "destination": "/" }
+  ]
 }
